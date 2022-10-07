@@ -9,5 +9,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //유월 팀 프론트엔드 깃허브!!!!
+        // 요건 내가 쓴거야 -주아!!!!
     }
 }
