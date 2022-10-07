@@ -10,5 +10,6 @@ class MainActivity : AppCompatActivity() {
 
         //유월 팀 프론트엔드 깃허브!!!!
         //다시 시도
+        //파일 작성
     }
 }
