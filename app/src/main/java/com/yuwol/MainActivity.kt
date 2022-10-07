@@ -8,6 +8,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //유월 팀 프론트엔드 깃허브!!
+        //유월 팀 프론트엔드 깃허브!!!!
     }
 }
