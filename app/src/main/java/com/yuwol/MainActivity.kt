@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
 
         //유월 팀 프론트엔드 깃허브g!!!!
         // 요건 내가 쓴거야 -주아!!!!
-        //다시 시도-주아
+        //다시 시도
     }
 }
