@@ -2,15 +2,45 @@ package com.yuwol
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.yuwol.R
+import com.yuwol.databinding.ActivityMainBinding
+import com.yuwol.home.HomeFragment
+import com.yuwol.rating.RatingFragment
+import com.yuwol.search.SearchFragment
+import com.yuwol.user.UserFragment
 
 class MainActivity : AppCompatActivity() {
+
+    // 바인딩
+    private  lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        replaceFragment(HomeFragment())
 
-        //유월 팀 프론트엔드 깃허브!!!!
-        //다시 시도
-        //파일 작성
+        binding.navBottom.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.home -> replaceFragment(HomeFragment())
+                R.id.search -> replaceFragment(SearchFragment())
+                R.id.rating -> replaceFragment(RatingFragment())
+                R.id.user -> replaceFragment(UserFragment())
+
+                else -> {
+
+                }
+            }
+            true
+        }
+
+    }
+
+    private  fun replaceFragment(fragment : Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fl_main, fragment)
+        fragmentTransaction.commit()
     }
 }
