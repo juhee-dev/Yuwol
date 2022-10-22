@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.yuwol.R
 import com.yuwol.adapter.ChartAdapter
 import com.yuwol.databinding.FragmentHomeBinding
@@ -34,12 +33,16 @@ class HomeFragment : Fragment() {
 
         Log.d("fragment", "HomeFragment")
 
-        binding.rvChart.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvChartHot.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvChartMelon.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvChartNew.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
 
         // 우리가 사용할 어댑터의 초기값을 넣어줌
         chartAdapter = ChartAdapter()
         // RecyclerView에 어뎁터를 우리가 만든 어뎁터로!
-        binding.rvChart.adapter = chartAdapter
+        binding.rvChartHot.adapter = chartAdapter
+        binding.rvChartMelon.adapter = chartAdapter
+        binding.rvChartNew.adapter = chartAdapter
 
         // 데이터 넣기
         chartAdapter.chartList.addAll(
