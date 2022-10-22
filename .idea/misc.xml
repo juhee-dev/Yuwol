@@ -8,7 +8,7 @@
         <entry key="app/src/main/res/layout/fragment_rating.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/list_item_chart.xml" value="0.5487548828125" />
+        <entry key="app/src/main/res/layout/list_item_chart.xml" value="0.25" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.28229166666666666" />
       </map>
     </option>
