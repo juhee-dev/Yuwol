@@ -3,12 +3,11 @@ package com.yuwol
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.yuwol.R
 import com.yuwol.databinding.ActivityMainBinding
-import com.yuwol.home.HomeFragment
-import com.yuwol.rating.RatingFragment
-import com.yuwol.search.SearchFragment
-import com.yuwol.user.UserFragment
+import com.yuwol.fragment.HomeFragment
+import com.yuwol.fragment.RatingFragment
+import com.yuwol.fragment.SearchFragment
+import com.yuwol.fragment.UserFragment
 
 class MainActivity : AppCompatActivity() {
 
