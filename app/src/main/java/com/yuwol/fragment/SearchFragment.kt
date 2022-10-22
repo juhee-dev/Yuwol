@@ -1,4 +1,4 @@
-package com.yuwol.search
+package com.yuwol.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
