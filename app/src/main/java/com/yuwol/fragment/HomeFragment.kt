@@ -46,35 +46,42 @@ class HomeFragment : Fragment() {
     }
 
     private fun initChartList() {
+        var rank = 1
         chartData.addAll(
             listOf<Chart>(
                 Chart(
                     R.drawable.cover,
+                    rank++.toString(),
                     "Nxde",
                     "(여자)아이들",
                     "4","1","2","4"
                 ), Chart(
                     R.drawable.cover,
+                    rank++.toString(),
                     "ANTIFRAGILE",
                     "LE SSERAFIM (르세라핌)",
                     "2", "1", "2", "1"
                 ), Chart(
                     R.drawable.cover,
+                    rank++.toString(),
                     "Hype Boy",
                     "NewJeans",
                     "2", "2", "2", "1"
                 ), Chart(
                     R.drawable.cover,
+                    rank++.toString(),
                     "Nxde",
                     "(여자)아이들",
                     "4","1","2","4"
                 ), Chart(
                     R.drawable.cover,
+                    rank++.toString(),
                     "ANTIFRAGILE",
                     "LE SSERAFIM (르세라핌)",
                     "2", "1", "2", "1"
                 ), Chart(
                     R.drawable.cover,
+                    rank++.toString(),
                     "Hype Boy",
                     "NewJeans",
                     "2", "2", "2", "1"
