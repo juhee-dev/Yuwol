@@ -24,6 +24,7 @@ class ChartAdapter : RecyclerView.Adapter<ChartAdapter.ViewHolder>() {
     class ViewHolder(private val binding: ItemHomeChartBinding) : RecyclerView.ViewHolder(binding.root){
         fun onBind(chart: Chart){
             binding.ivChartCover.setImageResource(chart.cover)
+            binding.tvChartRank.text = chart.rank
             binding.tvChartTitle.text = chart.title
             binding.tvChartArtist.text = chart.artist
             binding.tvChartDifficulty.text = chart.difficulty
