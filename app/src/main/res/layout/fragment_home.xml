@@ -38,7 +38,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/list_item_chart"
+                tools:listitem="@layout/item_home_chart"
                 app:layout_constraintTop_toBottomOf="@id/textView2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -62,7 +62,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/list_item_chart"
+                tools:listitem="@layout/item_home_chart"
                 app:layout_constraintTop_toBottomOf="@id/textView3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -86,7 +86,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/list_item_chart"
+                tools:listitem="@layout/item_home_chart"
                 app:layout_constraintTop_toBottomOf="@id/textView4"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
