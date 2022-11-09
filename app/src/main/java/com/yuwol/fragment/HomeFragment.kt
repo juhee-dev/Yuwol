@@ -82,7 +82,7 @@ class HomeFragment : Fragment() {
                 ), Chart(
                     R.drawable.cover,
                     rank++.toString(),
-                    "Hype Boy",
+                    "오류가 왜뜨지?!",
                     "NewJeans",
                     "2", "2", "3", "1"
                 )
