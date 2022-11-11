@@ -87,7 +87,7 @@ class HomeFragment : Fragment() {
                 ), Chart(
                     R.drawable.cover,
                     rank++.toString(),
-                    "이제 오류 안떠!",
+                    "다른 오류가 떠..^^",
                     "NewJeans",
                     "2", "2", "3", "1"
                 )
