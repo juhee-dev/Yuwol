@@ -1,54 +1,33 @@
-package com.yuwol.fragment
+package com.yuwol
 
-import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.yuwol.ChartAllActivity
-import com.yuwol.R
-import com.yuwol.adapter.ChartAdapter
-import com.yuwol.databinding.FragmentHomeBinding
+import com.yuwol.adapter.ChartAllAdapter
+import com.yuwol.databinding.ActivityChartAllBinding
 import com.yuwol.model.Chart
 
+class ChartAllActivity : AppCompatActivity() {
 
-class HomeFragment : Fragment(), View.OnClickListener {
-    lateinit var binding: FragmentHomeBinding
-    private lateinit var chartAdapter: ChartAdapter
+    private  lateinit var binding: ActivityChartAllBinding
+    private lateinit var chartAdapter: ChartAllAdapter
     private val chartData = mutableListOf<Chart>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityChartAllBinding.inflate(layoutInflater)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        setContentView(binding.root)
 
         initChartList()
         initChartRecyclerView()
-
-        binding.tvHomeAll.setOnClickListener(this)
     }
 
     private fun initChartRecyclerView() {
-        binding.rvChartHot.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvChartMelon.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvChartNew.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.HORIZONTAL, false)
-
-        chartAdapter = ChartAdapter()
-
+        binding.rvChartAll.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        chartAdapter = ChartAllAdapter()
         chartAdapter.dataList = chartData
-
-        binding.rvChartHot.adapter = chartAdapter
-        binding.rvChartMelon.adapter = chartAdapter
-        binding.rvChartNew.adapter = chartAdapter
+        binding.rvChartAll.adapter = chartAdapter
     }
 
     private fun initChartList() {
@@ -94,14 +73,5 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 )
             )
         )
-    }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.tv_home_all -> {
-                val intent = Intent(activity, ChartAllActivity::class.java)
-                startActivity(intent)
-            }
-        }
     }
 }
