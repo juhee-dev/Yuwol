@@ -2,6 +2,7 @@ package com.yuwol
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.adapter.ChartAllAdapter
 import com.yuwol.databinding.ActivityChartAllBinding
@@ -16,10 +17,11 @@ class ChartAllActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChartAllBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
 
-        initChartList()
+        val chartType = intent.getStringExtra("chart").toString()
+
+        initChartList(chartType)
         initChartRecyclerView()
     }
 
@@ -30,7 +32,25 @@ class ChartAllActivity : AppCompatActivity() {
         binding.rvChartAll.adapter = chartAdapter
     }
 
-    private fun initChartList() {
+    private fun initChartList(chartType: String) {
+        when (chartType) {
+            "all" -> {
+                binding.tvChartAllTitle.text = "송믈리에 차트"
+                binding.tvChartAllTitle2.text = "2022.11.15"
+            }
+            "melon" -> {
+                binding.tvChartAllTitle.text = "멜론 차트"
+                binding.tvChartAllTitle2.text = "2022.11.15"
+            }
+            "new" -> {
+                binding.tvChartAllTitle.text = "TJ 노래방 최신곡"
+                binding.tvChartAllTitle2.text = "2022.11.15"
+            }
+            else -> {
+                Log.d("chart", "initChartList 오류: intent 값이 없음")
+            }
+        }
+
         var rank = 1
         chartData.addAll(
             listOf<Chart>(

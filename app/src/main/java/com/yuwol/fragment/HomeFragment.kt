@@ -35,6 +35,28 @@ class HomeFragment : Fragment(), View.OnClickListener {
         initChartRecyclerView()
 
         binding.tvHomeAll.setOnClickListener(this)
+        binding.tvHomeAllMelon.setOnClickListener(this)
+        binding.tvHomeAllNew.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.tv_home_all -> {
+                val intent = Intent(activity, ChartAllActivity::class.java)
+                intent.putExtra("chart","all")
+                startActivity(intent)
+            }
+            R.id.tv_home_all_melon -> {
+                val intent = Intent(activity, ChartAllActivity::class.java)
+                intent.putExtra("chart","melon")
+                startActivity(intent)
+            }
+            R.id.tv_home_all_new -> {
+                val intent = Intent(activity, ChartAllActivity::class.java)
+                intent.putExtra("chart","new")
+                startActivity(intent)
+            }
+        }
     }
 
     private fun initChartRecyclerView() {
@@ -94,14 +116,5 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 )
             )
         )
-    }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.tv_home_all -> {
-                val intent = Intent(activity, ChartAllActivity::class.java)
-                startActivity(intent)
-            }
-        }
     }
 }
