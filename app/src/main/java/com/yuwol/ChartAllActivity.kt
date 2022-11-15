@@ -36,15 +36,12 @@ class ChartAllActivity : AppCompatActivity() {
         when (chartType) {
             "all" -> {
                 binding.tvChartAllTitle.text = "송믈리에 차트"
-                binding.tvChartAllTitle2.text = "2022.11.15"
             }
             "melon" -> {
                 binding.tvChartAllTitle.text = "멜론 차트"
-                binding.tvChartAllTitle2.text = "2022.11.15"
             }
             "new" -> {
                 binding.tvChartAllTitle.text = "TJ 노래방 최신곡"
-                binding.tvChartAllTitle2.text = "2022.11.15"
             }
             else -> {
                 Log.d("chart", "initChartList 오류: intent 값이 없음")
