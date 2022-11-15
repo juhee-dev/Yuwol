@@ -1,5 +1,6 @@
 package com.yuwol.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,13 +8,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.yuwol.ChartAllActivity
 import com.yuwol.R
 import com.yuwol.adapter.ChartAdapter
 import com.yuwol.databinding.FragmentHomeBinding
 import com.yuwol.model.Chart
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
     lateinit var binding: FragmentHomeBinding
     private lateinit var chartAdapter: ChartAdapter
     private val chartData = mutableListOf<Chart>()
@@ -31,15 +33,36 @@ class HomeFragment : Fragment() {
 
         initChartList()
         initChartRecyclerView()
+
+        binding.tvHomeAll.setOnClickListener(this)
+        binding.tvHomeAllMelon.setOnClickListener(this)
+        binding.tvHomeAllNew.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.tv_home_all -> {
+                val intent = Intent(activity, ChartAllActivity::class.java)
+                intent.putExtra("chart","all")
+                startActivity(intent)
+            }
+            R.id.tv_home_all_melon -> {
+                val intent = Intent(activity, ChartAllActivity::class.java)
+                intent.putExtra("chart","melon")
+                startActivity(intent)
+            }
+            R.id.tv_home_all_new -> {
+                val intent = Intent(activity, ChartAllActivity::class.java)
+                intent.putExtra("chart","new")
+                startActivity(intent)
+            }
+        }
     }
 
     private fun initChartRecyclerView() {
         binding.rvChartHot.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         binding.rvChartMelon.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        //binding.rvChartNew.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        val gridLayoutManager = GridLayoutManager(activity, 2, GridLayoutManager.HORIZONTAL, false)
-        binding.rvChartNew.setLayoutManager(gridLayoutManager)
-
+        binding.rvChartNew.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.HORIZONTAL, false)
 
         chartAdapter = ChartAdapter()
 
@@ -57,39 +80,39 @@ class HomeFragment : Fragment() {
                 Chart(
                     R.drawable.cover,
                     rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들",
-                    "4","1","2","4"
+                    "사건의 지평선",
+                    "윤하",
+                    "5", "찢음", "5","2","1"
                 ), Chart(
                     R.drawable.cover,
                     rank++.toString(),
                     "ANTIFRAGILE",
                     "LE SSERAFIM (르세라핌)",
-                    "2", "1", "2", "1"
+                    "2", "보통", "1", "2", "1"
                 ), Chart(
                     R.drawable.cover,
                     rank++.toString(),
                     "Hype Boy",
                     "NewJeans",
-                    "2", "2", "2", "1"
+                    "2", "보통", "2", "2", "1"
                 ), Chart(
                     R.drawable.cover,
                     rank++.toString(),
                     "Nxde",
                     "(여자)아이들",
-                    "4","1","2","4"
+                    "4", "싸해짐", "1","2","4"
                 ), Chart(
                     R.drawable.cover,
                     rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)",
-                    "2", "1", "2", "1"
+                    "After Like",
+                    "IVE (아이브)",
+                    "2", "찢음", "2", "1", "2"
                 ), Chart(
                     R.drawable.cover,
                     rank++.toString(),
-                    "다른 오류가 떠..^^",
+                    "Attention",
                     "NewJeans",
-                    "2", "2", "3", "1"
+                    "3", "싸해짐", "2", "2", "1"
                 )
             )
         )
