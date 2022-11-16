@@ -3,6 +3,7 @@ package com.yuwol
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.adapter.ChartAllAdapter
 import com.yuwol.databinding.ActivityChartAllBinding
@@ -23,6 +24,8 @@ class ChartAllActivity : AppCompatActivity() {
 
         initChartList(chartType)
         initChartRecyclerView()
+
+        binding.ivChartAllBack.setOnClickListener { finish() }
     }
 
     private fun initChartRecyclerView() {

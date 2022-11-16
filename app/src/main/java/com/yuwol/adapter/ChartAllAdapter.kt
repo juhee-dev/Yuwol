@@ -29,9 +29,6 @@ class ChartAllAdapter : RecyclerView.Adapter<ChartAllAdapter.ViewHolder>() {
             binding.tvItemChartAllArtist.text = chart.artist
             binding.tvItemChartAllDifficulty.text = chart.difficulty
             binding.tvItemChartAllMood.text = chart.mood
-            binding.tvItemChartAllHigh.text = chart.high
-            binding.tvItemChartAllLow.text = chart.low
-            binding.tvItemChartAllRap.text = chart.rap
         }
     }
 }
