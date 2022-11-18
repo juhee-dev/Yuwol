@@ -43,7 +43,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         when (v?.id) {
             R.id.tv_home_all -> {
                 val intent = Intent(activity, ChartAllActivity::class.java)
-                intent.putExtra("chart","all")
+                intent.putExtra("chart","hot")
                 startActivity(intent)
             }
             R.id.tv_home_all_melon -> {

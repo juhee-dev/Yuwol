@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/tv_item_chart_all_rank"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="match_parent"
         android:text="0"
         android:textSize="18sp"
@@ -20,7 +20,7 @@
         android:id="@+id/cv_item_chart_all"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="16dp"
+        android:layout_marginEnd="16dp"
         app:cardCornerRadius="2dp">
 
         <ImageView
@@ -91,7 +91,7 @@
 
     <ImageView
         android:id="@+id/iv_item_chart_all_bookmark"
-        android:layout_width="12dp"
+        android:layout_width="24dp"
         android:layout_height="12dp"
         android:src="@drawable/ic_bookmark"
         android:layout_gravity="center"/>
