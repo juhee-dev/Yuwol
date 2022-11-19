@@ -15,6 +15,7 @@ import com.yuwol.databinding.FragmentHomeBinding
 import com.yuwol.model.Chart
 
 class ChartAllFragment : Fragment() {
+
     lateinit var binding: FragmentChartAllBinding
     private lateinit var chartAdapter: ChartAllAdapter
     private val chartData = mutableListOf<Chart>()
@@ -29,6 +30,21 @@ class ChartAllFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        arguments?.let {
+            val chartType = it.getString("chartType")
+            if (chartType != null) {
+                initChartList(chartType)
+                initChartRecyclerView()
+            }
+        }
+
+        binding.tvChartAllHot.setOnClickListener { initChartList("hot") }
+        binding.tvChartAllMelon.setOnClickListener { initChartList("melon") }
+        binding.tvChartAllNew.setOnClickListener { initChartList("new") }
+        binding.ivChartAllBack.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, HomeFragment()).commit()
+        }
     }
 
     private fun initChartRecyclerView() {
@@ -145,4 +161,6 @@ class ChartAllFragment : Fragment() {
             )
         )
     }
+
+
 }

@@ -43,20 +43,26 @@ class HomeFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.tv_home_all -> {
-                val intent = Intent(activity, ChartAllActivity::class.java)
-                intent.putExtra("chart","hot")
-                startActivity(intent)
+                chartTransaction("hot")
             }
             R.id.tv_home_all_melon -> {
-                val intent = Intent(activity, ChartAllActivity::class.java)
-                intent.putExtra("chart","melon")
-                startActivity(intent)
+                chartTransaction("melon")
             }
             R.id.tv_home_all_new -> {
-                val intent = Intent(activity, ChartAllActivity::class.java)
-                intent.putExtra("chart","new")
-                startActivity(intent)
+                chartTransaction("new")
             }
+        }
+    }
+
+    private fun chartTransaction(chartType: String) {
+        val bundle = Bundle()
+        val chartAllFragment = ChartAllFragment()
+        bundle.putString("chartType", chartType)
+        chartAllFragment.arguments = bundle
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_main, chartAllFragment)
+            addToBackStack(null)
+            commit()
         }
     }
 
