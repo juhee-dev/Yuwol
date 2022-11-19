@@ -36,6 +36,7 @@
         android:textColor="@color/white"
         android:background="@drawable/bg_chart_rank"
         android:gravity="center"
+        android:translationZ="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 

@@ -1,40 +1,54 @@
-package com.yuwol
+package com.yuwol.fragment
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.yuwol.R
 import com.yuwol.adapter.ChartAllAdapter
-import com.yuwol.databinding.ActivityChartAllBinding
+import com.yuwol.databinding.FragmentChartAllBinding
+import com.yuwol.databinding.FragmentHomeBinding
 import com.yuwol.model.Chart
 
-class ChartAllActivity : AppCompatActivity() {
+class ChartAllFragment : Fragment() {
 
-    private  lateinit var binding: ActivityChartAllBinding
+    lateinit var binding: FragmentChartAllBinding
     private lateinit var chartAdapter: ChartAllAdapter
     private val chartData = mutableListOf<Chart>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityChartAllBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentChartAllBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        var chartType = intent.getStringExtra("chart").toString()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        initChartList(chartType)
-        initChartRecyclerView()
+        arguments?.let {
+            val chartType = it.getString("chartType")
+            if (chartType != null) {
+                initChartList(chartType)
+                initChartRecyclerView()
+            }
+        }
 
         binding.tvChartAllHot.setOnClickListener { initChartList("hot") }
         binding.tvChartAllMelon.setOnClickListener { initChartList("melon") }
         binding.tvChartAllNew.setOnClickListener { initChartList("new") }
-
-        binding.ivChartAllBack.setOnClickListener { finish() }
+        binding.ivChartAllBack.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, HomeFragment()).commit()
+        }
     }
 
     private fun initChartRecyclerView() {
-        binding.rvChartAll.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.rvChartAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         chartAdapter = ChartAllAdapter()
         chartAdapter.dataList = chartData
         binding.rvChartAll.adapter = chartAdapter
@@ -46,21 +60,21 @@ class ChartAllActivity : AppCompatActivity() {
         when (chartType) {
             "hot" -> {
                 binding.tvChartAllTitle.text = "Top"
-                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(this, R.color.purple_100))
-                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(this, R.color.black))
-                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(this, R.color.black))
+                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
+                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
+                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
             }
             "melon" -> {
                 binding.tvChartAllTitle.text = "melon Top100"
-                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(this, R.color.black))
-                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(this, R.color.purple_100))
-                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(this, R.color.black))
+                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
+                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
+                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
             }
             "new" -> {
                 binding.tvChartAllTitle.text = "최신 음악"
-                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(this, R.color.black))
-                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(this, R.color.black))
-                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(this, R.color.purple_100))
+                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
+                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
+                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
             }
             else -> {
                 Log.d("chart", "initChartList 오류: intent 값이 없음")
@@ -147,4 +161,6 @@ class ChartAllActivity : AppCompatActivity() {
             )
         )
     }
+
+
 }

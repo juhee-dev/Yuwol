@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChartAllActivity">
+    tools:context=".fragment.ChartAllFragment">
 
     <ImageView
         android:id="@+id/iv_chart_all_back"
@@ -72,6 +72,8 @@
         tools:listitem="@layout/item_chart_all"
         app:layout_constraintTop_toBottomOf="@id/ll_chart_all_tab"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
