@@ -10,3 +10,4 @@ data class Chart(
     val excitement: String,
     val rap: String,
 )
+
