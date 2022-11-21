@@ -11,3 +11,4 @@ data class Chart(
     val low: String,
     val rap: String,
 )
+
