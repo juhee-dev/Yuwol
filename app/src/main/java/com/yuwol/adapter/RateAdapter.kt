@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yuwol.databinding.ItemRatingBinding
+import com.yuwol.fragment.FirstRatingFragment
 import com.yuwol.model.Rate
 
 class RateAdapter : RecyclerView.Adapter<RateAdapter.ViewHolder>() {
@@ -22,10 +23,14 @@ class RateAdapter : RecyclerView.Adapter<RateAdapter.ViewHolder>() {
     override fun getItemCount(): Int = dataList.size
 
     class ViewHolder(private val binding: ItemRatingBinding) : RecyclerView.ViewHolder(binding.root){
+        private val context = binding.root.context
+
         fun onBind(chart: Rate){
             binding.ratingCover.setImageResource(chart.cover)
             binding.ratingRank.text = chart.rank
             binding.ratingTitle.text = chart.title
+
+
 
         }
     }

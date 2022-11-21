@@ -24,6 +24,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [RatingFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
 class RatingFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -107,63 +108,62 @@ class RatingFragment : Fragment() {
         RateData.addAll(
             listOf<Rate>(
                 Rate(
-                    R.drawable.cover,
+                    R.drawable.cover_note,
                     rank++.toString(),
                     "Nxde",
                     "(여자)아이들"
 
                 ), Rate(
-                    R.drawable.cover,
+                    R.drawable.cover_note,
                     rank++.toString(),
                     "ANTIFRAGILE",
                     "LE SSERAFIM (르세라핌)"
                 ), Rate(
-                    R.drawable.cover,
+                    R.drawable.cover_note,
                     rank++.toString(),
                     "Hype Boy",
                     "NewJeans"
 
                 ), Rate(
-                    R.drawable.cover,
+                    R.drawable.cover_note,
                     rank++.toString(),
                     "Nxde",
                     "(여자)아이들"
 
                 ), Rate(
-                    R.drawable.cover,
+                    R.drawable.cover_note,
                     rank++.toString(),
                     "ANTIFRAGILE",
                     "LE SSERAFIM (르세라핌)"
 
                 ), Rate(
-                    R.drawable.cover,
+                    R.drawable.cover_note,
                     rank++.toString(),
-                    "다른 오류가 떠..^^",
+                    "Hype Boy",
                     "NewJeans"
 
                 ), Rate(
-                    R.drawable.cover,
+                    R.drawable.cover_note,
                     rank++.toString(),
-                    "다른 오류가 떠..^^",
-                    "NewJeans"
+                    "Nxde",
+                    "(여자)아이들"
                 ), Rate(
-                    R.drawable.cover,
+                    R.drawable.cover_note,
                     rank++.toString(),
-                    "다른 오류가 떠..^^",
-                    "NewJeans"
+                    "ANTIFRAGILE",
+                    "LE SSERAFIM (르세라핌)"
 
                 ), Rate(
-                    R.drawable.cover,
+                    R.drawable.cover_note,
                     rank++.toString(),
-                    "다른 오류가 떠..^^",
-                    "NewJeans"
+                    "Nxde",
+                    "(여자)아이들"
 
                 ), Rate(
-                    R.drawable.cover,
+                    R.drawable.cover_note,
                     rank++.toString(),
-                    "다른 오류가 떠..^^",
-                    "NewJeans"
-
+                    "사건의 지평선",
+                    "윤하"
                 )
 
             )
