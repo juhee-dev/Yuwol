@@ -27,11 +27,11 @@ class RateAdapter : RecyclerView.Adapter<RateAdapter.ViewHolder>() {
 
         fun onBind(chart: Rate){
             binding.ratingCover.setImageResource(chart.cover)
-            binding.ratingRank.text = chart.rank
             binding.ratingTitle.text = chart.title
 
+            itemView.setOnClickListener {
 
-
+            }
         }
     }
 }
