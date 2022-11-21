@@ -1,16 +1,12 @@
 package com.yuwol.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.yuwol.ChartAllActivity
-import com.yuwol.MainActivity
 import com.yuwol.R
 import com.yuwol.adapter.ChartAdapter
 import com.yuwol.databinding.FragmentHomeBinding

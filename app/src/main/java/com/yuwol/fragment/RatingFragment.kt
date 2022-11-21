@@ -33,8 +33,10 @@ class RatingFragment : Fragment() {
     }
 
     private fun initRateRecyclerView() {
+        var link = rateAdapterToList()
+
         binding.rating.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        rateAdapter = RateAdapter()
+        rateAdapter = RateAdapter(link)
         rateAdapter.dataList = rateData
         binding.rating.adapter = rateAdapter
     }
@@ -104,5 +106,24 @@ class RatingFragment : Fragment() {
 
             )
         )
+    }
+
+    fun ratingTransaction(rate: Rate) {
+        val bundle = Bundle()
+        val rateFirstRatingFragment = FirstRatingFragment()
+        // TODO: title 정보를 보내는게 아니라 rate 객체 자체를 보내야함
+        bundle.putString("rating", rate.title)
+        rateFirstRatingFragment.arguments = bundle
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_main, rateFirstRatingFragment)
+            addToBackStack(null)
+            commit()
+        }
+    }
+
+    inner class rateAdapterToList {
+        fun getSongId(rate: Rate) {
+            ratingTransaction(rate)
+        }
     }
 }
