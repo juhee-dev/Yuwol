@@ -11,7 +11,6 @@ import com.yuwol.fragment.UserFragment
 
 class MainActivity : AppCompatActivity() {
 
-    // 바인딩
     private  lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

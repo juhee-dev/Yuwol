@@ -6,8 +6,9 @@ data class Chart(
     val title: String,
     val artist: String,
     val difficulty: String,
+    val mood: String,
     val high: String,
-    val excitement: String,
+    val low: String,
     val rap: String,
 )
 
