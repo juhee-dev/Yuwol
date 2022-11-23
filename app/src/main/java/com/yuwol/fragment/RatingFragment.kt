@@ -13,7 +13,6 @@ import com.yuwol.databinding.FragmentHomeBinding
 import com.yuwol.databinding.FragmentRatingBinding
 import com.yuwol.model.Rate
 
-
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
