@@ -50,6 +50,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
         }
     }
 
+
+
     private fun chartTransaction(chartType: String) {
         val bundle = Bundle()
         val chartAllFragment = ChartAllFragment()

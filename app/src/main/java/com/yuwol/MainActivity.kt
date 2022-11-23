@@ -4,10 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.yuwol.databinding.ActivityMainBinding
-import com.yuwol.fragment.HomeFragment
-import com.yuwol.fragment.RatingFragment
-import com.yuwol.fragment.SearchFragment
-import com.yuwol.fragment.UserFragment
+import com.yuwol.fragment.*
+import kotlinx.android.synthetic.main.fragment_third_rating.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
 
     }
 
