@@ -4,6 +4,7 @@ import java.io.Serializable
 
 data class Song(
     val cover: Int,
+    val rank: String,
     val title: String,
     val artist: String,
     val album: String,

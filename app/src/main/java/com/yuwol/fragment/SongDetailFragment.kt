@@ -6,14 +6,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.yuwol.R
+import com.yuwol.databinding.FragmentSongDetailBinding
 import com.yuwol.model.Rate
+import com.yuwol.model.Song
 
 class SongDetailFragment : Fragment() {
+    lateinit var binding: FragmentSongDetailBinding
+    lateinit var song: Song
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_song_detail, container, false)
+        binding = FragmentSongDetailBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        arguments?.let {
+            song = it.getSerializable("song") as Song
+        }
+
+        binding.tvSongDetailTitle.text = song.title
+        binding.tvSongDetailArtist.text = song.artist
+        binding.tvSongDetailAlbum.text = song.album
+        binding.tvSongDetailDate.text = song.date
+
+        binding.ivSongDetailBack.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, HomeFragment()).commit()
+        }
     }
 }

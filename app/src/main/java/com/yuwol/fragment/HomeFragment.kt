@@ -16,7 +16,7 @@ import com.yuwol.model.Song
 class HomeFragment : Fragment(), View.OnClickListener {
     lateinit var binding: FragmentHomeBinding
     private lateinit var chartAdapter: ChartAdapter
-    private val chartData = mutableListOf<Chart>()
+    private val chartData = mutableListOf<Song>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +51,65 @@ class HomeFragment : Fragment(), View.OnClickListener {
         }
     }
 
+    private fun initChartRecyclerView() {
+        binding.rvChartHot.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvChartMelon.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvChartNew.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.HORIZONTAL, false)
+
+        chartAdapter = ChartAdapter(SongListAdapterToList())
+
+        chartAdapter.dataList = chartData
+
+        binding.rvChartHot.adapter = chartAdapter
+        binding.rvChartMelon.adapter = chartAdapter
+        binding.rvChartNew.adapter = chartAdapter
+    }
+
+    private fun initChartList() {
+        var rank = 1
+        chartData.addAll(
+            listOf<Song>(
+                Song(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "사건의 지평선", "윤하", "END THEORY", "2022.03.30",
+                    "5", "찢음", "5","2","1",
+                    130, 12
+                ), Song(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "ANTIFRAGILE", "LE SSERAFIM (르세라핌)", "ANTIFRAGILE", "2022.10.17",
+                    "2", "보통", "1", "2", "1",
+                    120, 11
+                ), Song(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "Hype Boy", "NewJeans", "NewJeans 1st EP 'New Jeans'", "2022.08.01",
+                    "2", "보통", "2", "2", "1",
+                    110, 10
+                ), Song(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "Nxde", "(여자)아이들", "I love", "2022.10.17",
+                    "4", "싸해짐", "1","2","4",
+                    100, 9
+                ), Song(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "After Like", "IVE (아이브)", "After LIKE", "2022.08.22",
+                    "2", "찢음", "2", "1", "2",
+                    90, 8
+                ), Song(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "Attention", "NewJeans", "NewJeans 1st EP 'New Jeans'", "2022.08.01",
+                    "3", "싸해짐", "2", "2", "1",
+                    80, 7
+                )
+            )
+        )
+    }
+
     private fun chartTransaction(chartType: String) {
         val bundle = Bundle()
         val chartAllFragment = ChartAllFragment()
@@ -67,66 +126,17 @@ class HomeFragment : Fragment(), View.OnClickListener {
         val bundle = Bundle()
         val songDetailFragment = SongDetailFragment()
         bundle.putSerializable("song", song)
-
-
+        songDetailFragment.arguments = bundle
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_main, songDetailFragment)
+            addToBackStack(null)
+            commit()
+        }
     }
 
-    private fun initChartRecyclerView() {
-        binding.rvChartHot.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvChartMelon.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvChartNew.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.HORIZONTAL, false)
-
-        chartAdapter = ChartAdapter()
-
-        chartAdapter.dataList = chartData
-
-        binding.rvChartHot.adapter = chartAdapter
-        binding.rvChartMelon.adapter = chartAdapter
-        binding.rvChartNew.adapter = chartAdapter
-    }
-
-    private fun initChartList() {
-        var rank = 1
-        chartData.addAll(
-            listOf<Chart>(
-                Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "사건의 지평선",
-                    "윤하",
-                    "5", "찢음", "5","2","1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)",
-                    "2", "보통", "1", "2", "1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Hype Boy",
-                    "NewJeans",
-                    "2", "보통", "2", "2", "1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들",
-                    "4", "싸해짐", "1","2","4"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "After Like",
-                    "IVE (아이브)",
-                    "2", "찢음", "2", "1", "2"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Attention",
-                    "NewJeans",
-                    "3", "싸해짐", "2", "2", "1"
-                )
-            )
-        )
+    inner class SongListAdapterToList {
+        fun getSong(song: Song) {
+            songTransaction(song)
+        }
     }
 }

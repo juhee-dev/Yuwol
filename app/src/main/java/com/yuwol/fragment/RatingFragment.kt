@@ -33,10 +33,8 @@ class RatingFragment : Fragment() {
     }
 
     private fun initRatingRecyclerView() {
-        var link = RatingAdapterToList()
-
         binding.rating.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        rateAdapter = RateAdapter(link)
+        rateAdapter = RateAdapter(RatingAdapterToList())
         rateAdapter.dataList = rateData
         binding.rating.adapter = rateAdapter
     }
