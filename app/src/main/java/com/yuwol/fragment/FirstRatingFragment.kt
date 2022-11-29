@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.yuwol.databinding.FragmentFirstratingBinding
+import com.yuwol.model.Rate
 
 class FirstRatingFragment : Fragment() {
     lateinit var binding: FragmentFirstratingBinding
-    private var song = ""
+    lateinit var song: Rate
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,10 +25,10 @@ class FirstRatingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.let {
-            song = it.getString("rating").toString()
+            song = it.getSerializable("rating") as Rate
         }
 
-        binding.tvRating1Title.text = song
-        binding.tvRating1Artist.text = "artist"
+        binding.tvRating1Title.text = song.title
+        binding.tvRating1Artist.text = song.artist
     }
 }

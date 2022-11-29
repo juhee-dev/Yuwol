@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SongDetailFragment">
+
+    <ImageView
+        android:id="@+id/iv_song_detail_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_song_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/cover"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_song_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:text="Title"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/cv_song_detail"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_song_detail_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Artist"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_title"
+        app:layout_constraintStart_toStartOf="@id/tv_song_detail_title"/>
+
+    <TextView
+        android:id="@+id/tv_song_detail_album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Album"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_artist"
+        app:layout_constraintStart_toStartOf="@id/tv_song_detail_artist"/>
+
+    <TextView
+        android:id="@+id/tv_song_detail_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2000.00.00"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_album"
+        app:layout_constraintStart_toStartOf="@id/tv_song_detail_album"/>
+
+    <TextView
+        android:id="@+id/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:text="가창 난이도"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_date"
+        app:layout_constraintStart_toStartOf="@id/tv_song_detail_date"/>
+
+    <TextView
+        android:id="@+id/tv_song_detail_difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="0"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@+id/TextView"
+        app:layout_constraintStart_toEndOf="@id/TextView"/>
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_marginStart="5dp"
+        android:isIndicator="true"
+        app:layout_constraintTop_toTopOf="@+id/tv_song_detail_difficulty"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_song_detail_difficulty"
+        app:layout_constraintStart_toEndOf="@id/tv_song_detail_difficulty"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

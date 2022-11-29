@@ -28,12 +28,12 @@ class RatingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initRateList()
-        initRateRecyclerView()
+        initRatingList()
+        initRatingRecyclerView()
     }
 
-    private fun initRateRecyclerView() {
-        var link = rateAdapterToList()
+    private fun initRatingRecyclerView() {
+        var link = RatingAdapterToList()
 
         binding.rating.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         rateAdapter = RateAdapter(link)
@@ -41,7 +41,7 @@ class RatingFragment : Fragment() {
         binding.rating.adapter = rateAdapter
     }
 
-    private fun initRateList() {
+    private fun initRatingList() {
         var rank = 1
         rateData.addAll(
             listOf<Rate>(
@@ -111,8 +111,7 @@ class RatingFragment : Fragment() {
     fun ratingTransaction(rate: Rate) {
         val bundle = Bundle()
         val rateFirstRatingFragment = FirstRatingFragment()
-        // TODO: title 정보를 보내는게 아니라 rate 객체 자체를 보내야함
-        bundle.putString("rating", rate.title)
+        bundle.putSerializable("rating", rate)
         rateFirstRatingFragment.arguments = bundle
         parentFragmentManager.beginTransaction().apply {
             replace(R.id.fl_main, rateFirstRatingFragment)
@@ -121,7 +120,7 @@ class RatingFragment : Fragment() {
         }
     }
 
-    inner class rateAdapterToList {
+    inner class RatingAdapterToList {
         fun getSongId(rate: Rate) {
             ratingTransaction(rate)
         }

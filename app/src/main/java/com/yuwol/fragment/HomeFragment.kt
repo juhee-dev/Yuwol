@@ -11,6 +11,7 @@ import com.yuwol.R
 import com.yuwol.adapter.ChartAdapter
 import com.yuwol.databinding.FragmentHomeBinding
 import com.yuwol.model.Chart
+import com.yuwol.model.Song
 
 class HomeFragment : Fragment(), View.OnClickListener {
     lateinit var binding: FragmentHomeBinding
@@ -50,8 +51,6 @@ class HomeFragment : Fragment(), View.OnClickListener {
         }
     }
 
-
-
     private fun chartTransaction(chartType: String) {
         val bundle = Bundle()
         val chartAllFragment = ChartAllFragment()
@@ -62,6 +61,14 @@ class HomeFragment : Fragment(), View.OnClickListener {
             addToBackStack(null)
             commit()
         }
+    }
+
+    private fun songTransaction(song: Song) {
+        val bundle = Bundle()
+        val songDetailFragment = SongDetailFragment()
+        bundle.putSerializable("song", song)
+
+
     }
 
     private fun initChartRecyclerView() {

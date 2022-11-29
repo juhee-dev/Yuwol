@@ -1,17 +1,13 @@
 package com.yuwol.adapter
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.yuwol.R
 import com.yuwol.databinding.ItemRatingBinding
-import com.yuwol.fragment.ChartAllFragment
-import com.yuwol.fragment.FirstRatingFragment
 import com.yuwol.fragment.RatingFragment
 import com.yuwol.model.Rate
 
-class RateAdapter(var link:RatingFragment.rateAdapterToList) : RecyclerView.Adapter<RateAdapter.ViewHolder>() {
+class RateAdapter(var link:RatingFragment.RatingAdapterToList) : RecyclerView.Adapter<RateAdapter.ViewHolder>() {
     // Adapter는 ViewHolder로 변경할 데이터를 가지고 있어야 함
     var dataList = mutableListOf<Rate>()
 
