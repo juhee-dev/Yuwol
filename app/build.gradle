@@ -57,5 +57,6 @@ dependencies {
     def nav_version = "2.4.2"
     implementation "androidx.navigation:navigation-compose:$nav_version"
 
-    
+    // circle progress bar
+//    implementation 'com.github.owl-93.Determinate-Progress-View:release:v1.4.4'
 }
