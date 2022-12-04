@@ -37,5 +37,15 @@ class SongDetailFragment : Fragment() {
         binding.ivSongDetailBack.setOnClickListener {
             parentFragmentManager.beginTransaction().replace(R.id.fl_main, HomeFragment()).commit()
         }
+
+        binding.tvSongDetailMore.setOnClickListener {
+            if (binding.clSongDetailMore.visibility == View.VISIBLE) {
+                binding.clSongDetailMore.visibility = View.GONE
+                binding.clSongDetailMore.animate().setDuration(200).rotation(180f)
+            } else {
+                binding.clSongDetailMore.visibility = View.VISIBLE
+                binding.clSongDetailMore.animate().setDuration(200).rotation(0f)
+            }
+        }
     }
 }
