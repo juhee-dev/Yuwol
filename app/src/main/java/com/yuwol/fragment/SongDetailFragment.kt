@@ -41,10 +41,14 @@ class SongDetailFragment : Fragment() {
         binding.tvSongDetailMore.setOnClickListener {
             if (binding.clSongDetailMore.visibility == View.VISIBLE) {
                 binding.clSongDetailMore.visibility = View.GONE
-                binding.clSongDetailMore.animate().setDuration(200).rotation(180f)
+//                binding.clSongDetailMore.animate().setDuration(200).rotation(180f)
+                binding.clSongDetailMore.animate()
+                binding.tvSongDetailMore.text = "상세 평가 더보기"
             } else {
                 binding.clSongDetailMore.visibility = View.VISIBLE
-                binding.clSongDetailMore.animate().setDuration(200).rotation(0f)
+//                binding.clSongDetailMore.animate().setDuration(200).rotation(0f)
+                binding.clSongDetailMore.animate()
+                binding.tvSongDetailMore.text = "상세 평가 숨기기"
             }
         }
     }
