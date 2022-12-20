@@ -59,28 +59,28 @@ class ChartAllFragment : Fragment() {
 
         when (chartType) {
             "hot" -> {
-                binding.tvChartAllTitle.text = "Top"
+                binding.tvChartAllTitle.text = getString(R.string.chart_title_smlr)
                 binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
-                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
-                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
+                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
             }
             "melon" -> {
-                binding.tvChartAllTitle.text = "melon Top100"
-                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
+                binding.tvChartAllTitle.text = getString(R.string.chart_title_melon)
+                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
                 binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
-                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
+                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
             }
             "new" -> {
-                binding.tvChartAllTitle.text = "최신 음악"
-                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
-                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
+                binding.tvChartAllTitle.text = getString(R.string.chart_title_new)
+                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
                 binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
             }
             else -> {
                 Log.d("chart", "initChartList 오류: intent 값이 없음")
             }
         }
-        Log.d("chart", "chartType: "+chartType)
+        Log.d("chart", "chartType: "+ chartType)
 
         var rank = 1
         chartData.addAll(
