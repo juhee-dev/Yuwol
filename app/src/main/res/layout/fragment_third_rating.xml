@@ -49,14 +49,14 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="332dp"
         android:layout_height="158dp"
+        android:layout_marginTop="318dp"
         android:ems="10"
+        android:hint="가창 난이도, 분위기, 호흡 등 이 노래에 대한 가창 코멘트를 남겨보세요. (선택)"
         android:inputType="none"
         android:textSize="14dp"
-        android:hint="가창 난이도, 분위기, 호흡 등 이 노래에 대한 가창 코멘트를 남겨보세요. (선택)"
-        android:layout_marginTop="318dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
