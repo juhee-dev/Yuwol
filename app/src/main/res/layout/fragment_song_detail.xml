@@ -356,13 +356,14 @@
                 android:id="@+id/btn_song_detail_rating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginHorizontal="30dp"
                 android:text="평가하기"
                 android:textColor="@color/white"
                 android:background="@drawable/bg_rectangle"
                 app:layout_constraintTop_toBottomOf="@+id/cl_song_detail"
-                app:layout_constraintStart_toStartOf="@+id/cl_song_detail"
-                app:layout_constraintEnd_toEndOf="@+id/cl_song_detail"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
             <ImageView
                 android:id="@+id/ImageView"
                 android:layout_width="20dp"
@@ -377,8 +378,89 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="COMMENT"
+                android:textSize="14sp"
                 app:layout_constraintTop_toTopOf="@+id/ImageView"
                 app:layout_constraintStart_toEndOf="@+id/ImageView"/>
+            <EditText
+                android:id="@+id/et_song_detail_comment"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="30dp"
+                android:scrollbars="vertical"
+                android:hint="음악에 대한 코멘트를 남겨보세요."
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray_300"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/ImageView"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_song_detail_comment"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:background="@drawable/bg_rectangle"
+                android:text="등록"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/et_song_detail_comment"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_song_detail2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:padding="10dp"
+                android:background="@drawable/bg_rectangle_cr_big"
+                android:backgroundTint="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/btn_song_detail_comment"
+                app:layout_constraintStart_toStartOf="parent">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_song_detail_new"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:text="최신순"
+                    android:textSize="11sp"
+                    android:background="@drawable/bg_rectangle_cr_small"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_song_detail_popular"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:text="인기순"
+                    android:textSize="11sp"
+                    android:background="@drawable/bg_rectangle_cr_small"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_song_detail_new"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_song_detail_comment_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="전체 "
+                app:layout_constraintTop_toTopOf="@id/cl_song_detail2"
+                app:layout_constraintBottom_toBottomOf="@id/cl_song_detail2"
+                app:layout_constraintStart_toEndOf="@id/cl_song_detail2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="73"
+                app:layout_constraintTop_toTopOf="@id/cl_song_detail2"
+                app:layout_constraintBottom_toBottomOf="@id/cl_song_detail2"
+                app:layout_constraintStart_toEndOf="@id/tv_song_detail_comment_cnt"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChartHot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_comment_best"
+                app:layout_constraintTop_toBottomOf="@id/cl_song_detail2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
