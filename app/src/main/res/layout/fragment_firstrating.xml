@@ -65,7 +65,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:background="#ffffff"
         android:text="강민경(다비치) 잔나비 최성훈"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,7 +129,7 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="고음 난이도"
+            android:text="저음 난이도"
             android:textSize="14dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -162,7 +161,7 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="고음 난이도"
+            android:text="랩 난이도"
             android:textSize="14dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>

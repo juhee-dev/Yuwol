@@ -3,4 +3,6 @@
     <string name="chart_title_smlr">송믈리에 차트</string>
     <string name="chart_title_melon">음원 차트</string>
     <string name="chart_title_new">노래방 최신 음악</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
