@@ -1,5 +1,7 @@
 package com.yuwol.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Songrating (
     @SerializedName("song_id")
     val song_id: Long,

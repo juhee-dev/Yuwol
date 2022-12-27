@@ -1,5 +1,7 @@
 package com.yuwol.model
 
+import com.google.gson.annotations.SerializedName
+
 data class comment (
     @SerializedName("comment_id")
     val comment_id: Long,
