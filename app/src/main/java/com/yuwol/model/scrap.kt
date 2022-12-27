@@ -1,5 +1,7 @@
 package com.yuwol.model
 
+import com.google.gson.annotations.SerializedName
+
 data class scrap (
     @SerializedName("scrap_id")
     val scrap_id: Long,

@@ -1,5 +1,7 @@
 package com.yuwol.model
 
+import com.google.gson.annotations.SerializedName
+
 data class evaluation (
     @SerializedName("evaluation_id")
     val evaluation_id: Long,

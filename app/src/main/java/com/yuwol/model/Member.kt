@@ -1,4 +1,7 @@
 package com.yuwol.model
+
+import com.google.gson.annotations.SerializedName
+
 data class Member (
     @SerializedName("member_id")
     val member_id: Long,
