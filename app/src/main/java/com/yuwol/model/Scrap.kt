@@ -2,9 +2,9 @@ package com.yuwol.model
 
 import com.google.gson.annotations.SerializedName
 
-data class like (
-    @SerializedName("like_id")
-    val like_id: Long,
+data class Scrap (
+    @SerializedName("scrap_id")
+    val scrap_id: Long,
 
     @SerializedName("member_id")
     val member_id: Long,

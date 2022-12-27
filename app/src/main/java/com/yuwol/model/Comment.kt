@@ -2,13 +2,17 @@ package com.yuwol.model
 
 import com.google.gson.annotations.SerializedName
 
-data class scrap (
-    @SerializedName("scrap_id")
-    val scrap_id: Long,
+data class Comment (
+    @SerializedName("comment_id")
+    val comment_id: Long,
 
     @SerializedName("member_id")
     val member_id: Long,
 
     @SerializedName("song_id")
-    val song_id: Long
-        )
+    val song_id: Long,
+
+    @SerializedName("like_count")
+    val like_count: Long
+
+)

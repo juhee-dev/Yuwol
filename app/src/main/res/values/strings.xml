@@ -5,4 +5,6 @@
     <string name="chart_title_new">노래방 최신 음악</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kakao_key">kakao10019bf167db2fd028fd3923ff21ecf2</string>
+    <string name="kakao_native_key">10019bf167db2fd028fd3923ff21ecf2</string>
 </resources>
