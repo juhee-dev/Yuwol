@@ -1,18 +1,26 @@
 package com.yuwol.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.R
+import com.yuwol.adapter.ChartAdapter
+import com.yuwol.adapter.CommentAdapter
 import com.yuwol.databinding.FragmentSongDetailBinding
+import com.yuwol.model.Comment
 import com.yuwol.model.Rate
 import com.yuwol.model.Song
 
 class SongDetailFragment : Fragment() {
     lateinit var binding: FragmentSongDetailBinding
     lateinit var song: Song
+    private lateinit var commentAdapter: CommentAdapter
+    private val commentData = mutableListOf<Comment>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,5 +59,40 @@ class SongDetailFragment : Fragment() {
                 binding.tvSongDetailMore.text = "상세 평가 숨기기"
             }
         }
+
+        initCommentList()
+        initCommentRecyclerView()
+    }
+
+    private fun initCommentRecyclerView() {
+        binding.rvSongDetailComment.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
+        commentAdapter = CommentAdapter()
+
+        commentAdapter.dataList = commentData
+        Log.d("detail", "count of comment data: ${commentData.size}")
+
+        binding.rvSongDetailComment.adapter = commentAdapter
+    }
+
+    private fun initCommentList() {
+        var id: Long = 0
+        commentData.addAll(
+            listOf(
+                Comment(
+                    id++, id++, id++, id++
+                ), Comment(
+                    id++, id++, id++, id++
+                ), Comment(
+                    id++, id++, id++, id++
+                ), Comment(
+                    id++, id++, id++, id++
+                ), Comment(
+                    id++, id++, id++, id++
+                ), Comment(
+                    id++, id++, id++, id++
+                )
+            )
+        )
     }
 }
