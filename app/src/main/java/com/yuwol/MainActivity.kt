@@ -1,8 +1,10 @@
 package com.yuwol
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.kakao.sdk.user.UserApiClient
 import com.yuwol.databinding.ActivityMainBinding
 import com.yuwol.fragment.*
 import kotlinx.android.synthetic.main.fragment_third_rating.*
@@ -16,6 +18,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         replaceFragment(HomeFragment())
+
+        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+            if (error != null) {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
 
         binding.navBottom.setOnItemSelectedListener {
             when (it.itemId) {

@@ -1,12 +1,14 @@
 package com.yuwol.api
 
+import com.yuwol.data.request.RequestLoginData
 import com.yuwol.data.response.ResponseLoginData
 import retrofit2.Call
-import retrofit2.http.GET
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 interface LoginService {
-    val social: String
-    val code: String
-    @GET("/login/oauth2/<social>?code=<code>")
-    fun getLogin(): Call<ResponseLoginData>
+    @POST("login/oauth2/client")
+    fun postLogin(
+        @Body body: RequestLoginData
+    ): Call<ResponseLoginData>
 }

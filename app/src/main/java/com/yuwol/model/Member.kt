@@ -20,4 +20,4 @@ data class Member (
 
     @SerializedName("introduce")
     val introduce: String
-        )
+)

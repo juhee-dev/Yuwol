@@ -2,7 +2,7 @@ package com.yuwol.model
 
 import com.google.gson.annotations.SerializedName
 
-data class comment_like (
+data class CommentLike (
     @SerializedName("comment_like")
     val comment_like: Long,
 
