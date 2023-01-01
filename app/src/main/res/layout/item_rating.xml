@@ -47,6 +47,9 @@ android:layout_marginHorizontal="2dp">
         android:stepSize="0.5"
         android:scaleX="0.6"
         android:scaleY="0.6"
+        android:progressBackgroundTint="@color/gray_300"
+        android:secondaryProgressTint="@color/purple_100"
+        android:progressTint="@color/pink_100"
         />
 
     <!--    <View-->

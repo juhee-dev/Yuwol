@@ -48,6 +48,7 @@
         android:layout_width="332dp"
         android:layout_height="158dp"
         android:layout_marginTop="318dp"
+        android:textColor="@color/white"
         android:ems="10"
         android:hint="가창 난이도, 분위기, 호흡 등 이 노래에 대한 가창 코멘트를 남겨보세요. (선택)"
         android:textColorHint="@color/gray_100"
@@ -67,6 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
