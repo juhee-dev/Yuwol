@@ -65,4 +65,7 @@ dependencies {
 
     // 카카오 로그인
     implementation "com.kakao.sdk:v2-user:2.12.0"
+
+    // image picker
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
 }
