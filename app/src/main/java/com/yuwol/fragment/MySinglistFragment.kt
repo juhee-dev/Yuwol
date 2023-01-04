@@ -68,6 +68,7 @@ class MySinglistFragment : Fragment() {
     private fun initChartList(chartType: String) {
         chartData.clear()
 
+        // when 필요한가...
 
         Log.d("chart", "chartType: "+ chartType)
 
