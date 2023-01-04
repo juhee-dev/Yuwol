@@ -19,13 +19,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         replaceFragment(HomeFragment())
 
-        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
-            if (error != null) {
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-        }
+//        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+//            if (error != null) {
+//                val intent = Intent(this, LoginActivity::class.java)
+//                startActivity(intent)
+//                finish()
+//            }
+//        }
 
         binding.navBottom.setOnItemSelectedListener {
             when (it.itemId) {
