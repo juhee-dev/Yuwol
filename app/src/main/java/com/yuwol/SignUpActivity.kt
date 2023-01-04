@@ -12,6 +12,7 @@ import android.util.Base64
 import android.util.Log
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.yuwol.databinding.ActivitySignUpBinding
+import com.yuwol.fragment.HomeFragment
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
 
@@ -27,6 +28,11 @@ class SignUpActivity : AppCompatActivity() {
         binding.btnSignUpProfile.setOnClickListener {
             ImagePicker.with(this).galleryOnly().galleryMimeTypes(arrayOf("image/*")).crop(1f, 1f).compress(1024)
                 .maxResultSize(400, 400).start()
+        }
+
+        binding.btnSignUpSubmit.setOnClickListener {
+            val intent = Intent(this@SignUpActivity, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 

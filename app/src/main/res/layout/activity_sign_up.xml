@@ -120,6 +120,7 @@
         app:layout_constraintEnd_toEndOf="@id/cv_sign_up2"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sign_up_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="가입 완료"
