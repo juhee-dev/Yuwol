@@ -56,6 +56,11 @@ class UserFragment : Fragment() {
                 .commit()
         }
 
+        binding.ivRectangle5.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, MySettingsFragment())
+                .commit()
+        }
+
     }
     private fun setTitleGradient(text: String, tv: TextView) {
         val spannable = text.toSpannable()
