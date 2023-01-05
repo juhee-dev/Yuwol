@@ -85,42 +85,42 @@ class HomeFragment : Fragment(), View.OnClickListener {
         chartData.addAll(
             listOf<Song>(
                 Song(
-                    R.drawable.cover_note,
+                    R.drawable.cover2,
                     rank++.toString(),
                     "사건의 지평선", "윤하", "END THEORY", "2022.03.30",
                     "5", "찢음", "5","2","1",
                     130, 12
                 ), Song(
-                    R.drawable.cover_note,
+                    R.drawable.cover1,
                     rank++.toString(),
                     "ANTIFRAGILE", "LE SSERAFIM (르세라핌)", "ANTIFRAGILE", "2022.10.17",
-                    "2", "보통", "1", "2", "1",
-                    120, 11
+                    "4", "싸해짐", "4", "4", "4",
+                    80, 7
                 ), Song(
-                    R.drawable.cover_note,
+                    R.drawable.cover3,
                     rank++.toString(),
-                    "Hype Boy", "NewJeans", "NewJeans 1st EP 'New Jeans'", "2022.08.01",
-                    "2", "보통", "2", "2", "1",
-                    110, 10
-                ), Song(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Nxde", "(여자)아이들", "I love", "2022.10.17",
-                    "4", "싸해짐", "1","2","4",
+                    "Shut Down", "BLACKPINK", "BORN PINK", "2022.09.16",
+                    "4", "싸해짐", "4","4","4",
                     100, 9
                 ), Song(
-                    R.drawable.cover_note,
+                    R.drawable.cover2,
                     rank++.toString(),
-                    "After Like", "IVE (아이브)", "After LIKE", "2022.08.22",
-                    "2", "찢음", "2", "1", "2",
-                    90, 8
+                    "사건의 지평선", "윤하", "END THEORY", "2022.03.30",
+                    "5", "찢음", "5","2","1",
+                    130, 12
                 ), Song(
-                    R.drawable.cover_note,
+                    R.drawable.cover1,
                     rank++.toString(),
-                    "Attention", "NewJeans", "NewJeans 1st EP 'New Jeans'", "2022.08.01",
-                    "3", "싸해짐", "2", "2", "1",
+                    "ANTIFRAGILE", "LE SSERAFIM (르세라핌)", "ANTIFRAGILE", "2022.10.17",
+                    "4", "싸해짐", "4", "4", "4",
                     80, 7
-                )
+                ), Song(
+                    R.drawable.cover3,
+                    rank++.toString(),
+                    "Shut Down", "BLACKPINK", "BORN PINK", "2022.09.16",
+                    "4", "싸해짐", "4","4","4",
+                    100, 9
+                ),
             )
         )
     }

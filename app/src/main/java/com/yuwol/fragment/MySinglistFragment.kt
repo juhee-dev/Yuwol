@@ -40,15 +40,12 @@ class MySinglistFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitleGradient("나의 싱리스트", binding.tvChartAllTitle)
-        arguments?.let {
-            val chartType = it.getString("chartType")
-            if (chartType != null) {
-                initChartList(chartType)
-                initChartRecyclerView()
-            }
-        }
-        binding.ivChartAllBack.setOnClickListener{
+        setTitleGradient("나의 싱리스트", binding.tvMySinglistTitle)
+
+        initChartList()
+        initChartRecyclerView()
+
+        binding.ivMySinglistBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
         }
     }
@@ -60,17 +57,17 @@ class MySinglistFragment : Fragment() {
     }
 
     private fun initChartRecyclerView() {
-        binding.rvChartAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        binding.rvMySinglistAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         chartAdapter = ChartAllAdapter()
         chartAdapter.dataList = chartData
-        binding.rvChartAll.adapter = chartAdapter
+        binding.rvMySinglistAll.adapter = chartAdapter
     }
-    private fun initChartList(chartType: String) {
+    private fun initChartList() {
         chartData.clear()
 
         // when 필요한가...
 
-        Log.d("chart", "chartType: "+ chartType)
+        Log.d("chart", "chartType: ")
 
         var rank = 1
         chartData.addAll(
