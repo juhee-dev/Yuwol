@@ -28,6 +28,10 @@ class SignUpActivity : AppCompatActivity() {
             ImagePicker.with(this).galleryOnly().galleryMimeTypes(arrayOf("image/*")).crop(1f, 1f).compress(1024)
                 .maxResultSize(400, 400).start()
         }
+        binding.btnSignUpSubmit.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
