@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".fragment.MySinglistFragment">
     <ImageView
-        android:id="@+id/iv_chart_all_back"
+        android:id="@+id/iv_my_singlist_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/tv_chart_all_title"
+        android:id="@+id/tv_my_singlist_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_chart_all"
+        android:id="@+id/rv_my_singlist_all"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="64dp"
@@ -37,6 +37,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_chart_all_title"
+        app:layout_constraintTop_toTopOf="@+id/tv_my_singlist_title"
         tools:listitem="@layout/item_chart_all" />
 </androidx.constraintlayout.widget.ConstraintLayout>
