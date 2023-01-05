@@ -44,6 +44,21 @@ class MySettingsFragment : Fragment() {
         setTitleGradient("설정", binding.tvChartAllTitle)
 
 
+        binding.ivRectangle.setOnClickListener{
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main,DialogFragment())
+        }
+        binding.ivRectangle2.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, SettingsWithdrawalFragment())
+                .commit()
+        }
+        binding.ivRectangle3.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, SettingsInfoFragment())
+                .commit()
+        }
+        binding.ivRectangle4.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, SettingsNoticeFragment())
+                .commit()
+        }
         binding.ivChartAllBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
         }
