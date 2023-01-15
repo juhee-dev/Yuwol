@@ -14,20 +14,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
 import com.yuwol.adapter.ChartAllAdapter
+import com.yuwol.adapter.MysinglistAdapter
 import com.yuwol.databinding.FragmentMyLikesBinding
 import com.yuwol.databinding.FragmentMySinglistBinding
 import com.yuwol.model.Chart
 
 class MySinglistFragment : Fragment() {
     lateinit var binding: FragmentMySinglistBinding
-    private lateinit var chartAdapter: ChartAllAdapter
+    private lateinit var mysinglistAdapter: MysinglistAdapter
     private val chartData = mutableListOf<Chart>()
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,9 +53,9 @@ class MySinglistFragment : Fragment() {
 
     private fun initChartRecyclerView() {
         binding.rvMySinglistAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        chartAdapter = ChartAllAdapter()
-        chartAdapter.dataList = chartData
-        binding.rvMySinglistAll.adapter = chartAdapter
+        mysinglistAdapter = MysinglistAdapter()
+        mysinglistAdapter.dataList = chartData
+        binding.rvMySinglistAll.adapter = mysinglistAdapter
     }
     private fun initChartList() {
         chartData.clear()

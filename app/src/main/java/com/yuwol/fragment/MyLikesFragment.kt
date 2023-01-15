@@ -2,7 +2,6 @@ package com.yuwol.fragment
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,18 +9,20 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.text.set
 import androidx.core.text.toSpannable
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
 import com.yuwol.adapter.ChartAllAdapter
-import com.yuwol.databinding.FragmentChartAllBinding
+import com.yuwol.adapter.MylikesAdapter
 import com.yuwol.databinding.FragmentMyLikesBinding
 import com.yuwol.model.Chart
+import com.yuwol.model.Song
 
 
 class MyLikesFragment : Fragment() {
     lateinit var binding: FragmentMyLikesBinding
-    private lateinit var chartAdapter: ChartAllAdapter
+    private lateinit var mylikesAdapter: MylikesAdapter
     private val chartData = mutableListOf<Chart>()
 
     override fun onCreateView(
@@ -35,14 +36,14 @@ class MyLikesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setTitleGradient("나의 관심", binding.tvMyLikesTitle)
 
-        setTitleGradient("나의 관심", binding.tvChartAllTitle)
+        initChartList()
+        initChartRecyclerView()
 
-        binding.ivChartAllBack.setOnClickListener{
+        binding.ivMyLikesBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
         }
-
-
     }
 
     private fun setTitleGradient(text: String, tv: TextView) {
@@ -51,7 +52,108 @@ class MyLikesFragment : Fragment() {
         tv.text = spannable
     }
 
+    private fun initChartRecyclerView() {
+        binding.rvMyLikesAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        mylikesAdapter = MylikesAdapter()
+        mylikesAdapter.dataList= chartData
+        binding.rvMyLikesAll.adapter = mylikesAdapter
+    }
+    private fun initChartList() {
+        chartData.clear()
 
+        // when 필요한가...
 
+        Log.d("chart", "chartType: ")
+
+        var rank = 1
+        chartData.addAll(
+            listOf<Chart>(
+                Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "사건의 지평선",
+                    "윤하",
+                    "5", "찢음", "5","2","1"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "ANTIFRAGILE",
+                    "LE SSERAFIM (르세라핌)",
+                    "2", "보통", "1", "2", "1"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "Hype Boy",
+                    "NewJeans",
+                    "2", "보통", "2", "2", "1"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "Nxde",
+                    "(여자)아이들",
+                    "4", "싸해짐", "1","2","4"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "After Like",
+                    "IVE (아이브)",
+                    "2", "찢음", "2", "1", "2"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "Attention",
+                    "NewJeans",
+                    "3", "싸해짐", "2", "2", "1"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "사건의 지평선",
+                    "윤하",
+                    "5", "찢음", "5","2","1"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "ANTIFRAGILE",
+                    "LE SSERAFIM (르세라핌)",
+                    "2", "보통", "1", "2", "1"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "Hype Boy",
+                    "NewJeans",
+                    "2", "보통", "2", "2", "1"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "Nxde",
+                    "(여자)아이들",
+                    "4", "싸해짐", "1","2","4"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "After Like",
+                    "IVE (아이브)",
+                    "2", "찢음", "2", "1", "2"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "Attention",
+                    "NewJeans",
+                    "3", "싸해짐", "2", "2", "1"
+                )
+            )
+        )
+    }
+    private fun songTransaction(song: Song) {
+        val bundle = Bundle()
+        val songDetailFragment = SongDetailFragment()
+        bundle.putSerializable("song", song)
+        songDetailFragment.arguments = bundle
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_main, songDetailFragment)
+            addToBackStack(null)
+            commit()
+        }
+    }
 
 }

@@ -38,14 +38,14 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/tv_chart_all_hot"
+            android:id="@+id/tv_my_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:text="평가"/>
         <TextView
-            android:id="@+id/tv_chart_all_melon"
+            android:id="@+id/tv_my_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -60,7 +60,19 @@
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_chart_all"
+        tools:listitem="@layout/item_home_chart"
+        app:layout_constraintTop_toBottomOf="@id/ll_chart_all_tab"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_myrating_comment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_comment"
         app:layout_constraintTop_toBottomOf="@id/ll_chart_all_tab"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
