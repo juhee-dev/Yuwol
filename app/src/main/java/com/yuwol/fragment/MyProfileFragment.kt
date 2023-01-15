@@ -44,28 +44,28 @@ class MyProfileFragment : Fragment() {
             val call: Call<ResponseLoginData> =
             UserInfoServiceCreator.userInfoService.postLogin()
 
-            call.enqueue(object : Callback<ResponseUserInfoData>{
-                override fun onResponse(
-                    call: Call<ResponseUserInfoData>,
-                    response: Response<ResponseUserInfoData>
-                ) {
-                    if(response.isSuccessful){
-                        Log.d("Test","Success")
-                        val data = response.body().toString()
-                        Log.d("Responsevalue","response 값=>"+data)
-                        if(data=="ResponseUserInfoData Success"){
-
-                        }
-                    }
-                    else{
-                        //에러
-                    }
-                }
-
-                override fun onFailure(call: Call<ResponseUserInfoData>, t: Throwable) {
-                    Log.d("Test","error")
-                }
-            })
+//            call.enqueue(object : Callback<ResponseUserInfoData>{
+//                override fun onResponse(
+//                    call: Call<ResponseUserInfoData>,
+//                    response: Response<ResponseUserInfoData>
+//                ) {
+//                    if(response.isSuccessful){
+//                        Log.d("Test","Success")
+//                        val data = response.body().toString()
+//                        Log.d("Responsevalue","response 값=>"+data)
+//                        if(data=="ResponseUserInfoData Success"){
+//
+//                        }
+//                    }
+//                    else{
+//                        //에러
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<ResponseUserInfoData>, t: Throwable) {
+//                    Log.d("Test","error")
+//                }
+//            })
         }
 
     }
