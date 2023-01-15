@@ -1,7 +1,10 @@
 package com.yuwol.data.response
 
-data class ResponseProfileData(
+data class ResponseUserInfoData(
+
+    val mamberId: String,
     val username: String,
-    val image: String,
+    val imageUrl: String,
     val introduce: String
+
 )
