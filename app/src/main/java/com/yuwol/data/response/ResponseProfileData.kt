@@ -1,7 +1,7 @@
-//package com.yuwol.data.response
-//
-//import retrofit2.http.PUT
-//
-//data class ResponseProfileData(
-//
-//)
+package com.yuwol.data.response
+
+data class ResponseProfileData(
+    val username: String,
+    val image: String,
+    val introduce: String
+)

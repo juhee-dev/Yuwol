@@ -3,4 +3,8 @@
     <style name="ChartTitleText" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/pink_100</item>
     </style>
+
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
+        <item name="android:editTextColor">@android:color/white</item>
+    </style>
 </resources>
