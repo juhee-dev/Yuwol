@@ -1,18 +1,5 @@
 package com.yuwol.adapter
 
-import android.annotation.SuppressLint
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.Filter
-import android.widget.Filterable
-import androidx.recyclerview.widget.RecyclerView
-import com.yuwol.databinding.ItemHomeChartBinding
-import com.yuwol.model.Song
-import kotlinx.android.synthetic.main.item_search_auto.view.*
-
 class SearchAdapter
 //    (var song: Array<String>, var con: Context) : BaseAdapter(), Filterable
 {

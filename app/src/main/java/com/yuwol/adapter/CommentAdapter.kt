@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yuwol.R
 import com.yuwol.databinding.ItemCommentBinding
 import com.yuwol.model.Comment
-import com.yuwol.model.Song
 
 class CommentAdapter : RecyclerView.Adapter<CommentAdapter.ViewHolder>(), OnClickListener {
 

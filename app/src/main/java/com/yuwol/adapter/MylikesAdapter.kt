@@ -3,11 +3,8 @@ package com.yuwol.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.yuwol.databinding.ItemHomeChartBinding
 import com.yuwol.databinding.ItemMyLikesBinding
-import com.yuwol.fragment.MyLikesFragment
 import com.yuwol.model.Chart
-import com.yuwol.model.Song
 
 class MylikesAdapter: RecyclerView.Adapter<MylikesAdapter.ViewHolder>() {
 

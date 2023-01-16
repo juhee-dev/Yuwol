@@ -13,11 +13,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
-import com.yuwol.adapter.ChartAllAdapter
 import com.yuwol.adapter.MylikesAdapter
 import com.yuwol.databinding.FragmentMyLikesBinding
 import com.yuwol.model.Chart
-import com.yuwol.model.Song
+import com.yuwol.model.SongTemp
 
 
 class MyLikesFragment : Fragment() {
@@ -144,7 +143,7 @@ class MyLikesFragment : Fragment() {
             )
         )
     }
-    private fun songTransaction(song: Song) {
+    private fun songTransaction(song: SongTemp) {
         val bundle = Bundle()
         val songDetailFragment = SongDetailFragment()
         bundle.putSerializable("song", song)

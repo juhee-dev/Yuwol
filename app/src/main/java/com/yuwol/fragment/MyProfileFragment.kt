@@ -41,6 +41,7 @@ class MyProfileFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+<<<<<<< HEAD
 
 
 
@@ -77,6 +78,8 @@ class MyProfileFragment : Fragment() {
 //            })
         }
 
+=======
+>>>>>>> 670f1fa (feat: 멜론차트 구현중, activity->fragment 값 전달 완료)
     }
 
     override fun onCreateView(

@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         replaceFragment(HomeFragment())
 
         binding.navBottom.setOnItemSelectedListener {
@@ -37,6 +38,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private  fun replaceFragment(fragment : Fragment) {
+        val token = intent.getStringExtra("token")!!
+        var bundle = Bundle()
+        bundle.putString("token", token)
+        fragment.arguments = bundle
+
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fl_main, fragment)

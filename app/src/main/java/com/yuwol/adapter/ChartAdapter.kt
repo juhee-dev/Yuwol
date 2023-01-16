@@ -5,12 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yuwol.databinding.ItemHomeChartBinding
 import com.yuwol.fragment.HomeFragment
-import com.yuwol.model.Chart
-import com.yuwol.model.Song
+import com.yuwol.model.SongTemp
 
 class ChartAdapter(var link:HomeFragment.SongListAdapterToList) : RecyclerView.Adapter<ChartAdapter.ViewHolder>() {
 
-    var dataList = mutableListOf<Song>()
+    var dataList = mutableListOf<SongTemp>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemHomeChartBinding.inflate(LayoutInflater.from(parent.context),parent, false)
@@ -28,7 +27,7 @@ class ChartAdapter(var link:HomeFragment.SongListAdapterToList) : RecyclerView.A
     override fun getItemCount(): Int = dataList.size
 
     class ViewHolder(private val binding: ItemHomeChartBinding) : RecyclerView.ViewHolder(binding.root){
-        fun onBind(song: Song){
+        fun onBind(song: SongTemp){
             binding.ivChartCover.setImageResource(song.cover)
             binding.tvChartRank.text = song.rank
             binding.tvChartTitle.text = song.title
