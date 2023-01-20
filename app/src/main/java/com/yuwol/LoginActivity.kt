@@ -91,8 +91,8 @@ class LoginActivity : AppCompatActivity() {
                                 if (isFirst == true) {
                                     intent = Intent(this@LoginActivity, SignUpActivity::class.java)
                                 } else {
-//                                    intent = Intent(this@LoginActivity, MainActivity::class.java)
-                                    intent = Intent(this@LoginActivity, SignUpActivity::class.java)
+                                    intent = Intent(this@LoginActivity, MainActivity::class.java)
+//                                    intent = Intent(this@LoginActivity, SignUpActivity::class.java)
                                 }
                                 intent.putExtra("token", data.toString())
                                 startActivity(intent)

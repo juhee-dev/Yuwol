@@ -6,6 +6,9 @@ data class ResponseMelonChartData(
     val singer: String,
     val imageUrl: String,
     val totalDifficult: String,
+    val rapDifficult: String,
+    val highDifficult: String,
+    val lowDifficult: String,
     var mood: String,
     var isMySinglist: String
 )
