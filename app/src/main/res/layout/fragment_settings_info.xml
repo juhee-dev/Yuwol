@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".fragment.SettingsInfoFragment">
     <ImageView
-        android:id="@+id/iv_chart_all_back"
+        android:id="@+id/iv_settings_info_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/tv_chart_all_title"
+        android:id="@+id/tv_settings_info_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"

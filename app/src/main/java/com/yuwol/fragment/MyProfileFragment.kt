@@ -2,6 +2,8 @@ package com.yuwol.fragment
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,6 +26,7 @@ import com.yuwol.data.response.ResponseLoginData
 import com.yuwol.data.response.ResponseUserInfoData
 import com.yuwol.databinding.FragmentMyLikesBinding
 import com.yuwol.databinding.FragmentMyProfileBinding
+import kotlinx.android.synthetic.main.fragment_my_profile.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,10 +37,16 @@ class MyProfileFragment : Fragment() {
     lateinit var binding: FragmentMyProfileBinding
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.textView19.setOnClickListener {
+
+
+
+
+
+        binding.btnSignUpSubmit.setOnClickListener {
 
             Log.d("userinfo","myprofile")
 
@@ -81,9 +90,9 @@ class MyProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitleGradient("프로필 수정", binding.tvChartAllTitle)
+        setTitleGradient("프로필 수정", binding.tvMyProfileTitle)
 
-        binding.ivChartAllBack.setOnClickListener{
+        binding.ivMyProfileBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
         }
     }

@@ -28,7 +28,7 @@ class SettingsInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitleGradient("정보", binding.tvChartAllTitle)
+        setTitleGradient("정보", binding.tvSettingsInfoTitle)
 
         binding.ivRectangle.setOnClickListener {
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,InfoTosFragment())
@@ -39,7 +39,7 @@ class SettingsInfoFragment : Fragment() {
                 .commit()
         }
 
-        binding.ivChartAllBack.setOnClickListener{
+        binding.ivSettingsInfoBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,MySettingsFragment()).commit()
         }
     }

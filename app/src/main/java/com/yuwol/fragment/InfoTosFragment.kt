@@ -26,7 +26,7 @@ class InfoTosFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.ivChartAllBack.setOnClickListener{
+        binding.ivInfoTosBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,SettingsInfoFragment()).commit()
         }
     }
