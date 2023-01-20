@@ -48,9 +48,11 @@
         android:id="@+id/ib_item_comment_good"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_like"
+        android:src="@drawable/ic_thumbsup"
         app:layout_constraintTop_toTopOf="@id/tv_item_comment_date"
-        app:layout_constraintEnd_toStartOf="@id/tv_item_comment_good"/>
+        app:layout_constraintEnd_toStartOf="@id/tv_item_comment_good"
+        android:background="@android:color/transparent"
+        />
     <TextView
         android:id="@+id/tv_item_comment_good"
         android:layout_width="wrap_content"
@@ -61,13 +63,17 @@
         android:textSize="11sp"
         app:layout_constraintTop_toTopOf="@id/tv_item_comment_date"
         app:layout_constraintEnd_toStartOf="@id/ib_item_comment_bad"/>
+
     <ImageButton
         android:id="@+id/ib_item_comment_bad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_comment"
+        android:src="@drawable/ic_thumbsdown"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/tv_item_comment_bad"
         app:layout_constraintTop_toTopOf="@id/tv_item_comment_date"
-        app:layout_constraintEnd_toStartOf="@id/tv_item_comment_bad"/>
+        android:background="@android:color/transparent"
+        />
     <TextView
         android:id="@+id/tv_item_comment_bad"
         android:layout_width="wrap_content"

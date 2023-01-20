@@ -13,9 +13,7 @@ import androidx.core.text.toSpannable
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
-import com.yuwol.adapter.ChartAllAdapter
-import com.yuwol.adapter.CommentAdapter
-import com.yuwol.adapter.MysinglistAdapter
+import com.yuwol.adapter.*
 import com.yuwol.databinding.FragmentChartAllBinding
 import com.yuwol.databinding.FragmentMyLikesBinding
 import com.yuwol.databinding.FragmentMyRatingBinding
@@ -23,8 +21,8 @@ import com.yuwol.model.Chart
 
 class MyRatingFragment : Fragment() {
     lateinit var binding: FragmentMyRatingBinding
-    private lateinit var mysinglistAdapter: MysinglistAdapter
-    private lateinit var commentAdapter: CommentAdapter
+    private lateinit var myrateAdapter: MyrateAdapter
+    private lateinit var mycommentAdapter: MycommentAdapter
     private val chartData = mutableListOf<Chart>()
 
 
@@ -39,10 +37,8 @@ class MyRatingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitleGradient("나의 평가", binding.tvChartAllTitle)
-        binding.ivChartAllBack.setOnClickListener{
-            parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
-        }
+        setTitleGradient("나의 평가", binding.tvMyRateTitle)
+
 
 
         arguments?.let {
@@ -55,7 +51,9 @@ class MyRatingFragment : Fragment() {
 
         binding.tvMyRate.setOnClickListener { initChartList("평가") }
         binding.tvMyComment.setOnClickListener { initChartList("코멘트") }
-
+        binding.ivMyRateBack.setOnClickListener{
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
+        }
     }
 
     private fun setTitleGradient(text: String, tv: TextView) {
@@ -67,15 +65,17 @@ class MyRatingFragment : Fragment() {
 
 
     private fun initChartRecyclerView() {
-        binding.rvMyrating.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        mysinglistAdapter = MysinglistAdapter()
-        mysinglistAdapter.dataList=chartData
-        binding.rvMyrating.adapter= mysinglistAdapter
-
+        binding.rvMyrating.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMyratingComment.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        commentAdapter = CommentAdapter()
 
-        binding.rvMyrating.adapter= commentAdapter
+        myrateAdapter = MyrateAdapter()
+        mycommentAdapter = MycommentAdapter()
+
+        myrateAdapter.dataList=chartData
+        mycommentAdapter.dataList=chartData
+
+        binding.rvMyrating.adapter= myrateAdapter
+        binding.rvMyratingComment.adapter= mycommentAdapter
 
     }
 
@@ -83,14 +83,14 @@ class MyRatingFragment : Fragment() {
         chartData.clear()
 
         when (chartType) {
-            "hot" -> {
-                binding.tvChartAllTitle.text = "나의 평가"
+            "평가" -> {
+                binding.tvMyRateTitle.text = "평가"
                 binding.tvMyRate.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
                 binding.tvMyComment.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
 
             }
-            "melon" -> {
-                binding.tvChartAllTitle.text = "코멘트"
+            "코멘트" -> {
+                binding.tvMyRateTitle.text = "코멘트"
                 binding.tvMyRate.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
                 binding.tvMyComment.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
             }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".fragment.MyRatingFragment">
     <ImageView
-        android:id="@+id/iv_chart_all_back"
+        android:id="@+id/iv_my_rate_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/tv_chart_all_title"
+        android:id="@+id/tv_my_rate_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -29,12 +29,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/ll_chart_all_tab"
+        android:id="@+id/ll_my_rate_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/tv_chart_all_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_rate_title"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
@@ -60,8 +60,8 @@
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_home_chart"
-        app:layout_constraintTop_toBottomOf="@id/ll_chart_all_tab"
+        tools:listitem="@layout/item_my_rate"
+        app:layout_constraintTop_toBottomOf="@id/ll_my_rate_tab"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -72,8 +72,8 @@
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_comment"
-        app:layout_constraintTop_toBottomOf="@id/ll_chart_all_tab"
+        tools:listitem="@layout/item_my_comment"
+        app:layout_constraintTop_toBottomOf="@id/ll_my_rate_tab"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

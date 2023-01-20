@@ -23,7 +23,7 @@ class SettingsWithdrawalFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.ivChartAllBack.setOnClickListener{
+        binding.ivSettingsWithdrawalBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,MySettingsFragment()).commit()
         }
     }

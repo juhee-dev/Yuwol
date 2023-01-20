@@ -48,7 +48,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tv_rating1_title"
+        android:id="@+id/tv_rating2_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <TextView
-        android:id="@+id/tv_rating1_artist"
+        android:id="@+id/tv_rating2_artist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -69,7 +69,7 @@
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rating1_title"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_rating2_title"/>
 
 
     <TextView
@@ -83,7 +83,7 @@
         android:translationZ="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rating1_artist" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_rating2_artist" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -181,7 +181,7 @@
 
 
     <ImageView
-        android:id="@+id/iv_rating1_back"
+        android:id="@+id/iv_rating2_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"

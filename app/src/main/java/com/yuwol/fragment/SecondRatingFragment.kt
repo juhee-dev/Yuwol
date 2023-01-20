@@ -36,7 +36,7 @@ class SecondRatingFragment : Fragment() {
 //        binding.tvRating1Title.text = song.title
 //        binding.tvRating1Artist.text = song.artist
 
-        binding.ivRating1Back.setOnClickListener{
+        binding.ivRating2Back.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,ThirdRatingFragment()).commit()
         }
     }
