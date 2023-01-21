@@ -60,7 +60,7 @@
         android:id="@+id/btn_my_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/gray_500"
+        android:backgroundTint="@color/gray_100"
         android:src="@drawable/ic_baseline_camera_alt_24"
         app:borderWidth="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/cardView"
@@ -142,7 +142,7 @@
         app:layout_constraintEnd_toEndOf="@id/cv_my_profile2"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_sign_up_submit"
+        android:id="@+id/btn_my_profile_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="수정 완료"
