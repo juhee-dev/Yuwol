@@ -1,7 +1,6 @@
 package com.yuwol.fragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,57 +13,53 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
-import com.yuwol.adapter.*
-import com.yuwol.databinding.FragmentMyRatingBinding
+import com.yuwol.adapter.MycommentAdapter
+import com.yuwol.adapter.MyrateAdapter
+import com.yuwol.databinding.FragmentMyCommentBinding
 import com.yuwol.model.Chart
 
-class MyRatingFragment : Fragment() {
-    lateinit var binding: FragmentMyRatingBinding
-    private lateinit var myrateAdapter: MyrateAdapter
-    private val ratingData = mutableListOf<Chart>()
+class MyCommentFragment : Fragment() {
+    lateinit var binding: FragmentMyCommentBinding
+    private lateinit var mycommentAdapter: MycommentAdapter
+    private val commentData = mutableListOf<Chart>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMyRatingBinding.inflate(inflater, container, false)
+        binding = FragmentMyCommentBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initRatingList()
-        initRatingRecyclerView()
+        initCommentList()
+        initCommentRecyclerView()
 
-        binding.tvMyComment.setOnClickListener {
-            parentFragmentManager.beginTransaction().replace(R.id.fl_main, MyCommentFragment()).commit()
+        binding.tvMyRate.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, MyRatingFragment()).commit()
         }
 
-        binding.ivMyRateBack.setOnClickListener{
+        binding.ivMyCommentBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
         }
     }
 
-    private fun initRatingRecyclerView() {
-        binding.rvMyrating.layoutManager = GridLayoutManager(activity, 3)
+    private fun initCommentRecyclerView() {
+        binding.rvMyrating.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 
-        myrateAdapter = MyrateAdapter()
-        myrateAdapter.dataList = ratingData
+        mycommentAdapter = MycommentAdapter()
+        mycommentAdapter.dataList = commentData
 
-        binding.rvMyrating.adapter = myrateAdapter
+        binding.rvMyrating.adapter = mycommentAdapter
     }
 
-    private fun initRatingList() {
-        ratingData.clear()
-
-        binding.tvMyRateTitle.text = "나의 평가"
-        binding.tvMyRate.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
-        binding.tvMyComment.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+    private fun initCommentList() {
+        commentData.clear()
 
         var rank = 1
-        ratingData.addAll(
+        commentData.addAll(
             listOf<Chart>(
                 Chart(
                     R.drawable.cover_note,
@@ -142,5 +137,4 @@ class MyRatingFragment : Fragment() {
             )
         )
     }
-
 }
