@@ -71,19 +71,19 @@ class ChartAllFragment : Fragment() {
             "hot" -> {
                 setTitleGradient("송믈리에 차트", binding.tvChartAllTitle)
                 binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
-                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
-                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
+                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
             }
             "melon" -> {
                 setTitleGradient("Top 100", binding.tvChartAllTitle)
-                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
                 binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
-                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
             }
             "new" -> {
                 setTitleGradient("최신 음악", binding.tvChartAllTitle)
-                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
-                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
+                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
                 binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
             }
             else -> {

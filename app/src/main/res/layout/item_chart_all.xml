@@ -112,7 +112,7 @@
         android:layout_height="24dp"
         android:layout_marginEnd="20dp"
         android:layout_gravity="center"
-        android:background="@drawable/bg_bookmark_gradient" >
+        android:background="@drawable/bg_circle_gradient" >
         <ImageView
             android:id="@+id/iv_item_chart_all_bookmark"
             android:layout_width="24dp"
