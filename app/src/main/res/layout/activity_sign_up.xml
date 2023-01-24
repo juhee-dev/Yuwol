@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_camera_alt_24"
-        android:backgroundTint="@color/gray_500"
+        android:backgroundTint="@color/gray_100"
         app:borderWidth="0dp"
         app:layout_constraintEnd_toEndOf="@id/cv_sign_up"
         app:layout_constraintBottom_toBottomOf="@id/cv_sign_up"/>

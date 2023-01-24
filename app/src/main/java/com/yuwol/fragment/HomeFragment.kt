@@ -1,6 +1,7 @@
 package com.yuwol.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,14 +15,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
 import com.yuwol.adapter.ChartAdapter
+import com.yuwol.api.MelonChartServiceCreator
+import com.yuwol.data.response.ResponseMelonChartData
 import com.yuwol.databinding.FragmentHomeBinding
-import com.yuwol.model.Chart
-import com.yuwol.model.Song
+import com.yuwol.model.SongTemp
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeFragment : Fragment(), View.OnClickListener {
     lateinit var binding: FragmentHomeBinding
     private lateinit var chartAdapter: ChartAdapter
-    private val chartData = mutableListOf<Song>()
+    private val chartData = mutableListOf<SongTemp>()
+    val TAG = "home"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +45,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         setTitleGradient(getString(R.string.chart_title_new), binding.textView4)
 
         initChartList()
+        getChartList()
         initChartRecyclerView()
 
         binding.tvHomeAll.setOnClickListener(this)
@@ -80,41 +87,63 @@ class HomeFragment : Fragment(), View.OnClickListener {
         binding.rvChartNew.adapter = chartAdapter
     }
 
+    private fun getChartList() {
+        val token = arguments?.getString("token")
+        Log.d(TAG, "get token: $token")
+        val call: Call<ResponseMelonChartData> = MelonChartServiceCreator.melonChartService.getMellonChart(token!!)
+        call.enqueue(object : Callback<ResponseMelonChartData> {
+            override fun onResponse(
+                call: Call<ResponseMelonChartData>,
+                response: Response<ResponseMelonChartData>
+            ) {
+                if(response.isSuccessful){
+                    Log.d(TAG, "network success")
+                    val data = response.body().toString()
+                    Log.d(TAG, "onResponse: $data")
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseMelonChartData>, t: Throwable) {
+                Log.e(TAG, "onFailure: ", )
+            }
+        })
+    }
+
     private fun initChartList() {
         var rank = 1
         chartData.addAll(
-            listOf<Song>(
-                Song(
+            listOf<SongTemp>(
+                SongTemp(
                     R.drawable.cover2,
                     rank++.toString(),
                     "사건의 지평선", "윤하", "END THEORY", "2022.03.30",
                     "5", "찢음", "5","2","1",
                     130, 12
-                ), Song(
+                ), SongTemp(
                     R.drawable.cover1,
                     rank++.toString(),
                     "ANTIFRAGILE", "LE SSERAFIM (르세라핌)", "ANTIFRAGILE", "2022.10.17",
                     "4", "싸해짐", "4", "4", "4",
                     80, 7
-                ), Song(
+                ), SongTemp(
                     R.drawable.cover3,
                     rank++.toString(),
                     "Shut Down", "BLACKPINK", "BORN PINK", "2022.09.16",
                     "4", "싸해짐", "4","4","4",
                     100, 9
-                ), Song(
+                ), SongTemp(
                     R.drawable.cover2,
                     rank++.toString(),
                     "사건의 지평선", "윤하", "END THEORY", "2022.03.30",
                     "5", "찢음", "5","2","1",
                     130, 12
-                ), Song(
+                ), SongTemp(
                     R.drawable.cover1,
                     rank++.toString(),
                     "ANTIFRAGILE", "LE SSERAFIM (르세라핌)", "ANTIFRAGILE", "2022.10.17",
                     "4", "싸해짐", "4", "4", "4",
                     80, 7
-                ), Song(
+                ), SongTemp(
                     R.drawable.cover3,
                     rank++.toString(),
                     "Shut Down", "BLACKPINK", "BORN PINK", "2022.09.16",
@@ -137,7 +166,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    private fun songTransaction(song: Song) {
+    private fun songTransaction(song: SongTemp) {
         val bundle = Bundle()
         val songDetailFragment = SongDetailFragment()
         bundle.putSerializable("song", song)
@@ -150,7 +179,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 
     inner class SongListAdapterToList {
-        fun getSong(song: Song) {
+        fun getSong(song: SongTemp) {
             songTransaction(song)
         }
     }

@@ -387,7 +387,7 @@
                 android:scrollbars="vertical"
                 android:hint="음악에 대한 코멘트를 남겨보세요."
                 android:textColor="@color/white"
-                android:textColorHint="@color/gray_300"
+                android:textColorHint="@color/gray_400"
                 android:textSize="14sp"
                 app:layout_constraintTop_toBottomOf="@+id/ImageView"
                 app:layout_constraintStart_toStartOf="parent"/>

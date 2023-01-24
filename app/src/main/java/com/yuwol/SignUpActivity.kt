@@ -88,12 +88,14 @@ class SignUpActivity : AppCompatActivity() {
 
                     override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                         Log.d(TAG, "Upload success")
+                        val intent = Intent(this@SignUpActivity, MainActivity::class.java)
+                        intent.putExtra("token", token)
+                        startActivity(intent)
                     }
 
                 })
 
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+
             } else if (username == "") {
                 Toast.makeText(this, "닉네임을 설정해주세요.", Toast.LENGTH_SHORT).show()
             } else {

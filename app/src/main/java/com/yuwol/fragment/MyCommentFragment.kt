@@ -1,7 +1,7 @@
 package com.yuwol.fragment
 
 import android.os.Bundle
-import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,63 +9,57 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.text.set
 import androidx.core.text.toSpannable
-import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
-import com.yuwol.adapter.MylikesAdapter
-import com.yuwol.databinding.FragmentMyLikesBinding
+import com.yuwol.adapter.MycommentAdapter
+import com.yuwol.adapter.MyrateAdapter
+import com.yuwol.databinding.FragmentMyCommentBinding
 import com.yuwol.model.Chart
-import com.yuwol.model.SongTemp
 
-
-class MyLikesFragment : Fragment() {
-    lateinit var binding: FragmentMyLikesBinding
-    private lateinit var mylikesAdapter: MylikesAdapter
-    private val chartData = mutableListOf<Chart>()
+class MyCommentFragment : Fragment() {
+    lateinit var binding: FragmentMyCommentBinding
+    private lateinit var mycommentAdapter: MycommentAdapter
+    private val commentData = mutableListOf<Chart>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMyLikesBinding.inflate(inflater, container, false)
+        binding = FragmentMyCommentBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitleGradient("나의 관심", binding.tvMyLikesTitle)
 
-        initChartList()
-        initChartRecyclerView()
+        initCommentList()
+        initCommentRecyclerView()
 
-        binding.ivMyLikesBack.setOnClickListener{
+        binding.tvMyRate.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, MyRatingFragment()).commit()
+        }
+
+        binding.ivMyCommentBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
         }
     }
 
-    private fun setTitleGradient(text: String, tv: TextView) {
-        val spannable = text.toSpannable()
-        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_100), ContextCompat.getColor(requireContext(), R.color.purple_100))
-        tv.text = spannable
+    private fun initCommentRecyclerView() {
+        binding.rvMyrating.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+        mycommentAdapter = MycommentAdapter()
+        mycommentAdapter.dataList = commentData
+
+        binding.rvMyrating.adapter = mycommentAdapter
     }
 
-    private fun initChartRecyclerView() {
-        binding.rvMyLikesAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        mylikesAdapter = MylikesAdapter()
-        mylikesAdapter.dataList= chartData
-        binding.rvMyLikesAll.adapter = mylikesAdapter
-    }
-    private fun initChartList() {
-        chartData.clear()
-
-        // when 필요한가...
-
-        Log.d("chart", "chartType: ")
+    private fun initCommentList() {
+        commentData.clear()
 
         var rank = 1
-        chartData.addAll(
+        commentData.addAll(
             listOf<Chart>(
                 Chart(
                     R.drawable.cover_note,
@@ -143,16 +137,4 @@ class MyLikesFragment : Fragment() {
             )
         )
     }
-    private fun songTransaction(song: SongTemp) {
-        val bundle = Bundle()
-        val songDetailFragment = SongDetailFragment()
-        bundle.putSerializable("song", song)
-        songDetailFragment.arguments = bundle
-        parentFragmentManager.beginTransaction().apply {
-            replace(R.id.fl_main, songDetailFragment)
-            addToBackStack(null)
-            commit()
-        }
-    }
-
 }

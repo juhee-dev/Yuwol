@@ -4,7 +4,7 @@
     android:useLevel="false"  >
     <!-- 배경 색상 -->
     <solid
-        android:color="@color/gray_300"/>
+        android:color="@color/gray_400"/>
 
     <!-- 크기 -->
     <size

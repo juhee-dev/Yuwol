@@ -6,19 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.R
-import com.yuwol.adapter.ChartAdapter
 import com.yuwol.adapter.CommentAdapter
 import com.yuwol.databinding.FragmentSongDetailBinding
 import com.yuwol.model.Comment
-import com.yuwol.model.Rate
-import com.yuwol.model.Song
+import com.yuwol.model.SongTemp
 
 class SongDetailFragment : Fragment() {
     lateinit var binding: FragmentSongDetailBinding
-    lateinit var song: Song
+    lateinit var song: SongTemp
     private lateinit var commentAdapter: CommentAdapter
     private val commentData = mutableListOf<Comment>()
 
@@ -34,7 +31,7 @@ class SongDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.let {
-            song = it.getSerializable("song") as Song
+            song = it.getSerializable("song") as SongTemp
         }
 
         binding.tvSongDetailTitle.text = song.title

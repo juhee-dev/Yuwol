@@ -10,21 +10,18 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.text.set
 import androidx.core.text.toSpannable
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
 import com.yuwol.adapter.*
-import com.yuwol.databinding.FragmentChartAllBinding
-import com.yuwol.databinding.FragmentMyLikesBinding
 import com.yuwol.databinding.FragmentMyRatingBinding
 import com.yuwol.model.Chart
 
 class MyRatingFragment : Fragment() {
     lateinit var binding: FragmentMyRatingBinding
     private lateinit var myrateAdapter: MyrateAdapter
-    private lateinit var mycommentAdapter: MycommentAdapter
-    private val chartData = mutableListOf<Chart>()
-
+    private val ratingData = mutableListOf<Chart>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,72 +34,37 @@ class MyRatingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitleGradient("나의 평가", binding.tvMyRateTitle)
 
+        initRatingList()
+        initRatingRecyclerView()
 
-
-        arguments?.let {
-            val chartType = it.getString("chartType")
-            if (chartType != null) {
-                initChartList(chartType)
-                initChartRecyclerView()
-            }
+        binding.tvMyComment.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, MyCommentFragment()).commit()
         }
 
-        binding.tvMyRate.setOnClickListener { initChartList("평가") }
-        binding.tvMyComment.setOnClickListener { initChartList("코멘트") }
         binding.ivMyRateBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
         }
     }
 
-    private fun setTitleGradient(text: String, tv: TextView) {
-        val spannable = text.toSpannable()
-        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_100), ContextCompat.getColor(requireContext(), R.color.purple_100))
-        tv.text = spannable
-    }
-
-
-
-    private fun initChartRecyclerView() {
-        binding.rvMyrating.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvMyratingComment.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+    private fun initRatingRecyclerView() {
+        binding.rvMyrating.layoutManager = GridLayoutManager(activity, 3)
 
         myrateAdapter = MyrateAdapter()
-        mycommentAdapter = MycommentAdapter()
+        myrateAdapter.dataList = ratingData
 
-        myrateAdapter.dataList=chartData
-        mycommentAdapter.dataList=chartData
-
-        binding.rvMyrating.adapter= myrateAdapter
-        binding.rvMyratingComment.adapter= mycommentAdapter
-
+        binding.rvMyrating.adapter = myrateAdapter
     }
 
-    private fun initChartList(chartType: String) {
-        chartData.clear()
+    private fun initRatingList() {
+        ratingData.clear()
 
-        when (chartType) {
-            "평가" -> {
-                binding.tvMyRateTitle.text = "평가"
-                binding.tvMyRate.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
-                binding.tvMyComment.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
-
-            }
-            "코멘트" -> {
-                binding.tvMyRateTitle.text = "코멘트"
-                binding.tvMyRate.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
-                binding.tvMyComment.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
-            }
-
-            else -> {
-                Log.d("chart", "initChartList 오류: intent 값이 없음")
-            }
-        }
-        Log.d("chart", "chartType: "+ chartType)
+        binding.tvMyRateTitle.text = "나의 평가"
+        binding.tvMyRate.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
+        binding.tvMyComment.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
 
         var rank = 1
-        chartData.addAll(
+        ratingData.addAll(
             listOf<Chart>(
                 Chart(
                     R.drawable.cover_note,

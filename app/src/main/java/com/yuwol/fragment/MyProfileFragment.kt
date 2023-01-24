@@ -35,57 +35,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MyProfileFragment : Fragment() {
     lateinit var binding: FragmentMyProfileBinding
-
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-
-
-
-
-        binding.btnSignUpSubmit.setOnClickListener {
-
-            Log.d("userinfo","myprofile")
-
-            val call: Call<ResponseLoginData> =
-            UserInfoServiceCreator.userInfoService.postLogin()
-
-//            call.enqueue(object : Callback<ResponseUserInfoData>{
-//                override fun onResponse(
-//                    call: Call<ResponseUserInfoData>,
-//                    response: Response<ResponseUserInfoData>
-//                ) {
-//                    if(response.isSuccessful){
-//                        Log.d("Test","Success")
-//                        val data = response.body().toString()
-//                        Log.d("Responsevalue","response 값=>"+data)
-//                        if(data=="ResponseUserInfoData Success"){
-//
-//                        }
-//                    }
-//                    else{
-//                        //에러
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<ResponseUserInfoData>, t: Throwable) {
-//                    Log.d("Test","error")
-//                }
-//            })
-        }
-
-    }
-
+    
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMyProfileBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

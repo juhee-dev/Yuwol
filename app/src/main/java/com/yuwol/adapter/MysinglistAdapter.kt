@@ -4,9 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yuwol.databinding.ItemMySinglistBinding
-import com.yuwol.fragment.MySinglistFragment
 import com.yuwol.model.Chart
-import com.yuwol.model.Song
 
 class MysinglistAdapter : RecyclerView.Adapter<MysinglistAdapter.ViewHolder>() {
     var dataList = mutableListOf<Chart>()

@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.MyRatingFragment">
+    tools:context=".fragment.MyCommentFragment">
     <ImageView
-        android:id="@+id/iv_my_rate_back"
+        android:id="@+id/iv_my_comment_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/tv_my_rate_title"
+        android:id="@+id/tv_my_comment_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -29,12 +29,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/ll_my_rate_tab"
+        android:id="@+id/ll_my_comment_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/tv_my_rate_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_comment_title"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
@@ -43,14 +43,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="평가"
-            android:textColor="@color/purple_100"/>
+            android:text="평가"/>
         <TextView
             android:id="@+id/tv_my_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="@color/purple_100"
             android:text="코멘트"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -60,9 +60,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/item_my_rate"
-        app:layout_constraintTop_toBottomOf="@id/ll_my_rate_tab"
+        android:layout_marginHorizontal="12dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_my_comment"
+        app:layout_constraintTop_toBottomOf="@id/ll_my_comment_tab"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
