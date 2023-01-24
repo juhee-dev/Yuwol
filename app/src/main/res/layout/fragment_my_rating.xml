@@ -24,7 +24,6 @@
         android:text="나의 평가"
         android:fontFamily="@font/scdream"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
