@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
 import com.yuwol.adapter.ChartAdapter
+import com.yuwol.adapter.ChartNewAdapter
 import com.yuwol.api.MelonChartServiceCreator
 import com.yuwol.data.response.ResponseMelonChartData
 import com.yuwol.databinding.FragmentHomeBinding
@@ -26,6 +27,7 @@ import retrofit2.Response
 class HomeFragment : Fragment(), View.OnClickListener {
     lateinit var binding: FragmentHomeBinding
     private lateinit var chartAdapter: ChartAdapter
+    private lateinit var chartNewAdapter: ChartNewAdapter
     private val chartData = mutableListOf<SongTemp>()
     val TAG = "home"
 
@@ -79,12 +81,14 @@ class HomeFragment : Fragment(), View.OnClickListener {
         binding.rvChartNew.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.HORIZONTAL, false)
 
         chartAdapter = ChartAdapter(SongListAdapterToList())
+        chartNewAdapter = ChartNewAdapter(SongListAdapterToList())
 
         chartAdapter.dataList = chartData
+        chartNewAdapter.dataList = chartData
 
         binding.rvChartHot.adapter = chartAdapter
         binding.rvChartMelon.adapter = chartAdapter
-        binding.rvChartNew.adapter = chartAdapter
+        binding.rvChartNew.adapter = chartNewAdapter
     }
 
     private fun getChartList() {
