@@ -62,77 +62,22 @@ class MyCommentFragment : Fragment() {
         commentData.addAll(
             listOf<Chart>(
                 Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_antifragile,
                     rank++.toString(),
-                    "사건의 지평선",
-                    "윤하",
-                    "5", "찢음", "5","2","1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)",
-                    "2", "보통", "1", "2", "1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Hype Boy",
-                    "NewJeans",
-                    "2", "보통", "2", "2", "1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들",
-                    "4", "싸해짐", "1","2","4"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "After Like",
-                    "IVE (아이브)",
+                    "ANTIFRAGILE", "LE SSERAFIM (르세라핌)",
                     "2", "찢음", "2", "1", "2"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_loverun,
                     rank++.toString(),
-                    "Attention",
-                    "NewJeans",
+                    "사랑은 늘 도망가",
+                    "임영웅",
                     "3", "싸해짐", "2", "2", "1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_hero,
                     rank++.toString(),
-                    "사건의 지평선",
+                    "우리들의 블루스",
                     "윤하",
                     "5", "찢음", "5","2","1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)",
-                    "2", "보통", "1", "2", "1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Hype Boy",
-                    "NewJeans",
-                    "2", "보통", "2", "2", "1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들",
-                    "4", "싸해짐", "1","2","4"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "After Like",
-                    "IVE (아이브)",
-                    "2", "찢음", "2", "1", "2"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Attention",
-                    "NewJeans",
-                    "3", "싸해짐", "2", "2", "1"
                 )
             )
         )
