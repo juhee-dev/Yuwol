@@ -218,7 +218,7 @@
         android:layout_width="40sp"
         android:layout_height="20sp"
         android:layout_marginTop="6dp"
-        android:background="@drawable/bg_rectangle_shadow"
+        android:background="@drawable/bg_rectangle_gradient"
         android:text="삭제"
         android:fontFamily="@font/suit"
         android:textColor="@color/gray_100"
