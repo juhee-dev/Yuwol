@@ -7,7 +7,7 @@
     tools:context=".LoginActivity">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/ImageView"
+        android:id="@+id/cardView"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="40dp"
@@ -16,48 +16,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-
-            <ImageView
-                android:id="@+id/iv_rate1_cover"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/login_logo"
-                android:layout_gravity="center"/>
-
+        <ImageView
+            android:id="@+id/iv_rate1_cover"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_logo"
+            android:layout_gravity="center"/>
     </androidx.cardview.widget.CardView>
 
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_login"
+    <TextView
+        android:id="@+id/TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@id/ImageView"
+        android:layout_marginTop="70dp"
+        android:text="Login"
+        android:fontFamily="@font/scdream"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Login">
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_login_signIn"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="Sign in"
-            android:textColor="@color/pink_100"
-            android:backgroundTint="@color/gray_700"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textSize="25dp"
-            />
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageView
+        android:id="@+id/iv_login_effect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/login_effect"
+        app:layout_constraintTop_toBottomOf="@id/TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
     <ImageView
         android:id="@+id/iv_login_signIn_kakao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="34dp"
         android:src="@drawable/kakao_login_medium_wide"
-        app:layout_constraintTop_toBottomOf="@id/cl_login"
+        app:layout_constraintTop_toBottomOf="@id/iv_login_effect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
