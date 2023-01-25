@@ -19,7 +19,7 @@ import com.yuwol.databinding.FragmentHomeBinding
 import com.yuwol.model.Chart
 
 class ChartAllFragment : Fragment() {
-
+//내거 적용이 되나?
     lateinit var binding: FragmentChartAllBinding
     private lateinit var chartAdapter: ChartAllAdapter
     private val chartData = mutableListOf<Chart>()
