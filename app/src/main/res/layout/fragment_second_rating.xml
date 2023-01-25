@@ -6,26 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".fragment.SecondRatingFragment">
 
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="평가하기(2/3)"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036" />
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_roundedrectangle_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="평가하기(2/3)"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="40dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="200dp"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,33 +63,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/cover_note" />
+                android:src="@drawable/cover_omg" />
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tv_rating2_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="우린 그렇게 사랑해서"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Ditto"
         android:textSize="20dp"
         android:textStyle="bold"
         android:translationZ="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="270dp"
+        android:gravity="center"
+        android:background="@color/gray_800" />
 
     <TextView
         android:id="@+id/tv_rating2_artist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="강민경(다비치) 잔나비 최성훈"
+        android:text="NewJeans"
         android:textSize="12dp"
+        android:textColor="@color/gray_100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_rating2_title"/>
+
 
 
     <TextView
@@ -79,6 +102,7 @@
         android:layout_marginTop="30dp"
         android:text="내가 이 노래를 부를 때,\n 분위기는 어땠나요?"
         android:textAlignment="center"
+        android:textColor="@color/gray_300"
         android:textSize="11dp"
         android:translationZ="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,16 +138,6 @@
             android:progressDrawable="@drawable/ic_seekbar"
             android:splitTrack="false"/>
 
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="20"
-            android:translationX="-60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView11"
@@ -131,6 +145,7 @@
             android:layout_height="wrap_content"
             android:text="분위기 찢음"
             android:textSize="14dp"
+            android:textColor="#F04BED"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -142,6 +157,7 @@
             android:layout_marginTop="20dp"
             android:text="분위기 괜찮음"
             android:textSize="14dp"
+            android:textColor="#D850EE"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -152,6 +168,7 @@
             android:layout_marginTop="20dp"
             android:text="분위기 보통"
             android:textSize="14dp"
+            android:textColor="#BF54F0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -162,6 +179,7 @@
             android:layout_marginTop="20dp"
             android:text="분위기 애매함"
             android:textSize="14dp"
+            android:textColor="#A35AF2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -173,24 +191,41 @@
             android:text="분위기 싸해짐"
             android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            android:textColor="#8168F8"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
-    <ImageView
-        android:id="@+id/iv_rating2_back"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ic_forward"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_rating2_3">
 
+        <ImageView
+            android:id="@+id/iv_rating2_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_rating2_forward"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_rating2_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_rating2_back" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

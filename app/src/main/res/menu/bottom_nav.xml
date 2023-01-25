@@ -9,7 +9,7 @@
         android:icon="@drawable/ic_search"/>
     <item android:title="평가"
         android:id="@+id/rating"
-        android:icon="@drawable/ic_mic"/>
+        android:icon="@drawable/ic_mic2"/>
     <item android:title="마이페이지"
         android:id="@+id/user"
         android:icon="@drawable/ic_person"/>

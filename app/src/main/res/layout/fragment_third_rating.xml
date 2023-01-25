@@ -6,17 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".fragment.ThirdRatingFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:text="평가하기(3/3)"
-        android:textSize="15dp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_roundedrectangle_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="평가하기(3/3)"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="10dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView7"
@@ -27,6 +56,7 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:translationZ="10dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,38 +67,73 @@
         android:layout_height="wrap_content"
         android:text="강민경(다비치) 잔나비 최성훈"
         android:textSize="12dp"
+        android:textColor="@color/gray_300"
         android:layout_marginTop="258dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <EditText
+    <androidx.cardview.widget.CardView
         android:id="@+id/editTextTextPersonName"
         android:layout_width="332dp"
         android:layout_height="158dp"
-        android:layout_marginTop="318dp"
-        android:textColor="@color/white"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/gray_500"
         android:ems="10"
-        android:hint="가창 난이도, 분위기, 호흡 등 이 노래에 대한 가창 코멘트를 남겨보세요. (선택)"
-        android:textColorHint="@color/gray_100"
         android:inputType="none"
         android:textSize="14dp"
+        app:cardCornerRadius="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="225dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="612dp"
-        android:background="@drawable/solid_button"
-        android:text="완료"
+        <EditText
+            android:id="@+id/et_my_profile_introduce"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="가창 난이도, 분위기, 호흡 등 이 노래에 대한 가창 코멘트를 남겨보세요. (선택)"
+            android:paddingHorizontal="12dp"
+            android:singleLine="false"
+            android:textColor="@color/white"
+            android:textColorHint="#A1A1A1"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_my_profile_name" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        android:layout_marginTop="60dp">
 
+        <ImageView
+            android:id="@+id/button"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/solid_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="완료"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

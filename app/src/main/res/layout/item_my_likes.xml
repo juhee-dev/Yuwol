@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="55dp"
+    android:layout_height="90dp"
     android:orientation="horizontal"
-    android:layout_marginVertical="5dp"
-    android:layout_marginHorizontal="20dp">
+    >
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="20dp"
+        android:src="@drawable/ic_roundedrectangle_user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_item_my_likes"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="16dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         app:cardCornerRadius="2dp"
-        android:layout_marginLeft="20dp">
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/iv_item_my_likes_cover"
@@ -25,10 +38,15 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:layout_weight="1">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cv_item_my_likes"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="10dp">
 
         <TextView
             android:id="@+id/tv_item_my_likes_title"
@@ -54,14 +72,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가창 난이도 ★"
-                android:textSize="9sp"/>
+                android:textSize="9sp"
+                android:textColor="@color/pink_100"/>
 
             <TextView
                 android:id="@+id/tv_item_my_likes_difficulty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:textSize="9sp"/>
+                android:textSize="9sp"
+                android:textColor="@color/pink_100"/>
 
             <TextView
                 android:id="@+id/textView"
@@ -76,7 +96,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="보통"
-                android:textSize="9sp"/>
+                android:textSize="9sp"
+                android:textColor="@color/pink_100"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -84,9 +105,13 @@
 
     <ImageView
         android:id="@+id/iv_item_my_likes_bookmark"
-        android:layout_width="24dp"
-        android:layout_height="12dp"
-        android:src="@drawable/ic_like"
-        android:layout_gravity="center"/>
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_like2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

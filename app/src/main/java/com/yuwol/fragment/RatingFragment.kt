@@ -44,62 +44,60 @@ class RatingFragment : Fragment() {
         rateData.addAll(
             listOf<Rate>(
                 Rate(
-                    R.drawable.cover_note,
+                    R.drawable.cover3,
                     rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들"
+                    "BORN PINK",
+                    "BLACKPINK"
 
                 ), Rate(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)"
-                ), Rate(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Hype Boy",
-                    "NewJeans"
-
-                ), Rate(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들"
-
-                ), Rate(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)"
-
-                ), Rate(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Hype Boy",
-                    "NewJeans"
-
-                ), Rate(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들"
-                ), Rate(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)"
-
-                ), Rate(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들"
-
-                ), Rate(
-                    R.drawable.cover_note,
+                    R.drawable.cover_endtheory,
                     rank++.toString(),
                     "사건의 지평선",
                     "윤하"
+                ), Rate(
+                    R.drawable.cover_omg,
+                    rank++.toString(),
+                    "Ditto", "NewJeans"
+
+                ), Rate(
+                    R.drawable.cover_like,
+                    rank++.toString(),
+                    "좋니",
+                    "윤종신"
+
+                ), Rate(
+                    R.drawable.cover_antifragile,
+                    rank++.toString(),
+                    "ANTIFRAGILE",
+                    "LE SSERAFIM(르세라핌)"
+
+                ), Rate(
+                    R.drawable.cover_newjeans,
+                    rank++.toString(),
+                    "Hype Boy",
+                    "NewJeans"
+
+                ), Rate(
+                    R.drawable.cover_vibe,
+                    rank++.toString(),
+                    "VIBE", "태양"
+                ), Rate(
+                    R.drawable.cover_hero2,
+                    rank++.toString(),
+                    "Polaroid",
+                    "임영웅"
+
+                ), Rate(
+                    R.drawable.cover_candy,
+                    rank++.toString(),
+                    "Candy",
+                    "NCT DREAM"
+
+                ), Rate(
+                    R.drawable.cover_doit,
+                    rank++.toString(),
+                    "해요(2022)",
+                    "#안녕"
                 )
 
             )
