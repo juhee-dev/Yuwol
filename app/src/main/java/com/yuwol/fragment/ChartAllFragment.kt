@@ -6,8 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.text.set
+import androidx.core.text.toSpannable
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.yuwol.LinearGradientSpan
 import com.yuwol.R
 import com.yuwol.adapter.ChartAllAdapter
 import com.yuwol.databinding.FragmentChartAllBinding
@@ -47,6 +51,12 @@ class ChartAllFragment : Fragment() {
         }
     }
 
+    private fun setTitleGradient(text: String, tv: TextView) {
+        val spannable = text.toSpannable()
+        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_300), ContextCompat.getColor(requireContext(), R.color.purple_300))
+        tv.text = spannable
+    }
+
     private fun initChartRecyclerView() {
         binding.rvChartAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         chartAdapter = ChartAllAdapter()
@@ -59,21 +69,21 @@ class ChartAllFragment : Fragment() {
 
         when (chartType) {
             "hot" -> {
-                binding.tvChartAllTitle.text = getString(R.string.chart_title_smlr)
+                setTitleGradient("송믈리에 차트", binding.tvChartAllTitle)
                 binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
-                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
-                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
+                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
             }
             "melon" -> {
-                binding.tvChartAllTitle.text = getString(R.string.chart_title_melon)
-                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                setTitleGradient("Top 100", binding.tvChartAllTitle)
+                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
                 binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
-                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
             }
             "new" -> {
-                binding.tvChartAllTitle.text = getString(R.string.chart_title_new)
-                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
-                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                setTitleGradient("최신 음악", binding.tvChartAllTitle)
+                binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
+                binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
                 binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
             }
             else -> {

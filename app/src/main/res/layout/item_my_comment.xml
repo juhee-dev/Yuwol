@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:orientation="vertical"
-    android:layout_marginVertical="5dp">
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginTop="22dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -15,16 +16,14 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_item_my_comment"
             android:layout_width="wrap_content"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            app:cardCornerRadius="2dp">
-
+            app:cardCornerRadius="5dp">
             <ImageView
                 android:id="@+id/iv_item_my_comment_cover"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="67dp"
+                android:layout_height="67dp"
                 tools:srcCompat="@tools:sample/avatars"/>
-
         </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -38,6 +37,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Title"
+            android:textColor="@color/gray_100"
+            android:fontFamily="@font/suit"
             android:textSize="13sp" />
 
         <TextView
@@ -45,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Artist"
+            android:fontFamily="@font/suit"
             android:textSize="10sp"
             android:textColor="@color/gray_300"
             android:layout_marginTop="4dp"/>
@@ -60,6 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가창 난이도 ★"
+                android:fontFamily="@font/suit"
                 android:textSize="10sp"
                 android:textColor="@color/pink_100"/>
 
@@ -68,6 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:fontFamily="@font/suit"
                 android:textSize="10sp"
                 android:textColor="@color/pink_100"/>
 
@@ -77,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="분위기 "
+                android:fontFamily="@font/suit"
                 android:textColor="@color/gray_200"
                 android:textSize="10sp" />
 
@@ -85,7 +90,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="보통"
-                android:textSize="9sp"
+                android:fontFamily="@font/suit"
+                android:textSize="10sp"
                 android:textColor="@color/pink_100"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -101,6 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="고음 ★"
+                android:fontFamily="@font/suit"
                 android:textSize="10sp"
                 android:textColor="@color/gray_200"/>
 
@@ -109,8 +116,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:fontFamily="@font/suit"
                 android:textColor="@color/gray_200"
-                android:textSize="9sp"/>
+                android:textSize="10sp"/>
 
             <TextView
                 android:id="@+id/textView_2"
@@ -118,16 +126,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="저음 ★"
+                android:fontFamily="@font/suit"
                 android:textColor="@color/gray_200"
-                android:textSize="9sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_item_my_comment_low"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:fontFamily="@font/suit"
                 android:textColor="@color/gray_200"
-                android:textSize="9sp"/>
+                android:textSize="10sp"/>
 
             <TextView
                 android:id="@+id/textView_3"
@@ -135,33 +145,34 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="랩 ★"
+                android:fontFamily="@font/suit"
                 android:textColor="@color/gray_200"
-                android:textSize="9sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_item_my_comment_rap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:fontFamily="@font/suit"
                 android:textColor="@color/gray_200"
-                android:textSize="9sp"/>
-
-
+                android:textSize="10sp"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <ImageButton
-            android:id="@+id/iv_item_my_comment_bookmark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:src="@drawable/ic_trashcan"
-            android:layout_gravity="center"
-            android:background="@android:color/transparent"
-            app:tint="@color/gray_200" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_circle_gradient" >
+            <ImageView
+                android:id="@+id/iv_item_chart_all_bookmark"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_trashcan"
+                app:tint="@color/gray_300"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -176,6 +187,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="제가 한 마디 하겠습니다 이거 진짜 분위기 찢음"
+            android:fontFamily="@font/suit"
             android:textSize="12sp"
             android:textColor="@color/gray_100"
             />
@@ -193,6 +205,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="22.12.25"
+                android:fontFamily="@font/suit"
                 android:textSize="10sp"
                 android:textColor="@color/gray_300"
                 app:layout_constraintTop_toBottomOf="@id/tv_item_comment"
@@ -218,6 +231,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" 0"
+                android:fontFamily="@font/suit"
                 android:textSize="10sp"
                 android:textColor="@color/gray_300"
                 android:layout_gravity="center"/>
@@ -238,6 +252,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" 0"
+                android:fontFamily="@font/suit"
                 android:textSize="10sp"
                 android:textColor="@color/gray_300"
                 android:layout_gravity="center"/>

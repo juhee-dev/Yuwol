@@ -1,5 +1,6 @@
 package com.yuwol
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentResolver
 import android.content.Intent
@@ -9,10 +10,16 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Base64
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.text.set
+import androidx.core.text.toSpannable
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.dhaval2404.imagepicker.util.FileUriUtils
 import com.yuwol.api.ProfileServiceCreator
@@ -35,22 +42,21 @@ class SignUpActivity : AppCompatActivity() {
     lateinit var body: MultipartBody.Part
     lateinit var introduce: String
     lateinit var imageUri: Uri
-    lateinit var imageFile: File // file:/storage/emulated/0/Android/data/com.yuwol/files/DCIM/IMG_20221201_050535924.jpg
-    lateinit var imagePath: String // 절대경로 - /storage/emulated/0/Android/data/com.yuwol/files/DCIM/IMG_20221201_005427922.jpg
+    lateinit var imageFile: File
+    lateinit var imagePath: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setTitleGradient(binding.tvSignUpTitle.text.toString(), binding.tvSignUpTitle)
 
-        binding.btnSignUpProfile.setColorFilter(Color.WHITE)
         binding.btnSignUpProfile.setOnClickListener {
             ImagePicker.with(this).galleryOnly().galleryMimeTypes(arrayOf("image/*")).crop(1f, 1f).compress(1024)
                 .maxResultSize(400, 400).start()
         }
 
-        // 기본 이미지 설정
         // TODO: get default image file
         val resources: Resources = this.resources
         imageUri = Uri.parse(
@@ -147,4 +153,29 @@ class SignUpActivity : AppCompatActivity() {
 
     }
 
+    private fun setTitleGradient(text: String, tv: TextView) {
+        val spannable = text.toSpannable()
+        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(this, R.color.pink_100), ContextCompat.getColor(this, R.color.purple_100))
+        tv.text = spannable
+    }
+
+//    private fun NameTextWatcher() {
+//        var etName = binding.etSignUpName
+//        etName.addTextChangedListener(object : TextWatcher {
+//            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+//
+//            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+//
+//            @SuppressLint("ResourceAsColor")
+//            override fun afterTextChanged(s: Editable?) {
+//                if (etName.text.length in 3..10) {
+//                    etName.setTextColor(Color.parseColor(R.color.gray_100.toString()))
+//                } else {
+//                    etName.setTextColor(Color.parseColor(R.color.gray_400.toString()))
+//                }
+//
+//            }
+//
+//        })
+//    }
 }

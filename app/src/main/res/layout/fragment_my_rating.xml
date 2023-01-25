@@ -22,8 +22,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="나의 평가"
+        android:fontFamily="@font/scdream"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,8 @@
         android:id="@+id/ll_my_rate_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/tv_my_rate_title"
         app:layout_constraintStart_toStartOf="parent">
@@ -44,6 +45,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="평가"
+            android:fontFamily="@font/scdream"
+            android:textSize="11sp"
             android:textColor="@color/purple_100"/>
         <TextView
             android:id="@+id/tv_my_comment"
@@ -51,7 +54,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="코멘트"/>
+            android:text="코멘트"
+            android:fontFamily="@font/scdream"
+            android:textSize="11sp"
+            android:textColor="@color/gray_150"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
