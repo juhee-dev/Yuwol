@@ -133,6 +133,7 @@
             android:max="100"
             android:progress="20"
             android:rotation="270"
+            android:layout_marginTop="-30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView13"
             app:layout_constraintStart_toStartOf="parent"

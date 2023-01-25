@@ -51,6 +51,9 @@ class MyProfileFragment : Fragment() {
         binding.ivMyProfileBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
         }
+        binding.btnMyProfileSubmit.setOnClickListener{
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
+        }
     }
 
     private fun setTitleGradient(text: String, tv: TextView) {
