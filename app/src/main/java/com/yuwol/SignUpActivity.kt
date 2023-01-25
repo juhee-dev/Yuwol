@@ -14,8 +14,12 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Base64
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.text.set
+import androidx.core.text.toSpannable
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.dhaval2404.imagepicker.util.FileUriUtils
 import com.yuwol.api.ProfileServiceCreator
@@ -45,6 +49,8 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setTitleGradient(binding.tvSignUpTitle.text.toString(), binding.tvSignUpTitle)
 
         binding.btnSignUpProfile.setOnClickListener {
             ImagePicker.with(this).galleryOnly().galleryMimeTypes(arrayOf("image/*")).crop(1f, 1f).compress(1024)
@@ -145,6 +151,12 @@ class SignUpActivity : AppCompatActivity() {
             Log.d("ActivityResult", "something wrong")
         }
 
+    }
+
+    private fun setTitleGradient(text: String, tv: TextView) {
+        val spannable = text.toSpannable()
+        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(this, R.color.pink_100), ContextCompat.getColor(this, R.color.purple_100))
+        tv.text = spannable
     }
 
 //    private fun NameTextWatcher() {
