@@ -44,8 +44,8 @@ class SongDetailFragment : Fragment() {
 
         setTitleGradient(binding.tvSongDetailRating.text.toString(), binding.tvSongDetailRating)
 
-        initCommentList()
-        initCommentRecyclerView()
+//        initCommentList()
+//        initCommentRecyclerView()
 
         binding.tvSongDetailTitle.text = song.title
         binding.tvSongDetailArtist.text = song.artist
@@ -75,49 +75,43 @@ class SongDetailFragment : Fragment() {
         tv.text = spannable
     }
 
-    private fun initCommentRecyclerView() {
-        binding.rvSongDetailCommentBest.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvSongDetailComment.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-
-        commentBestAdapter = CommentBestAdapter()
-        commentAdapter = CommentAdapter()
-
-        commentBestAdapter.dataList = bestCommentData
-        commentAdapter.dataList = commentData
-        Log.d("detail", "count of comment data: ${commentData.size}")
-
-        binding.rvSongDetailComment.adapter = commentAdapter
-    }
-
-    private fun initCommentList() {
-        var id: Long = 0
-        bestCommentData.addAll(
-            listOf<Comment>(
-                Comment(
-                    id++, id++, id++, id++
-                ), Comment(
-                    id++, id++, id++, id++
-                ), Comment(
-                    id++, id++, id++, id++
-                )
-            )
-        )
-        commentData.addAll(
-            listOf<Comment>(
-                Comment(
-                    id++, id++, id++, id++
-                ), Comment(
-                    id++, id++, id++, id++
-                ), Comment(
-                    id++, id++, id++, id++
-                ), Comment(
-                    id++, id++, id++, id++
-                ), Comment(
-                    id++, id++, id++, id++
-                ), Comment(
-                    id++, id++, id++, id++
-                )
-            )
-        )
-    }
+//    private fun initCommentRecyclerView() {
+//        binding.rvSongDetailCommentBest.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+//        binding.rvSongDetailComment.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+//
+//        commentBestAdapter = CommentBestAdapter()
+//        commentAdapter = CommentAdapter()
+//
+//        commentBestAdapter.dataList = bestCommentData
+//        commentAdapter.dataList = commentData
+//        Log.d("detail", "count of comment data: ${commentData.size}")
+//
+//        binding.rvSongDetailComment.adapter = commentAdapter
+//    }
+//
+//    private fun initCommentList() {
+//        bestCommentData.addAll(
+//            listOf<Comment>(
+//                Comment(
+//                    R.drawable.profile_default.toString(),
+//                    "유월월월",
+//                    "제가 한 마디 하겠습니다 이거 진짜 분위기 찢음",
+//                    "22.12.25",
+//                    15, 0
+//                ), Comment(
+//                    R.drawable.profile_default.toString(),
+//                    "유컹컹컹",
+//                    "제가 두 마디 하겠습니다 이거 분위기 찢고 가창 개오짐",
+//                    "22.12.26",
+//                    13, 0
+//                ),Comment(
+//                    R.drawable.profile_default.toString(),
+//                    "유왈왈왈",
+//                    "제가 세 마디 하겠습니다 이거 분위기 찢고 가창 개오지고 저음도 오짐",
+//                    "22.12.26",
+//                    10, 0
+//                ),
+//            )
+//        )
+//    }
 }

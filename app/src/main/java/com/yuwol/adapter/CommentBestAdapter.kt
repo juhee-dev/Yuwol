@@ -28,11 +28,11 @@ class CommentBestAdapter : RecyclerView.Adapter<CommentBestAdapter.ViewHolder>()
     class ViewHolder(private val binding: ItemCommentBestBinding) : RecyclerView.ViewHolder(binding.root){
         fun onBind(comment: Comment){
             binding.ivItemCommentProfile.setImageResource(R.drawable.cover_note)
-            binding.tvItemCommentName.text = comment.member_id.toString()
-            binding.tvItemComment.text = comment.comment_id.toString()
-            binding.tvItemCommentDate.text = "22.00.00"
-            binding.tvItemCommentGood.text = "00"
-            binding.tvItemCommentBad.text = "00"
+            binding.tvItemCommentName.text = comment.name
+            binding.tvItemComment.text = comment.comment
+            binding.tvItemCommentDate.text = comment.date
+            binding.tvItemCommentGood.text = comment.like.toString()
+            binding.tvItemCommentBad.text = comment.dislike.toString()
         }
     }
 

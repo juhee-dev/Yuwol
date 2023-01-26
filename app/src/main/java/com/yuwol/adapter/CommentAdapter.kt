@@ -26,12 +26,12 @@ class CommentAdapter : RecyclerView.Adapter<CommentAdapter.ViewHolder>(), OnClic
 
     class ViewHolder(private val binding: ItemCommentBinding) : RecyclerView.ViewHolder(binding.root){
         fun onBind(comment: Comment){
-            binding.ivItemCommentProfile.setImageResource(R.drawable.cover_newjeans)
-            binding.tvItemCommentName.text = "test"
-            binding.tvItemComment.text = "testtesttesttesttesttesttest"
-            binding.tvItemCommentDate.text = "22.00.00"
-            binding.tvItemCommentGood.text = "00"
-            binding.tvItemCommentBad.text = "00"
+            binding.ivItemCommentProfile.setImageResource(R.drawable.profile_default)
+            binding.tvItemCommentName.text = comment.name
+            binding.tvItemComment.text = comment.comment
+            binding.tvItemCommentDate.text = comment.date
+            binding.tvItemCommentGood.text = comment.like.toString()
+            binding.tvItemCommentBad.text = comment.dislike.toString()
         }
     }
 
