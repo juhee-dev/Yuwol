@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="평가하기(1/3)"
-            android:textSize="15dp"
+            android:textSize="13dp"
             android:fontFamily="@font/suit"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imageView3"
@@ -163,6 +163,7 @@
         android:id="@+id/cl_rating1_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_rating1">
@@ -211,6 +212,7 @@
         android:id="@+id/cl_rating1_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_rating1_2">

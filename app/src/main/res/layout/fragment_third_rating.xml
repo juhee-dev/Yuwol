@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="평가하기(3/3)"
-            android:textSize="15dp"
+            android:textSize="13dp"
             android:fontFamily="@font/suit"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imageView3"
@@ -53,12 +53,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="234dp"
-        android:text="Ditto"
+        android:text="우린 그렇게 사랑해서"
         android:fontFamily="@font/suit"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         android:translationZ="10dp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -67,78 +66,45 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NewJeans"
+        android:layout_marginTop="2dp"
+        android:text="강민경(다비치) 잔나비 최성훈"
         android:textSize="12dp"
         android:fontFamily="@font/suit"
         android:textColor="@color/gray_300"
-        android:layout_marginTop="258dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/textView7" />
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/editTextTextPersonName"
+    <EditText
+        android:id="@+id/et_third_rating"
         android:layout_width="332dp"
         android:layout_height="158dp"
-        android:layout_marginHorizontal="60dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/gray_500"
-        android:ems="10"
-        android:inputType="none"
-        android:textSize="14dp"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="44dp"
+        android:padding="14dp"
+        android:gravity="top"
+        android:background="@drawable/bg_rectangle_gradient"
+        android:hint="가창 난이도, 분위기, 호흡 등 이 노래에 대한 가창 코멘트를 남겨보세요. (선택)"
+        android:fontFamily="@font/suit"
+        android:singleLine="false"
+        android:textColor="@color/white"
+        android:textColorHint="#A1A1A1"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView8" />
 
-        <EditText
-            android:id="@+id/et_my_profile_introduce"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@null"
-            android:hint="가창 난이도, 분위기, 호흡 등 이 노래에 대한 가창 코멘트를 남겨보세요. (선택)"
-            android:paddingHorizontal="12dp"
-            android:fontFamily="@font/suit"
-            android:singleLine="false"
-            android:textColor="@color/white"
-            android:textColorHint="#A1A1A1"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_my_profile_name" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_third_rating_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/ic_rectangle_submit"
+        android:text="완료"
+        android:fontFamily="@font/suit"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        android:layout_marginTop="60dp">
-
-        <ImageView
-            android:id="@+id/button"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:background="@drawable/solid_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="완료"
-            android:fontFamily="@font/suit"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

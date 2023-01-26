@@ -1,6 +1,8 @@
 package com.yuwol.fragment
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,13 +13,12 @@ import androidx.core.text.set
 import androidx.core.text.toSpannable
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
-import com.yuwol.adapter.RateAdapter
-import com.yuwol.databinding.FragmentFirstratingBinding
+import com.yuwol.SignUpActivity
 import com.yuwol.databinding.FragmentUserBinding
-import com.yuwol.model.Rate
 
 class UserFragment : Fragment() {
     lateinit var binding: FragmentUserBinding
+    val TAG = "USER"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,13 +32,14 @@ class UserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setTitleGradient("나의\n싱리스트", binding.textView3)
-        setTitleGradient("나의\n관심", binding.textView4)
-        setTitleGradient("나의\n평가", binding.textView5)
-        setTitleGradient("프로필\n수정", binding.textView6)
-        setTitleGradient("설정", binding.textView7)
+        setMemberInfo()
 
-
+        setTitleGradient(binding.textView.text.toString(), binding.textView)
+        setSettingsGradient(binding.textView3.text.toString(), binding.textView3)
+        setSettingsGradient(binding.textView4.text.toString(), binding.textView4)
+        setSettingsGradient(binding.textView5.text.toString(), binding.textView5)
+        setSettingsGradient(binding.textView6.text.toString(), binding.textView6)
+        setSettingsGradient(binding.textView7.text.toString(), binding.textView7)
 
         binding.ivRectangle.setOnClickListener {
             parentFragmentManager.beginTransaction().replace(R.id.fl_main, MySinglistFragment())
@@ -62,9 +64,28 @@ class UserFragment : Fragment() {
         }
 
     }
+
+    private fun setMemberInfo() {
+        val name = arguments?.getString("name")
+        val image_uri = arguments?.getString("image")
+        val introduce = arguments?.getString("introduce")
+
+        Log.d(TAG, "setMemberInfo: name=${name} introduce=${introduce}")
+
+        binding.tvUserName.text = name
+        binding.ivUserProfile.setImageResource(R.drawable.cover_antifragile)
+        binding.tvUserIntroduce.text = introduce
+    }
+
     private fun setTitleGradient(text: String, tv: TextView) {
         val spannable = text.toSpannable()
-        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_100), ContextCompat.getColor(requireContext(), R.color.purple_100))
+        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_300), ContextCompat.getColor(requireContext(), R.color.purple_300))
+        tv.text = spannable
+    }
+
+    private fun setSettingsGradient(text: String, tv: TextView) {
+        val spannable = text.toSpannable()
+        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_400), ContextCompat.getColor(requireContext(), R.color.purple_100))
         tv.text = spannable
     }
 

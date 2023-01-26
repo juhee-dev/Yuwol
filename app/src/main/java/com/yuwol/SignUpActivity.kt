@@ -1,17 +1,13 @@
 package com.yuwol
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentResolver
 import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Base64
 import android.util.Log
 import android.widget.TextView
@@ -24,6 +20,7 @@ import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.dhaval2404.imagepicker.util.FileUriUtils
 import com.yuwol.api.ProfileServiceCreator
 import com.yuwol.databinding.ActivitySignUpBinding
+import com.yuwol.model.Member
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -82,20 +79,24 @@ class SignUpActivity : AppCompatActivity() {
                     "image",
                     imageFile.name, reqFile
                 )
-                Log.d(TAG, "image file name: ${imageFile.name}") // okhttp3.MultipartBody$Part@4a1ff7e
+                Log.d(TAG, "image file name: ${imageFile.name}")
 
                 val token = intent.getStringExtra("token")!!
                 Log.d(TAG, "token: $token")
                 val req = ProfileServiceCreator.profileService.postProfile(token, username, body, introduce)
                 req.enqueue(object:retrofit2.Callback<ResponseBody> {
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        t.message?.let { Log.e(TAG, "Upload error: $it") } // Upload error: Failed to connect to localhost/127.0.0.1:8080
+                        t.message?.let { Log.e(TAG, "Upload error: $it") }
                     }
 
                     override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                         Log.d(TAG, "Upload success")
+
                         val intent = Intent(this@SignUpActivity, MainActivity::class.java)
                         intent.putExtra("token", token)
+                        intent.putExtra("name", binding.etSignUpName.text.toString())
+                        intent.putExtra("image", imageUri.toString())
+                        intent.putExtra("introduce", binding.etSignUpIntroduce.text.toString())
                         startActivity(intent)
                     }
 
@@ -155,7 +156,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun setTitleGradient(text: String, tv: TextView) {
         val spannable = text.toSpannable()
-        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(this, R.color.pink_100), ContextCompat.getColor(this, R.color.purple_100))
+        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(this, R.color.pink_300), ContextCompat.getColor(this, R.color.purple_300))
         tv.text = spannable
     }
 
