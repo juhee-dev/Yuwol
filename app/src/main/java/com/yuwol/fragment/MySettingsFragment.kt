@@ -41,8 +41,7 @@ class MySettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setTitleGradient("설정", binding.tvMySettingsTitle)
-
+        setTitleGradient(binding.tvMySettingsTitle.text.toString(), binding.tvMySettingsTitle)
 
 //        binding.ivRectangle.setOnClickListener{
 //            parentFragmentManager.beginTransaction().replace(R.id.fl_main,DialogFragment())
@@ -67,10 +66,8 @@ class MySettingsFragment : Fragment() {
 
     private fun setTitleGradient(text: String, tv: TextView) {
         val spannable = text.toSpannable()
-        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_100), ContextCompat.getColor(requireContext(), R.color.purple_100))
+        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_300), ContextCompat.getColor(requireContext(), R.color.purple_300))
         tv.text = spannable
     }
-
-
 
 }
