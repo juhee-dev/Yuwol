@@ -67,77 +67,43 @@ class MyRatingFragment : Fragment() {
         ratingData.addAll(
             listOf<Chart>(
                 Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_endtheory,
                     rank++.toString(),
                     "사건의 지평선",
                     "윤하",
                     "5", "찢음", "5","2","1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_monologue,
                     rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)",
+                    "Monologue", "tei",
                     "2", "보통", "1", "2", "1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_newjeans,
                     rank++.toString(),
-                    "Hype Boy",
-                    "NewJeans",
+                    "Hype boy", "NewJeans",
                     "2", "보통", "2", "2", "1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_emerge,
                     rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들",
+                    "응급실(쾌걸춘향OST)", "izi",
                     "4", "싸해짐", "1","2","4"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_notme,
                     rank++.toString(),
-                    "After Like",
-                    "IVE (아이브)",
+                    "내가아니라도", "주호",
                     "2", "찢음", "2", "1", "2"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_firstlove,
                     rank++.toString(),
-                    "Attention",
-                    "NewJeans",
+                    "첫사랑",
+                    "백아",
                     "3", "싸해짐", "2", "2", "1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_everytime,
                     rank++.toString(),
-                    "사건의 지평선",
-                    "윤하",
+                    "너의모든순간(별에서온그대OST)",
+                    "성시경",
                     "5", "찢음", "5","2","1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)",
-                    "2", "보통", "1", "2", "1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Hype Boy",
-                    "NewJeans",
-                    "2", "보통", "2", "2", "1"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들",
-                    "4", "싸해짐", "1","2","4"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "After Like",
-                    "IVE (아이브)",
-                    "2", "찢음", "2", "1", "2"
-                ), Chart(
-                    R.drawable.cover_note,
-                    rank++.toString(),
-                    "Attention",
-                    "NewJeans",
-                    "3", "싸해짐", "2", "2", "1"
                 )
             )
         )
