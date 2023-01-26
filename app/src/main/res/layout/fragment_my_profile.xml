@@ -54,13 +54,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
+            android:backgroundTint="@color/gray_800"
             app:cardCornerRadius="150dp">
             <ImageView
                 android:id="@+id/iv_my_profile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/profile_default" />
+                android:src="@drawable/login_logo"
+                android:backgroundTint="@color/gray_800"/>
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
 
@@ -114,7 +116,7 @@
         android:layout_marginHorizontal="40dp"
         android:paddingHorizontal="16dp"
         android:paddingVertical="16dp"
-        android:text="안녕하세요 팀 유월입니다!"
+        android:text="안녕하세요. 신나는 노래를 좋아하는 유월입니다!"
         android:hint="자신을 소개해보세요."
         android:gravity="top"
         android:fontFamily="@font/suit"

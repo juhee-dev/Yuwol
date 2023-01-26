@@ -73,7 +73,7 @@ class UserFragment : Fragment() {
         Log.d(TAG, "setMemberInfo: name=${name} introduce=${introduce}")
 
         binding.tvUserName.text = name
-        binding.ivUserProfile.setImageResource(R.drawable.cover_antifragile)
+        binding.ivUserProfile.setImageResource(R.drawable.login_logo)
         binding.tvUserIntroduce.text = introduce
     }
 

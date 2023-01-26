@@ -32,7 +32,7 @@ class RateAdapter(var link:RatingFragment.RatingAdapterToList) : RecyclerView.Ad
         fun onBind(chart: Rate){
             binding.ratingCover.setImageResource(chart.cover)
             binding.ratingTitle.text = chart.title
-
+            binding.ratingArtist.text = chart.artist
         }
     }
 }

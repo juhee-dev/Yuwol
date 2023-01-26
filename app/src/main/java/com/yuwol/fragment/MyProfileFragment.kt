@@ -28,9 +28,8 @@ class MyProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitleGradient("프로필 수정", binding.tvMyProfileTitle)
 
-        setMemberInfo()
+//        setMemberInfo()
 
         binding.ivMyProfileBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
@@ -40,23 +39,15 @@ class MyProfileFragment : Fragment() {
         }
     }
 
-    private fun setMemberInfo() {
-        val name = arguments?.getString("name")
-        val image_uri = arguments?.getString("image")
-        val introduce = arguments?.getString("introduce")
-
-        Log.d(TAG, "프로필 수정: name=${name} introduce=${introduce}")
-
-        binding.etMyProfileName.setText(name)
-        binding.ivMyProfile.setImageResource(R.drawable.cover_antifragile)
-        binding.etMyProfileIntroduce.setText(introduce)
-    }
-
-    private fun setTitleGradient(text: String, tv: TextView) {
-        val spannable = text.toSpannable()
-        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_100), ContextCompat.getColor(requireContext(), R.color.purple_100))
-        tv.text = spannable
-    }
-
-
+//    private fun setMemberInfo() {
+//        val name = arguments?.getString("name")
+//        val image_uri = arguments?.getString("image")
+//        val introduce = arguments?.getString("introduce")
+//
+//        Log.d(TAG, "프로필 수정: name=${name} introduce=${introduce}")
+//
+//        binding.etMyProfileName.setText(name)
+//        binding.ivMyProfile.setImageResource(R.drawable.cover_antifragile)
+//        binding.etMyProfileIntroduce.setText(introduce)
+//    }
 }

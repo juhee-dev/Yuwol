@@ -1,5 +1,7 @@
 package com.yuwol.model
 
+import java.io.Serializable
+
 data class Chart(
     val cover: Int,
     val rank: String,
@@ -10,5 +12,5 @@ data class Chart(
     val high: String,
     val low: String,
     val rap: String,
-)
+) : Serializable
 

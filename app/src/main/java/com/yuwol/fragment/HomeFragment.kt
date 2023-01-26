@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
 import com.yuwol.adapter.ChartAdapter
+import com.yuwol.adapter.ChartMelonAdapter
 import com.yuwol.adapter.ChartNewAdapter
 import com.yuwol.api.MelonChartServiceCreator
 import com.yuwol.data.response.ResponseMelonChartData
@@ -26,7 +27,8 @@ import retrofit2.Response
 
 class HomeFragment : Fragment(), View.OnClickListener {
     lateinit var binding: FragmentHomeBinding
-    private lateinit var chartAdapter: ChartAdapter
+    private lateinit var chartHotAdapter: ChartAdapter
+    private lateinit var chartMelonAdapter: ChartMelonAdapter
     private lateinit var chartNewAdapter: ChartNewAdapter
     private val hotChartData = mutableListOf<SongTemp>()
     private val melonChartData = mutableListOf<SongTemp>()
@@ -48,8 +50,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
         setTitleGradient(getString(R.string.chart_title_melon), binding.textView3)
         setTitleGradient(getString(R.string.chart_title_new), binding.textView4)
 
-        initChartList()
 //        getChartList()
+        initSongmmelierChartList()
+        initMelonChartList()
+        initNewChartList()
         initChartRecyclerView()
 
         binding.tvHomeAll.setOnClickListener(this)
@@ -82,15 +86,16 @@ class HomeFragment : Fragment(), View.OnClickListener {
         binding.rvChartMelon.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         binding.rvChartNew.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.HORIZONTAL, false)
 
-        chartAdapter = ChartAdapter(SongListAdapterToList())
+        chartHotAdapter = ChartAdapter(SongListAdapterToList())
+        chartMelonAdapter = ChartMelonAdapter(SongListAdapterToList())
         chartNewAdapter = ChartNewAdapter(SongListAdapterToList())
 
-        chartAdapter.dataList = hotChartData
-        chartAdapter.dataList = melonChartData
+        chartHotAdapter.dataList = hotChartData
+        chartMelonAdapter.dataList = melonChartData
         chartNewAdapter.dataList = newChartData
 
-        binding.rvChartHot.adapter = chartAdapter
-        binding.rvChartMelon.adapter = chartAdapter
+        binding.rvChartHot.adapter = chartHotAdapter
+        binding.rvChartMelon.adapter = chartMelonAdapter
         binding.rvChartNew.adapter = chartNewAdapter
     }
 
@@ -116,7 +121,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         })
     }
 
-    private fun initChartList() {
+    private fun initSongmmelierChartList() {
         var rank = 1
         hotChartData.addAll(
             listOf<SongTemp>(
@@ -159,8 +164,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 ),
             )
         )
+    }
 
-        rank =1
+    private fun initMelonChartList() {
+        var rank = 1
         melonChartData.addAll(
             listOf<SongTemp>(
                 SongTemp(
@@ -202,7 +209,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 ),
             )
         )
+    }
 
+    private fun initNewChartList() {
+        var rank = 1
         newChartData.addAll(
             listOf<SongTemp>(
                 SongTemp(
