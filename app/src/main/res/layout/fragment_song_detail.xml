@@ -34,9 +34,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
                 <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:src="@drawable/cover_newjeans"/>
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:src="@drawable/cover"/>
             </androidx.cardview.widget.CardView>
             <ImageView
                 android:id="@+id/iv_song_detail_sing_list"
@@ -61,6 +61,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="0"
+                android:fontFamily="@font/suit"
+                android:textSize="12sp"
                 app:layout_constraintTop_toTopOf="@+id/iv_song_detail_like"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_song_detail_like"
                 app:layout_constraintStart_toEndOf="@+id/iv_song_detail_like"/>
@@ -79,6 +81,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="0"
+                android:fontFamily="@font/suit"
+                android:textSize="12sp"
                 app:layout_constraintTop_toTopOf="@+id/iv_song_detail_comment"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_song_detail_comment"
                 app:layout_constraintStart_toEndOf="@+id/iv_song_detail_comment"/>
@@ -87,9 +91,10 @@
                 android:id="@+id/tv_song_detail_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginStart="32dp"
                 android:text="Title"
+                android:fontFamily="@font/suit"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/iv_song_detail_like"
@@ -98,24 +103,31 @@
                 android:id="@+id/tv_song_detail_artist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Artist"
-                android:textSize="14sp"
+                android:fontFamily="@font/suit"
+                android:textSize="11sp"
                 app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_title"
                 app:layout_constraintStart_toStartOf="@id/tv_song_detail_title"/>
             <TextView
                 android:id="@+id/tv_song_detail_album"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Album"
-                android:textSize="14sp"
+                android:fontFamily="@font/suit"
+                android:textSize="10sp"
+                android:textColor="@color/purple_250"
                 app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_artist"
                 app:layout_constraintStart_toStartOf="@id/tv_song_detail_artist"/>
             <TextView
                 android:id="@+id/tv_song_detail_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="2000.00.00"
-                android:textSize="14sp"
+                android:fontFamily="@font/suit"
+                android:textSize="10sp"
                 app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_album"
                 app:layout_constraintStart_toStartOf="@id/tv_song_detail_album"/>
 
@@ -133,7 +145,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="가창 난이도"
-                    android:textSize="16sp"
+                    android:fontFamily="@font/suit"
+                    android:textSize="12sp"
+                    android:textColor="@color/pink_200"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"/>
                 <TextView
@@ -142,7 +156,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:text="0"
-                    android:textSize="16sp"
+                    android:fontFamily="@font/suit"
+                    android:textSize="12sp"
                     app:layout_constraintTop_toTopOf="@+id/TextView"
                     app:layout_constraintStart_toEndOf="@id/TextView"/>
                 <androidx.appcompat.widget.AppCompatRatingBar
@@ -159,9 +174,11 @@
                     android:id="@+id/TextView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="7dp"
                     android:text="고음 난이도"
-                    android:textSize="14sp"
+                    android:fontFamily="@font/suit"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray_300"
                     app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_difficulty"
                     app:layout_constraintEnd_toEndOf="@id/TextView"/>
                 <TextView
@@ -170,7 +187,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:text="0"
-                    android:textSize="14sp"
+                    android:fontFamily="@font/suit"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray_300"
                     app:layout_constraintTop_toTopOf="@+id/TextView2"
                     app:layout_constraintStart_toEndOf="@id/TextView2"/>
                 <androidx.appcompat.widget.AppCompatRatingBar
@@ -189,7 +208,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="저음 난이도"
-                    android:textSize="14sp"
+                    android:fontFamily="@font/suit"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray_300"
                     app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_high"
                     app:layout_constraintEnd_toEndOf="@id/TextView2"/>
                 <TextView
@@ -198,7 +219,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:text="0"
-                    android:textSize="14sp"
+                    android:fontFamily="@font/suit"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray_300"
                     app:layout_constraintTop_toTopOf="@+id/TextView3"
                     app:layout_constraintStart_toEndOf="@id/TextView3"/>
                 <androidx.appcompat.widget.AppCompatRatingBar
@@ -217,7 +240,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="랩 난이도"
-                    android:textSize="14sp"
+                    android:fontFamily="@font/suit"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray_300"
                     app:layout_constraintTop_toBottomOf="@+id/TextView3"
                     app:layout_constraintEnd_toEndOf="@id/TextView3"/>
                 <TextView
@@ -226,7 +251,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:text="0"
-                    android:textSize="14sp"
+                    android:fontFamily="@font/suit"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray_300"
                     app:layout_constraintTop_toTopOf="@+id/TextView4"
                     app:layout_constraintStart_toEndOf="@id/TextView4"/>
                 <androidx.appcompat.widget.AppCompatRatingBar
@@ -242,19 +269,22 @@
 
                 <ImageView
                     android:id="@+id/iv_song_detail_circle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
                     android:layout_marginStart="20dp"
                     android:src="@drawable/ic_circle_gradient5"
-                    app:layout_constraintTop_toTopOf="@+id/tv_song_detail_difficulty"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_song_detail_rap"
+                    android:scaleType="centerInside"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/rb_song_detail_rap"/>
                 <TextView
                     android:id="@+id/tv_song_detail_mood"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="분위기 찢음"
-                    android:textSize="12dp"
+                    android:fontFamily="@font/suit"
+                    android:textStyle="bold"
+                    android:textSize="10sp"
+                    android:textColor="@color/pink_200"
                     app:layout_constraintTop_toTopOf="@+id/iv_song_detail_circle"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_song_detail_circle"
                     app:layout_constraintStart_toStartOf="@id/iv_song_detail_circle"
@@ -265,8 +295,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="상세 평가 더보기"
+                    android:fontFamily="@font/suit"
+                    android:textSize="10sp"
+                    android:textColor="@color/gray_300"
                     android:layout_marginTop="16dp"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_rap"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_song_detail_circle"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -274,49 +307,81 @@
                     android:id="@+id/cl_song_detail_more"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="30dp"
                     app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_more"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:visibility="gone">
                     <TextView
                         android:id="@+id/tv_song_detail_more_difficulty"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="110dp"
+                        android:layout_height="23dp"
+                        android:gravity="center"
+                        android:background="@drawable/bg_rectangle_gradient"
                         android:text="가창 난이도"
+                        android:fontFamily="@font/suit"
+                        android:textSize="8sp"
+                        android:textColor="@color/pink_200"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"/>
                     <TextView
                         android:id="@+id/tv_song_detail_more_high"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="110dp"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/bg_rectangle_gradient"
                         android:text="고음 난이도"
+                        android:fontFamily="@font/suit"
+                        android:textSize="8sp"
+                        android:textColor="@color/gray_300"
                         app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_more_difficulty"
                         app:layout_constraintStart_toStartOf="parent"/>
                     <TextView
                         android:id="@+id/tv_song_detail_more_low"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="110dp"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/bg_rectangle_gradient"
                         android:text="저음 난이도"
+                        android:fontFamily="@font/suit"
+                        android:textSize="8sp"
+                        android:textColor="@color/gray_300"
                         app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_more_high"
                         app:layout_constraintStart_toStartOf="parent"/>
                     <TextView
                         android:id="@+id/tv_song_detail_more_rap"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="110dp"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/bg_rectangle_gradient"
                         android:text="랩 난이도"
+                        android:fontFamily="@font/suit"
+                        android:textSize="8sp"
+                        android:textColor="@color/gray_300"
                         app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_more_low"
                         app:layout_constraintStart_toStartOf="parent"/>
                     <TextView
                         android:id="@+id/tv_song_detail_more_mood"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="110dp"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/bg_rectangle_gradient"
                         android:text="분위기 평가"
+                        android:fontFamily="@font/suit"
+                        android:textSize="8sp"
+                        android:textColor="@color/gray_300"
                         app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_more_rap"
                         app:layout_constraintStart_toStartOf="parent"/>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_rectangle_gradient"
                         app:layout_constraintTop_toTopOf="@+id/tv_song_detail_more_difficulty"
                         app:layout_constraintBottom_toBottomOf="@+id/tv_song_detail_more_mood"
                         app:layout_constraintStart_toEndOf="@+id/tv_song_detail_more_difficulty"
@@ -326,7 +391,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="5.0"
+                            android:fontFamily="@font/suit"
                             android:textSize="16sp"
+                            android:textColor="@color/pink_200"
                             android:textStyle="bold"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -346,23 +413,29 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="총 0명"
+                            android:fontFamily="@font/suit"
+                            android:textSize="8sp"
+                            android:textColor="@color/gray_300"
                             app:layout_constraintTop_toBottomOf="@+id/rb_song_detail_more"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_song_detail_rating"
+            <TextView
+                android:id="@+id/tv_song_detail_rating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginHorizontal="32dp"
+                android:gravity="center"
                 android:text="평가하기"
+                android:fontFamily="@font/suit"
+                android:textSize="11sp"
                 android:textColor="@color/white"
                 android:background="@drawable/bg_rectangle"
                 app:layout_constraintTop_toBottomOf="@+id/cl_song_detail"
-                app:layout_constraintStart_toStartOf="@+id/cl_song_detail"
-                app:layout_constraintEnd_toEndOf="@+id/cl_song_detail"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
             <ImageView
                 android:id="@+id/ImageView"
                 android:layout_width="20dp"
@@ -370,35 +443,47 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
                 android:src="@drawable/ic_comment"
-                app:layout_constraintTop_toBottomOf="@+id/btn_song_detail_rating"
+                app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_rating"
                 app:layout_constraintStart_toStartOf="parent"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="COMMENT"
+                android:fontFamily="@font/suit"
+                android:textStyle="bold"
+                android:textSize="12sp"
                 app:layout_constraintTop_toTopOf="@+id/ImageView"
                 app:layout_constraintStart_toEndOf="@+id/ImageView"/>
             <EditText
                 android:id="@+id/et_song_detail_comment"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="30dp"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:background="@drawable/bg_rectangle_gradient"
                 android:scrollbars="vertical"
                 android:hint="음악에 대한 코멘트를 남겨보세요."
+                android:gravity="top"
+                android:fontFamily="@font/suit"
+                android:textSize="11sp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray_400"
-                android:textSize="14sp"
                 app:layout_constraintTop_toBottomOf="@+id/ImageView"
                 app:layout_constraintStart_toStartOf="parent"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_song_detail_comment"
-                android:layout_width="80dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="30dp"
-                android:background="@drawable/bg_rectangle"
+                android:background="@drawable/bg_rectangle_gradient"
                 android:text="등록"
-                android:textSize="14sp"
+                android:fontFamily="@font/suit"
+                android:textStyle="bold"
+                android:textSize="10sp"
                 app:layout_constraintTop_toBottomOf="@+id/et_song_detail_comment"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -414,20 +499,24 @@
                 app:layout_constraintStart_toStartOf="parent">
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_song_detail_new"
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="30dp"
                     android:text="최신순"
-                    android:textSize="11sp"
+                    android:fontFamily="@font/suit"
+                    android:textStyle="bold"
+                    android:textSize="9sp"
                     android:background="@drawable/bg_rectangle_cr_small"
                     android:backgroundTint="@color/black"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"/>
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_song_detail_popular"
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="30dp"
                     android:text="인기순"
-                    android:textSize="11sp"
+                    android:fontFamily="@font/suit"
+                    android:textStyle="bold"
+                    android:textSize="9sp"
                     android:background="@drawable/bg_rectangle_cr_small"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toEndOf="@id/btn_song_detail_new"/>
@@ -438,6 +527,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="전체 "
+                android:fontFamily="@font/suit"
+                android:textSize="12sp"
                 app:layout_constraintTop_toTopOf="@id/cl_song_detail2"
                 app:layout_constraintBottom_toBottomOf="@id/cl_song_detail2"
                 app:layout_constraintStart_toEndOf="@id/cl_song_detail2"/>
@@ -445,6 +536,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="73"
+                android:fontFamily="@font/suit"
+                android:textSize="12sp"
                 app:layout_constraintTop_toTopOf="@id/cl_song_detail2"
                 app:layout_constraintBottom_toBottomOf="@id/cl_song_detail2"
                 app:layout_constraintStart_toEndOf="@id/tv_song_detail_comment_cnt"/>
@@ -453,7 +546,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_comment_best"
                 app:layout_constraintTop_toBottomOf="@id/cl_song_detail2"
