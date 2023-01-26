@@ -27,7 +27,7 @@ class CommentBestAdapter : RecyclerView.Adapter<CommentBestAdapter.ViewHolder>()
 
     class ViewHolder(private val binding: ItemCommentBestBinding) : RecyclerView.ViewHolder(binding.root){
         fun onBind(comment: Comment){
-            binding.ivItemCommentProfile.setImageResource(R.drawable.cover)
+            binding.ivItemCommentProfile.setImageResource(R.drawable.cover_note)
             binding.tvItemCommentName.text = comment.member_id.toString()
             binding.tvItemComment.text = comment.comment_id.toString()
             binding.tvItemCommentDate.text = "22.00.00"

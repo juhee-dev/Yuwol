@@ -35,7 +35,6 @@ class MyLikesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitleGradient("나의 관심", binding.tvMyLikesTitle)
 
         initChartList()
         initChartRecyclerView()
@@ -43,12 +42,6 @@ class MyLikesFragment : Fragment() {
         binding.ivMyLikesBack.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,UserFragment()).commit()
         }
-    }
-
-    private fun setTitleGradient(text: String, tv: TextView) {
-        val spannable = text.toSpannable()
-        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_100), ContextCompat.getColor(requireContext(), R.color.purple_100))
-        tv.text = spannable
     }
 
     private fun initChartRecyclerView() {
