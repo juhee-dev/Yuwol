@@ -16,11 +16,13 @@ import com.yuwol.R
 import com.yuwol.adapter.ChartAllAdapter
 import com.yuwol.databinding.FragmentChartAllBinding
 import com.yuwol.model.Chart
+import com.yuwol.model.SongTemp
 
 class ChartAllFragment : Fragment() {
     lateinit var binding: FragmentChartAllBinding
     private lateinit var chartAdapter: ChartAllAdapter
     private val chartData = mutableListOf<Chart>()
+    val TAG = "chart"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,9 +45,16 @@ class ChartAllFragment : Fragment() {
 
         binding.tvChartAllHot.setOnClickListener {
             initChartList("hot")
+            initChartRecyclerView()
         }
-        binding.tvChartAllMelon.setOnClickListener { initChartList("melon") }
-        binding.tvChartAllNew.setOnClickListener { initChartList("new") }
+        binding.tvChartAllMelon.setOnClickListener {
+            initChartList("melon")
+            initChartRecyclerView()
+        }
+        binding.tvChartAllNew.setOnClickListener {
+            initChartList("new")
+            initChartRecyclerView()
+        }
         binding.ivChartAllBack.setOnClickListener {
             parentFragmentManager.beginTransaction().replace(R.id.fl_main, HomeFragment()).commit()
         }
@@ -60,7 +69,7 @@ class ChartAllFragment : Fragment() {
     private fun initChartRecyclerView() {
         binding.rvChartAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 
-        chartAdapter = ChartAllAdapter()
+        chartAdapter = ChartAllAdapter(SongListAdapterToList())
 
         chartAdapter.dataList = chartData
 
@@ -97,6 +106,24 @@ class ChartAllFragment : Fragment() {
             else -> {
                 Log.d("chart", "initChartList 오류: intent 값이 없음")
             }
+        }
+    }
+
+    private fun songTransaction(song: Chart) {
+        val bundle = Bundle()
+        val songDetailFragment = SongDetailFragment()
+        bundle.putSerializable("song", song)
+        songDetailFragment.arguments = bundle
+        parentFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_main, songDetailFragment)
+            addToBackStack(null)
+            commit()
+        }
+    }
+
+    inner class SongListAdapterToList {
+        fun getSong(song: Chart) {
+            songTransaction(song)
         }
     }
 
