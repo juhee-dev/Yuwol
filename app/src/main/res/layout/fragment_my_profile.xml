@@ -66,16 +66,16 @@
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/btn_sign_up_profile"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:tint="@color/gray_100"-->
-<!--        android:backgroundTint="@color/gray_700"-->
-<!--        android:src="@drawable/ic_baseline_camera_alt_24"-->
-<!--        app:borderWidth="0dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/cv_my_profile"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/cv_my_profile" />-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_sign_up_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@color/gray_100"
+        android:backgroundTint="@color/gray_700"
+        android:src="@drawable/ic_baseline_camera_alt_24"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_my_profile"
+        app:layout_constraintEnd_toEndOf="@+id/cv_my_profile" />
 
     <EditText
         android:id="@+id/et_my_profile_name"
