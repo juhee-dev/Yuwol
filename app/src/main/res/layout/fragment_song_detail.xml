@@ -323,7 +323,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_song_detail_more"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:visibility="visible">
+                    android:visibility="gone">
                     <TextView
                         android:id="@+id/tv_song_detail_more_difficulty"
                         android:layout_width="110dp"
