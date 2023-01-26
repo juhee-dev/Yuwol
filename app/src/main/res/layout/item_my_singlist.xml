@@ -8,7 +8,7 @@
     android:layout_marginHorizontal="20dp"
     android:paddingHorizontal="16dp"
     android:paddingVertical="10dp"
-    android:background="@drawable/bg_rectangle_mylist">
+    android:background="@drawable/bg_rectangle_shadow">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_item_my_singlist"

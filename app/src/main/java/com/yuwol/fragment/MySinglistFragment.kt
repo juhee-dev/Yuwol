@@ -30,7 +30,6 @@ class MySinglistFragment : Fragment() {
     ): View? {
         binding = FragmentMySinglistBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

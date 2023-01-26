@@ -1,5 +1,6 @@
 package com.yuwol.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.core.text.set
 import androidx.core.text.toSpannable
 import com.yuwol.LinearGradientSpan
 import com.yuwol.R
+import com.yuwol.SignUpActivity
 import com.yuwol.databinding.FragmentUserBinding
 
 class UserFragment : Fragment() {
@@ -48,8 +50,12 @@ class UserFragment : Fragment() {
                 .commit()
         }
         binding.ivRectangle4.setOnClickListener {
-            parentFragmentManager.beginTransaction().replace(R.id.fl_main, MyProfileFragment())
-                .commit()
+//            parentFragmentManager.beginTransaction().replace(R.id.fl_main, MyProfileFragment())
+//                .commit()
+            activity?.let{
+                val intent = Intent(context, SignUpActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         binding.ivRectangle5.setOnClickListener {
