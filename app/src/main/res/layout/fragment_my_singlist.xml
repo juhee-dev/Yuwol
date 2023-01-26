@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:text="나의 관심"
+        android:text="나의 싱리스트"
         android:fontFamily="@font/scdream"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
