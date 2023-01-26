@@ -10,13 +10,19 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.FragmentTransaction
 import com.yuwol.R
+import com.yuwol.adapter.RateAdapter
 import com.yuwol.databinding.FragmentSecondRatingBinding
 import com.yuwol.databinding.FragmentThirdRatingBinding
+import com.yuwol.model.Rate
 import kotlinx.android.synthetic.main.fragment_third_rating.*
 import kotlinx.android.synthetic.main.fragment_third_rating.view.*
 
 class ThirdRatingFragment : Fragment() {
     lateinit var binding: FragmentThirdRatingBinding
+    lateinit var song: Rate
+    private lateinit var RateAdapter: RateAdapter
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -39,6 +45,15 @@ class ThirdRatingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+//        arguments?.let {
+//            song = it.getSerializable("rating") as Rate
+//        }
+//
+//        binding.textView7.text = song.title
+//        binding.textView8.text = song.artist
+
+
 
         binding.button.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,HomeFragment()).commit()

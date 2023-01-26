@@ -33,6 +33,7 @@ class FirstRatingFragment : Fragment() {
 
         binding.tvRating1Title.text = song.title
         binding.tvRating1Artist.text = song.artist
+        binding.ivRate1Cover.setImageResource(song.cover)
 
         binding.ivRating1Back.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,RatingFragment()).commit()

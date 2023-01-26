@@ -38,6 +38,8 @@ class SongDetailFragment : Fragment() {
         binding.tvSongDetailArtist.text = song.artist
         binding.tvSongDetailAlbum.text = song.album
         binding.tvSongDetailDate.text = song.date
+        binding.cvSongCover.setImageResource(song.cover)
+
 
         binding.ivSongDetailBack.setOnClickListener {
             parentFragmentManager.beginTransaction().replace(R.id.fl_main, HomeFragment()).commit()
