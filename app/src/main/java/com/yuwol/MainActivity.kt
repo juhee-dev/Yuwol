@@ -33,8 +33,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-
     }
 
     private  fun replaceFragment(fragment : Fragment) {
@@ -49,11 +47,11 @@ class MainActivity : AppCompatActivity() {
         }
         var image_uri = intent.getStringExtra("image")
         if (image_uri == null) {
-            image_uri = R.drawable.profile_default.toString()
+            image_uri = R.drawable.login_logo.toString()
         }
         var introduce = intent.getStringExtra("introduce")
         if (introduce == null) {
-            introduce = "안녕하세요 팀 유월입니다!"
+            introduce = "안녕하세요. 신나는 노래를 좋아하는 유월입니다!"
         }
         bundle.putString("name", name)
         bundle.putString("image", image_uri)
