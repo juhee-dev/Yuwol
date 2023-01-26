@@ -7,10 +7,11 @@ import com.yuwol.databinding.ItemChartAllBinding
 import com.yuwol.fragment.ChartAllFragment
 import com.yuwol.fragment.HomeFragment
 import com.yuwol.model.Chart
+import com.yuwol.model.SongTemp
 
 class ChartAllAdapter(var link: ChartAllFragment.SongListAdapterToList) : RecyclerView.Adapter<ChartAllAdapter.ViewHolder>() {
 
-    var dataList = mutableListOf<Chart>()
+    var dataList = mutableListOf<SongTemp>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemChartAllBinding.inflate(LayoutInflater.from(parent.context),parent, false)
@@ -28,7 +29,7 @@ class ChartAllAdapter(var link: ChartAllFragment.SongListAdapterToList) : Recycl
     override fun getItemCount(): Int = dataList.size
 
     class ViewHolder(private val binding: ItemChartAllBinding) : RecyclerView.ViewHolder(binding.root){
-        fun onBind(chart: Chart){
+        fun onBind(chart: SongTemp){
             binding.ivItemChartAllCover.setImageResource(chart.cover)
             binding.tvItemChartAllRank.text = chart.rank
             binding.tvItemChartAllTitle.text = chart.title
