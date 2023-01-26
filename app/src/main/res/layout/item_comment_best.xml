@@ -16,7 +16,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
-        android:src="@drawable/cover"
+        android:src="@drawable/cover_newjeans"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="유월월월"
+        android:fontFamily="@font/suit"
         android:textSize="14sp"
         app:layout_constraintTop_toTopOf="@id/iv_item_comment_profile"
         app:layout_constraintBottom_toBottomOf="@id/iv_item_comment_profile"
@@ -39,6 +40,7 @@
         android:layout_marginTop="16dp"
         android:text="제가 한 마디 하겠습니다 이거 진짜 분위기 찢음"
         android:textSize="14sp"
+        android:fontFamily="@font/suit"
         app:layout_constraintTop_toBottomOf="@id/iv_item_comment_profile"
         app:layout_constraintStart_toStartOf="parent"/>
     <TextView
@@ -48,6 +50,7 @@
         android:layout_marginStart="6dp"
         android:layout_marginTop="16dp"
         android:text="22.12.25"
+        android:fontFamily="@font/suit"
         android:textSize="11sp"
         app:layout_constraintTop_toBottomOf="@id/tv_item_comment"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -67,6 +70,7 @@
         android:layout_marginStart="6dp"
         android:layout_marginEnd="10dp"
         android:text="10"
+        android:fontFamily="@font/suit"
         android:textSize="11sp"
         app:layout_constraintTop_toTopOf="@id/tv_item_comment_date"
         app:layout_constraintEnd_toStartOf="@id/ib_item_comment_bad"/>
@@ -85,6 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
         android:text="0"
+        android:fontFamily="@font/suit"
         android:textSize="11sp"
         app:layout_constraintTop_toTopOf="@id/tv_item_comment_date"
         app:layout_constraintEnd_toEndOf="parent"/>

@@ -23,6 +23,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="공지사항"
+        android:fontFamily="@font/scdream"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,6 +38,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="70dp"
         android:layout_marginLeft="10dp"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:fontFamily="@font/suit"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

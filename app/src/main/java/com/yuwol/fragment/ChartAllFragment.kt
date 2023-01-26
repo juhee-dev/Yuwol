@@ -15,14 +15,15 @@ import com.yuwol.LinearGradientSpan
 import com.yuwol.R
 import com.yuwol.adapter.ChartAllAdapter
 import com.yuwol.databinding.FragmentChartAllBinding
-import com.yuwol.databinding.FragmentHomeBinding
 import com.yuwol.model.Chart
 
 class ChartAllFragment : Fragment() {
 //내거 적용이 되나?
     lateinit var binding: FragmentChartAllBinding
     private lateinit var chartAdapter: ChartAllAdapter
-    private val chartData = mutableListOf<Chart>()
+    private val hotChartData = mutableListOf<Chart>()
+    private val melonChartData = mutableListOf<Chart>()
+    private val newChartData = mutableListOf<Chart>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,12 +61,16 @@ class ChartAllFragment : Fragment() {
     private fun initChartRecyclerView() {
         binding.rvChartAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         chartAdapter = ChartAllAdapter()
-        chartAdapter.dataList = chartData
+        chartAdapter.dataList = hotChartData
+        chartAdapter.dataList = melonChartData
+        chartAdapter.dataList = newChartData
         binding.rvChartAll.adapter = chartAdapter
     }
 
     private fun initChartList(chartType: String) {
-        chartData.clear()
+        hotChartData.clear()
+        melonChartData.clear()
+        newChartData.clear()
 
         when (chartType) {
             "hot" -> {
@@ -93,81 +98,231 @@ class ChartAllFragment : Fragment() {
         Log.d("chart", "chartType: "+ chartType)
 
         var rank = 1
-        chartData.addAll(
+        hotChartData.addAll(
             listOf<Chart>(
                 Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_endtheory,
                     rank++.toString(),
                     "사건의 지평선",
                     "윤하",
                     "5", "찢음", "5","2","1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_monologue,
                     rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)",
+                    "Monologue", "tei",
                     "2", "보통", "1", "2", "1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_newjeans,
                     rank++.toString(),
-                    "Hype Boy",
-                    "NewJeans",
+                    "Hype boy", "NewJeans",
                     "2", "보통", "2", "2", "1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_emerge,
                     rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들",
+                    "응급실(쾌걸춘향OST)", "izi",
                     "4", "싸해짐", "1","2","4"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_notme,
                     rank++.toString(),
-                    "After Like",
-                    "IVE (아이브)",
+                    "내가아니라도", "주호",
                     "2", "찢음", "2", "1", "2"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_omg,
                     rank++.toString(),
-                    "Attention",
-                    "NewJeans",
+                    "Ditto", "NewJeans",
                     "3", "싸해짐", "2", "2", "1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_firstlove,
                     rank++.toString(),
-                    "사건의 지평선",
-                    "윤하",
+                    "첫사랑",
+                    "백아",
                     "5", "찢음", "5","2","1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_like,
                     rank++.toString(),
-                    "ANTIFRAGILE",
-                    "LE SSERAFIM (르세라핌)",
+                    "좋니",
+                    "윤종신",
                     "2", "보통", "1", "2", "1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_everytime,
                     rank++.toString(),
-                    "Hype Boy",
-                    "NewJeans",
+                    "너의모든순간(별에서온그대OST)",
+                    "성시경",
                     "2", "보통", "2", "2", "1"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_anywhere,
                     rank++.toString(),
-                    "Nxde",
-                    "(여자)아이들",
+                    "어디에도",
+                    "MC THE MAX",
                     "4", "싸해짐", "1","2","4"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_doit,
                     rank++.toString(),
-                    "After Like",
-                    "IVE (아이브)",
+                    "해요(2022)",
+                    "#안녕",
                     "2", "찢음", "2", "1", "2"
                 ), Chart(
-                    R.drawable.cover_note,
+                    R.drawable.cover_antifragile,
                     rank++.toString(),
-                    "Attention",
-                    "NewJeans",
+                    "ANTIFRAGILE",
+                    "LE SSERAFIM(르세라핌)",
                     "3", "싸해짐", "2", "2", "1"
                 )
+            )
+        )
+
+        rank=1
+        melonChartData.addAll(
+            listOf<Chart>(
+                Chart(
+                    R.drawable.cover_omg,
+                    rank++.toString(),
+                    "Ditto", "NewJeans",
+                    "5", "찢음", "5","2","1"
+                ), Chart(
+                    R.drawable.cover_omg,
+                    rank++.toString(),
+                    "OMG", "NewJeans",
+                    "2", "보통", "1", "2", "1"
+                ),Chart(
+                    R.drawable.cover_newjeans,
+                    rank++.toString(),
+                    "Hype Boy",
+                    "NewJeans",
+                    "4", "싸해짐", "1","2","4"
+                ), Chart(
+                    R.drawable.cover_endtheory,
+                    rank++.toString(),
+                    "사건의 지평선", "윤하",
+                    "2", "보통", "2", "2", "1"
+                ), Chart(
+                    R.drawable.cover_vibe,
+                    rank++.toString(),
+                    "VIBE", "태양",
+                    "4", "싸해짐", "1","2","4"
+                ), Chart(
+                    R.drawable.cover_antifragile,
+                    rank++.toString(),
+                    "ANTIFRAGILE", "LE SSERAFIM (르세라핌)",
+                    "2", "찢음", "2", "1", "2"
+                ), Chart(
+                    R.drawable.cover_loverun,
+                    rank++.toString(),
+                    "사랑은 늘 도망가",
+                    "임영웅",
+                    "3", "싸해짐", "2", "2", "1"
+                ), Chart(
+                    R.drawable.cover_hero,
+                    rank++.toString(),
+                    "우리들의 블루스",
+                    "윤하",
+                    "5", "찢음", "5","2","1"
+                ), Chart(
+                    R.drawable.cover_hero,
+                    rank++.toString(),
+                    "다시 만날 수 있을까",
+                    "LE SSERAFIM (르세라핌)",
+                    "2", "보통", "1", "2", "1"
+                ), Chart(
+                    R.drawable.cover_note,
+                    rank++.toString(),
+                    "London Boy",
+                    "임영웅",
+                    "2", "보통", "2", "2", "1"
+                ), Chart(
+                    R.drawable.cover_hero2,
+                    rank++.toString(),
+                    "Polaroid",
+                    "임영웅",
+                    "4", "싸해짐", "1","2","4"
+                ), Chart(
+                    R.drawable.cover_candy,
+                    rank++.toString(),
+                    "Candy",
+                    "NCT DREAM",
+                    "2", "찢음", "2", "1", "2"
+                ), Chart(
+                    R.drawable.cover_hero,
+                    rank++.toString(),
+                    "무지개",
+                    "임영웅",
+                    "3", "싸해짐", "2", "2", "1"
+                )
+            )
+        )
+
+        rank=1
+        newChartData.addAll(
+            listOf<Chart>(
+                Chart(
+                    R.drawable.cover_shoutout,
+                    rank++.toString(),
+                    "SHOUT OUT", "ENHYPEN",
+                    "5", "찢음", "5","2","1"
+                ), Chart(
+                    R.drawable.cover_imfine,
+                    rank++.toString(),
+                    "비로소 괜찮아질 거야", "PATEKO (파테코), Jayci yucca (제이씨 유카), Kid Wine",
+                    "2", "보통", "1", "2", "1"
+                ), Chart(
+                    R.drawable.cover_imfine,
+                    rank++.toString(),
+                    "힘든 거 알아", "PATEKO (파테코), Jayci yucca (제이씨 유카), Kid Wine",
+                    "2", "보통", "2", "2", "1"
+                ), Chart(
+                    R.drawable.cover_quit,
+                    rank++.toString(),
+                    "퇴사", "Anonymous Artists(어나니머스 아티스트)",
+                    "4", "싸해짐", "1","2","4"
+                ), Chart(
+                    R.drawable.cover_mrtrot,
+                    rank++.toString(),
+                    "님이여", "황민호", "미스터트롯2 예선 베스트 PART2",
+                    "2", "찢음", "2", "1"
+                ), Chart(
+                    R.drawable.cover_bluecheck,
+                    rank++.toString(),
+                    "BLUE CHECK REMIX",
+                    "박재범, Slom",
+                    "5", "찢음", "5","2","1"
+                ), Chart(
+                    R.drawable.cover_yournum,
+                    rank++.toString(),
+                    "니 번호가 뜨는 일",
+                    "이예준",
+                    "2", "보통", "1", "2", "1"
+                ), Chart(
+                    R.drawable.cover_lastlove,
+                    rank++.toString(),
+                    "마지막사랑",
+                    "신예영",
+                    "4", "싸해짐", "1","2","4"
+                ), Chart(
+                    R.drawable.cover_weagain,
+                    rank++.toString(),
+                    "우린 다시",
+                    "정동원",
+                    "2", "보통", "2", "2", "1"
+                ), Chart(
+                    R.drawable.cover_wishlist,
+                    rank++.toString(),
+                    "wishlist",
+                    "Alaina Castillo",
+                    "2", "찢음", "2", "1", "2"
+                ), Chart(
+                    R.drawable.cover_jp,
+                    rank++.toString(),
+                    "ビバハピ",
+                    "Mitchie M(Feat.初音ミク)",
+                    "3", "싸해짐", "2", "2", "1"
+                ), Chart(
+                    R.drawable.cover_flyer,
+                    rank++.toString(),
+                    "Flyer!",
+                    "Chinozo",
+                    "3", "싸해짐", "2", "2", "1"
+                )
+
             )
         )
     }

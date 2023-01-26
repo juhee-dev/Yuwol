@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:fontFamily="@font/scdream"
         android:layout_marginTop="20dp"
         android:text="마이페이지"
         android:textSize="22sp"
@@ -25,7 +25,7 @@
         android:layout_width="116dp"
         android:layout_height="111dp"
         android:layout_marginTop="40dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="200dp"
         app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,10 +49,14 @@
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/gray_800"
+        android:gravity="center"
         android:text="유월"
         android:textSize="20dp"
+        android:translationZ="10dp"
+        android:layout_marginTop="-20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -99,6 +103,7 @@
                 android:textStyle="bold"
                 android:text="나의\n싱리스트"
                 android:textSize="20dp"
+                android:fontFamily="@font/scdream"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -127,6 +132,7 @@
                 android:textStyle="bold"
                 android:text="나의\n관심"
                 android:textSize="20dp"
+                android:fontFamily="@font/scdream"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -153,6 +159,7 @@
                 android:textStyle="bold"
                 android:text="나의\n평가"
                 android:textSize="20dp"
+                android:fontFamily="@font/scdream"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -181,6 +188,7 @@
                 android:text="프로필\n수정"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:fontFamily="@font/scdream"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -207,6 +215,7 @@
                 android:textStyle="bold"
                 android:text="설정"
                 android:textSize="20dp"
+                android:fontFamily="@font/scdream"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

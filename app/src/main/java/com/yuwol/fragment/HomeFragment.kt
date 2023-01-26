@@ -28,7 +28,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
     lateinit var binding: FragmentHomeBinding
     private lateinit var chartAdapter: ChartAdapter
     private lateinit var chartNewAdapter: ChartNewAdapter
-    private val chartData = mutableListOf<SongTemp>()
+    private val hotChartData = mutableListOf<SongTemp>()
+    private val melonChartData = mutableListOf<SongTemp>()
+    private val newChartData = mutableListOf<SongTemp>()
     val TAG = "home"
 
     override fun onCreateView(
@@ -83,8 +85,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
         chartAdapter = ChartAdapter(SongListAdapterToList())
         chartNewAdapter = ChartNewAdapter(SongListAdapterToList())
 
-        chartAdapter.dataList = chartData
-        chartNewAdapter.dataList = chartData
+        chartAdapter.dataList = hotChartData
+        chartAdapter.dataList = melonChartData
+        chartNewAdapter.dataList = newChartData
 
         binding.rvChartHot.adapter = chartAdapter
         binding.rvChartMelon.adapter = chartAdapter
@@ -115,45 +118,131 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     private fun initChartList() {
         var rank = 1
-        chartData.addAll(
+        hotChartData.addAll(
             listOf<SongTemp>(
                 SongTemp(
-                    R.drawable.cover2,
+                    R.drawable.cover_endtheory,
                     rank++.toString(),
                     "사건의 지평선", "윤하", "END THEORY", "2022.03.30",
                     "5", "찢음", "5","2","1",
                     130, 12
                 ), SongTemp(
-                    R.drawable.cover1,
+                    R.drawable.cover_monologue,
                     rank++.toString(),
-                    "ANTIFRAGILE", "LE SSERAFIM (르세라핌)", "ANTIFRAGILE", "2022.10.17",
+                    "Monologue", "tei", "ANTIFRAGILE", "2022.10.17",
                     "4", "싸해짐", "4", "4", "4",
                     80, 7
                 ), SongTemp(
-                    R.drawable.cover3,
+                    R.drawable.cover_newjeans,
                     rank++.toString(),
-                    "Shut Down", "BLACKPINK", "BORN PINK", "2022.09.16",
+                    "Hype boy", "NewJeans", "NewJeans", "2022.08.01",
                     "4", "싸해짐", "4","4","4",
                     100, 9
                 ), SongTemp(
-                    R.drawable.cover2,
+                    R.drawable.cover_emerge,
                     rank++.toString(),
-                    "사건의 지평선", "윤하", "END THEORY", "2022.03.30",
+                    "응급실(쾌걸춘향OST)", "izi", "END THEORY", "2022.03.30",
                     "5", "찢음", "5","2","1",
                     130, 12
                 ), SongTemp(
-                    R.drawable.cover1,
+                    R.drawable.cover_notme,
                     rank++.toString(),
-                    "ANTIFRAGILE", "LE SSERAFIM (르세라핌)", "ANTIFRAGILE", "2022.10.17",
+                    "내가아니라도", "주호", "ANTIFRAGILE", "2022.10.17",
                     "4", "싸해짐", "4", "4", "4",
                     80, 7
                 ), SongTemp(
-                    R.drawable.cover3,
+                    R.drawable.cover_omg,
                     rank++.toString(),
-                    "Shut Down", "BLACKPINK", "BORN PINK", "2022.09.16",
+                    "Ditto", "NewJeans", "OMG", "2023.01.02",
                     "4", "싸해짐", "4","4","4",
                     100, 9
                 ),
+            )
+        )
+
+        rank =1
+        melonChartData.addAll(
+            listOf<SongTemp>(
+                SongTemp(
+                    R.drawable.cover_omg,
+                    rank++.toString(),
+                    "Ditto", "NewJeans", "OMG", "2023.01.02",
+                    "5", "찢음", "5","2","1",
+                    130, 12
+                ), SongTemp(
+                    R.drawable.cover_omg,
+                    rank++.toString(),
+                    "OMG", "NewJeans", "OMG", "2023.01.02",
+                    "4", "싸해짐", "4", "4", "4",
+                    80, 7
+                ), SongTemp(
+                    R.drawable.cover_newjeans,
+                    rank++.toString(),
+                    "Hype Boy", "NewJeans", "NewJeans", "2022.08.01",
+                    "4", "싸해짐", "4","4","4",
+                    100, 9
+                ), SongTemp(
+                    R.drawable.cover_endtheory,
+                    rank++.toString(),
+                    "사건의 지평선", "윤하", "END THEORY", "2022.03.30",
+                    "5", "찢음", "5","2","1",
+                    130, 12
+                ), SongTemp(
+                    R.drawable.cover_vibe,
+                    rank++.toString(),
+                    "VIBE", "태양", "VIBE", "2023.01.13",
+                    "4", "싸해짐", "4", "4", "4",
+                    80, 7
+                ), SongTemp(
+                    R.drawable.cover_antifragile,
+                    rank++.toString(),
+                    "ANTIFRAGILE", "LE SSERAFIM (르세라핌)", "ANTIFRAGILE", "2022.10.17",
+                    "4", "싸해짐", "4", "4", "4",
+                    80, 7
+                ),
+            )
+        )
+
+        newChartData.addAll(
+            listOf<SongTemp>(
+                SongTemp(
+                    R.drawable.cover_shoutout,
+                    rank++.toString(),
+                    "SHOUT OUT", "ENHYPEN", "MANIFESTO : DAY 1", "2022.07.04",
+                    "4", "싸해짐", "4", "4", "4",
+                    80, 7
+                ), SongTemp(
+                    R.drawable.cover_imfine,
+                    rank++.toString(),
+                    "비로소 괜찮아질 거야", "PATEKO (파테코), Jayci yucca (제이씨 유카), Kid Wine", "어서와요 키카코 하우스 2", "2022.12.29",
+                    "4", "싸해짐", "4","4","4",
+                    100, 9
+                ), SongTemp(
+                    R.drawable.cover_imfine,
+                    rank++.toString(),
+                    "힘든 거 알아", "PATEKO (파테코), Jayci yucca (제이씨 유카), Kid Wine", "어서와요 키카코 하우스 2", "2022.12.29",
+                    "5", "찢음", "5","2","1",
+                    130, 12
+                ), SongTemp(
+                    R.drawable.cover_quit,
+                    rank++.toString(),
+                    "퇴사", "Anonymous Artists(어나니머스 아티스트)", "ARTISI 이민석", "2020.07.30",
+                    "4", "싸해짐", "4", "4", "4",
+                    80, 7
+                ), SongTemp(
+                    R.drawable.cover_mrtrot,
+                    rank++.toString(),
+                    "님이여", "황민호", "미스터트롯2 예선 베스트 PART2", "2022.12.30",
+                    "4", "싸해짐", "4","4","4",
+                    100, 9
+                ),
+                SongTemp(
+                    R.drawable.cover_bluecheck,
+                    rank++.toString(),
+                    "BLUE CHECK REMIX", "박재범, Slom", "SLAY HOUSE REMIX", "2023.01.17",
+                    "4", "싸해짐", "4","4","4",
+                    100, 9
+                )
             )
         )
     }
