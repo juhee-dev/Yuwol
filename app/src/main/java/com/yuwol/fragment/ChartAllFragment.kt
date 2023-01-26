@@ -18,12 +18,9 @@ import com.yuwol.databinding.FragmentChartAllBinding
 import com.yuwol.model.Chart
 
 class ChartAllFragment : Fragment() {
-//내거 적용이 되나?
     lateinit var binding: FragmentChartAllBinding
     private lateinit var chartAdapter: ChartAllAdapter
-    private val hotChartData = mutableListOf<Chart>()
-    private val melonChartData = mutableListOf<Chart>()
-    private val newChartData = mutableListOf<Chart>()
+    private val chartData = mutableListOf<Chart>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +41,9 @@ class ChartAllFragment : Fragment() {
             }
         }
 
-        binding.tvChartAllHot.setOnClickListener { initChartList("hot") }
+        binding.tvChartAllHot.setOnClickListener {
+            initChartList("hot")
+        }
         binding.tvChartAllMelon.setOnClickListener { initChartList("melon") }
         binding.tvChartAllNew.setOnClickListener { initChartList("new") }
         binding.ivChartAllBack.setOnClickListener {
@@ -60,17 +59,18 @@ class ChartAllFragment : Fragment() {
 
     private fun initChartRecyclerView() {
         binding.rvChartAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
         chartAdapter = ChartAllAdapter()
-        chartAdapter.dataList = hotChartData
-        chartAdapter.dataList = melonChartData
-        chartAdapter.dataList = newChartData
+
+        chartAdapter.dataList = chartData
+
         binding.rvChartAll.adapter = chartAdapter
     }
 
     private fun initChartList(chartType: String) {
-        hotChartData.clear()
-        melonChartData.clear()
-        newChartData.clear()
+        Log.d("chart", "chartType: "+ chartType)
+
+        chartData.clear()
 
         when (chartType) {
             "hot" -> {
@@ -78,27 +78,31 @@ class ChartAllFragment : Fragment() {
                 binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
                 binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
                 binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
+                initHotChartList()
             }
             "melon" -> {
                 setTitleGradient("Top 100", binding.tvChartAllTitle)
                 binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
                 binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
                 binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
+                initMelonChartList()
             }
             "new" -> {
                 setTitleGradient("최신 음악", binding.tvChartAllTitle)
                 binding.tvChartAllHot.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
                 binding.tvChartAllMelon.setTextColor(ContextCompat.getColor(requireActivity(), R.color.gray_150))
                 binding.tvChartAllNew.setTextColor(ContextCompat.getColor(requireActivity(), R.color.purple_100))
+                initNewChartList()
             }
             else -> {
                 Log.d("chart", "initChartList 오류: intent 값이 없음")
             }
         }
-        Log.d("chart", "chartType: "+ chartType)
+    }
 
+    private fun initHotChartList() {
         var rank = 1
-        hotChartData.addAll(
+        chartData.addAll(
             listOf<Chart>(
                 Chart(
                     R.drawable.cover_endtheory,
@@ -170,9 +174,11 @@ class ChartAllFragment : Fragment() {
                 )
             )
         )
+    }
 
-        rank=1
-        melonChartData.addAll(
+    private fun initMelonChartList() {
+        var rank = 1
+        chartData.addAll(
             listOf<Chart>(
                 Chart(
                     R.drawable.cover_omg,
@@ -250,9 +256,11 @@ class ChartAllFragment : Fragment() {
                 )
             )
         )
+    }
 
-        rank=1
-        newChartData.addAll(
+    private fun initNewChartList() {
+        var rank = 1
+        chartData.addAll(
             listOf<Chart>(
                 Chart(
                     R.drawable.cover_shoutout,
