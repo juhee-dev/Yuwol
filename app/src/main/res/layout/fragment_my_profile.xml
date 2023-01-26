@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_wline"
     tools:context=".fragment.MyProfileFragment">
 
     <ImageView
@@ -23,138 +24,122 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="프로필 수정"
-        android:textSize="22sp"
-        android:textStyle="bold"
         android:fontFamily="@font/scdream"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/effect_line"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_profile_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        app:cardBackgroundColor="@color/white"
+        android:id="@+id/cv_my_profile"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:cardBackgroundColor="@color/gray_800"
         app:cardCornerRadius="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_my_profile_title"
         android:layout_marginTop="72dp">
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             app:cardCornerRadius="150dp">
-
             <ImageView
-                android:id="@+id/iv_rate1_cover"
+                android:id="@+id/iv_my_profile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/cover_note" />
+                android:src="@drawable/profile_default" />
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_my_profile"
+        android:id="@+id/btn_sign_up_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/gray_100"
+        app:tint="@color/gray_100"
+        android:backgroundTint="@color/gray_700"
         android:src="@drawable/ic_baseline_camera_alt_24"
         app:borderWidth="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="@+id/cardView" />
+        app:layout_constraintBottom_toBottomOf="@+id/cv_my_profile"
+        app:layout_constraintEnd_toEndOf="@+id/cv_my_profile" />
 
     <EditText
         android:id="@+id/et_my_profile_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="60dp"
-        android:background="@drawable/bg_rectangle_signup"
-        android:backgroundTint="@color/gray_500"
-        android:hint="닉네임"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="35dp"
+        android:paddingHorizontal="16dp"
         android:fontFamily="@font/suit"
-        android:paddingHorizontal="12dp"
-        android:textColor="@color/white"
+        android:text="유월"
+        android:hint="닉네임"
+        android:maxLength="16"
         android:textColorHint="#A1A1A1"
+        android:textColor="@color/white"
         android:textSize="14sp"
+        android:background="@drawable/bg_rectangle_gradient"
+        app:layout_constraintTop_toBottomOf="@id/cv_my_profile"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        android:layout_marginTop="20sp"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
-        android:id="@+id/tv_my_profile_name_count"
+        android:id="@+id/TextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="@color/gray_100"
-        app:layout_constraintTop_toBottomOf="@id/et_my_profile_name"
-        app:layout_constraintEnd_toStartOf="@id/TextView"/>
-    <TextView
-        android:id="@+id/TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:text="/15"
-        android:textColor="@color/gray_100"
+        android:layout_marginStart="4dp"
+        android:text="*"
+        android:fontFamily="@font/suit"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:textColor="@color/pink_300"
         app:layout_constraintTop_toBottomOf="@id/et_my_profile_name"
         app:layout_constraintEnd_toEndOf="@id/et_my_profile_name"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_my_profile2"
+    <EditText
+        android:id="@+id/et_my_profile_introduce"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="60dp"
-        android:backgroundTint="@color/gray_500"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_my_profile_name_count"
-        app:layout_constraintStart_toStartOf="parent">
-        <EditText
-            android:id="@+id/et_my_profile_introduce"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="12dp"
-            android:hint="자신을 소개해보세요."
-            android:fontFamily="@font/suit"
-            android:textColorHint="#A1A1A1"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:singleLine="false"
-            android:background="@null"
-            app:layout_constraintTop_toBottomOf="@id/et_my_profile_name"
-            app:layout_constraintStart_toStartOf="parent"/>
-    </androidx.cardview.widget.CardView>
-    <TextView
-        android:id="@+id/tv_my_profile_introduce_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="@color/gray_100"
-        app:layout_constraintTop_toBottomOf="@id/cv_my_profile2"
-        app:layout_constraintEnd_toStartOf="@id/TextView2"/>
-    <TextView
-        android:id="@+id/TextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:text="/15"
-        android:textColor="@color/gray_100"
-        app:layout_constraintTop_toBottomOf="@id/cv_my_profile2"
-        app:layout_constraintEnd_toEndOf="@id/cv_my_profile2"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_my_profile_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="수정 완료"
+        android:layout_height="110dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="40dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        android:text="안녕하세요 팀 유월입니다!"
+        android:hint="자신을 소개해보세요."
+        android:gravity="top"
         android:fontFamily="@font/suit"
-        android:background="@drawable/bg_rectangle"
-        app:layout_constraintTop_toBottomOf="@id/tv_my_profile_introduce_count"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:maxLength="100"
+        android:textColorHint="#A1A1A1"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:singleLine="false"
+        android:background="@drawable/bg_rectangle_gradient"
+        app:layout_constraintTop_toBottomOf="@id/TextView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_my_profile_submit"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:text="수정 완료"
+        android:fontFamily="@font/suit"
+        android:textSize="17sp"
+        android:textColor="@color/gray_100"
+        android:background="@drawable/bg_rectangle_gradient"
+        app:layout_constraintTop_toBottomOf="@id/et_my_profile_introduce"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

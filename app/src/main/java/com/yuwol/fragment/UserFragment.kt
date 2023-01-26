@@ -2,6 +2,7 @@ package com.yuwol.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,7 @@ import com.yuwol.databinding.FragmentUserBinding
 
 class UserFragment : Fragment() {
     lateinit var binding: FragmentUserBinding
+    val TAG = "USER"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +31,8 @@ class UserFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setMemberInfo()
 
         setTitleGradient(binding.textView.text.toString(), binding.textView)
         setSettingsGradient(binding.textView3.text.toString(), binding.textView3)
@@ -50,12 +54,8 @@ class UserFragment : Fragment() {
                 .commit()
         }
         binding.ivRectangle4.setOnClickListener {
-//            parentFragmentManager.beginTransaction().replace(R.id.fl_main, MyProfileFragment())
-//                .commit()
-            activity?.let{
-                val intent = Intent(context, SignUpActivity::class.java)
-                startActivity(intent)
-            }
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main, MyProfileFragment())
+                .commit()
         }
 
         binding.ivRectangle5.setOnClickListener {
@@ -63,6 +63,18 @@ class UserFragment : Fragment() {
                 .commit()
         }
 
+    }
+
+    private fun setMemberInfo() {
+        val name = arguments?.getString("name")
+        val image_uri = arguments?.getString("image")
+        val introduce = arguments?.getString("introduce")
+
+        Log.d(TAG, "setMemberInfo: name=${name} introduce=${introduce}")
+
+        binding.tvUserName.text = name
+        binding.ivUserProfile.setImageResource(R.drawable.cover_antifragile)
+        binding.tvUserIntroduce.text = introduce
     }
 
     private fun setTitleGradient(text: String, tv: TextView) {
