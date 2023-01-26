@@ -1,6 +1,7 @@
 package com.yuwol.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +11,7 @@ import com.yuwol.adapter.RateAdapter
 import com.yuwol.databinding.FragmentSecondRatingBinding
 import com.yuwol.model.Rate
 
-
 class SecondRatingFragment : Fragment() {
-
     lateinit var binding: FragmentSecondRatingBinding
     lateinit var song: Rate
     private lateinit var RateAdapter: RateAdapter
@@ -29,18 +28,12 @@ class SecondRatingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        arguments?.let {
-//            song = it.getSerializable("rating") as Rate
-//        }
-//
-//        binding.tvRating1Title.text = song.title
-//        binding.tvRating1Artist.text = song.artist
-
         binding.ivRating2Forward.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,ThirdRatingFragment()).commit()
         }
         binding.ivRating2Back.setOnClickListener{
-            parentFragmentManager.beginTransaction().replace(R.id.fl_main,SecondRatingFragment()).commit()
+            Log.d("rating", "onViewCreated: 뒤로가기")
+            parentFragmentManager.beginTransaction().replace(R.id.fl_main,FirstRatingFragment()).commit()
         }
     }
 }
