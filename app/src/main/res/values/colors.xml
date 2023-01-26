@@ -9,8 +9,11 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="purple_100">#785BD9</color>
+    <color name="purple_250">#8C73DF</color>
     <color name="purple_300">#643FE1</color>
+    <color name="pink_50">#D68AAE</color>
     <color name="pink_100">#B9637B</color>
+    <color name="pink_200">#DC607E</color>
     <color name="pink_300">#E13FB4</color>
     <color name="pink_400">#A44D65</color>
     <color name="gray_100">#EAEAEA</color>

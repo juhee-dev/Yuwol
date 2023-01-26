@@ -6,15 +6,16 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yuwol.R
+import com.yuwol.databinding.ItemCommentBestBinding
 import com.yuwol.databinding.ItemCommentBinding
 import com.yuwol.model.Comment
 
-class CommentAdapter : RecyclerView.Adapter<CommentAdapter.ViewHolder>(), OnClickListener {
+class CommentBestAdapter : RecyclerView.Adapter<CommentBestAdapter.ViewHolder>(), OnClickListener {
 
     var dataList = mutableListOf<Comment>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemCommentBinding.inflate(LayoutInflater.from(parent.context),parent, false)
+        val binding = ItemCommentBestBinding.inflate(LayoutInflater.from(parent.context),parent, false)
         return ViewHolder(binding)
     }
 
@@ -24,9 +25,9 @@ class CommentAdapter : RecyclerView.Adapter<CommentAdapter.ViewHolder>(), OnClic
 
     override fun getItemCount(): Int = dataList.size
 
-    class ViewHolder(private val binding: ItemCommentBinding) : RecyclerView.ViewHolder(binding.root){
+    class ViewHolder(private val binding: ItemCommentBestBinding) : RecyclerView.ViewHolder(binding.root){
         fun onBind(comment: Comment){
-            binding.ivItemCommentProfile.setImageResource(R.drawable.profile_default)
+            binding.ivItemCommentProfile.setImageResource(R.drawable.cover_note)
             binding.tvItemCommentName.text = comment.name
             binding.tvItemComment.text = comment.comment
             binding.tvItemCommentDate.text = comment.date

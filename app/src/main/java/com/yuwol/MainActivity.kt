@@ -38,9 +38,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private  fun replaceFragment(fragment : Fragment) {
-        val token = intent.getStringExtra("token")!!
         var bundle = Bundle()
+        
+        val token = intent.getStringExtra("token")!!
         bundle.putString("token", token)
+
+        var name = intent.getStringExtra("name")
+        if (name == null) {
+            name = "유월"
+        }
+        var image_uri = intent.getStringExtra("image")
+        if (image_uri == null) {
+            image_uri = R.drawable.profile_default.toString()
+        }
+        var introduce = intent.getStringExtra("introduce")
+        if (introduce == null) {
+            introduce = "안녕하세요 팀 유월입니다!"
+        }
+        bundle.putString("name", name)
+        bundle.putString("image", image_uri)
+        bundle.putString("introduce", introduce)
+
         fragment.arguments = bundle
 
         val fragmentManager = supportFragmentManager

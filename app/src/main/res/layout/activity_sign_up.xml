@@ -31,32 +31,67 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        app:cardCornerRadius="100dp"
-        android:backgroundTint="@color/gray_800"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:cardBackgroundColor="@color/gray_800"
+        app:cardCornerRadius="200dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_sign_up_title">
-        <ImageView
-            android:id="@+id/iv_sign_up_profile"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/profile_default"
-            android:background="@drawable/bg_circle_gradient"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sign_up_title"
+        android:layout_marginTop="72dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="150dp">
+            <ImageView
+                android:id="@+id/iv_sign_up_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_default" />
+        </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_sign_up_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_camera_alt_24"
         app:tint="@color/gray_100"
-        android:backgroundTint="#1E1E1E"
+        android:backgroundTint="@color/gray_700"
+        android:src="@drawable/ic_baseline_camera_alt_24"
         app:borderWidth="0dp"
-        app:layout_constraintEnd_toEndOf="@id/cv_sign_up"
-        app:layout_constraintBottom_toBottomOf="@id/cv_sign_up"/>
+        app:layout_constraintBottom_toBottomOf="@+id/cv_sign_up"
+        app:layout_constraintEnd_toEndOf="@+id/cv_sign_up" />
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/cv_sign_up"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        app:cardCornerRadius="100dp"-->
+<!--        android:backgroundTint="@color/gray_800"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_sign_up_title">-->
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_sign_up_profile"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:src="@drawable/profile_default"/>-->
+<!--    </androidx.cardview.widget.CardView>-->
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/btn_sign_up_profile"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_baseline_camera_alt_24"-->
+<!--        app:tint="@color/gray_100"-->
+<!--        android:backgroundTint="#1E1E1E"-->
+<!--        app:borderWidth="0dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/cv_sign_up"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/cv_sign_up"/>-->
 
     <EditText
         android:id="@+id/et_sign_up_name"
@@ -64,7 +99,7 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="35dp"
-        android:paddingHorizontal="12dp"
+        android:paddingHorizontal="16dp"
         android:hint="닉네임"
         android:fontFamily="@font/suit"
         android:maxLength="16"
@@ -75,27 +110,27 @@
         app:layout_constraintTop_toBottomOf="@id/cv_sign_up"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-        android:id="@+id/tv_sign_up_name_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:fontFamily="@font/suit"
-        android:textSize="10sp"
-        android:textColor="@color/gray_350"
-        app:layout_constraintTop_toBottomOf="@id/et_sign_up_name"
-        app:layout_constraintEnd_toStartOf="@id/TextView"/>
-    <TextView
-        android:id="@+id/TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:text="/15"
-        android:fontFamily="@font/suit"
-        android:textSize="10sp"
-        android:textColor="@color/gray_350"
-        app:layout_constraintTop_toBottomOf="@id/et_sign_up_name"
-        app:layout_constraintEnd_toEndOf="@id/et_sign_up_name"/>
+<!--    <TextView-->
+<!--        android:id="@+id/tv_sign_up_name_count"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="0"-->
+<!--        android:fontFamily="@font/suit"-->
+<!--        android:textSize="10sp"-->
+<!--        android:textColor="@color/gray_350"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/et_sign_up_name"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/TextView"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/TextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:text="/15"-->
+<!--        android:fontFamily="@font/suit"-->
+<!--        android:textSize="10sp"-->
+<!--        android:textColor="@color/gray_350"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/et_sign_up_name"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/et_sign_up_name"/>-->
     <TextView
         android:id="@+id/TextView3"
         android:layout_width="wrap_content"
@@ -107,7 +142,7 @@
         android:textStyle="bold"
         android:textColor="@color/pink_300"
         app:layout_constraintTop_toBottomOf="@id/et_sign_up_name"
-        app:layout_constraintStart_toEndOf="@id/TextView"/>
+        app:layout_constraintEnd_toEndOf="@id/et_sign_up_name"/>
 
     <EditText
         android:id="@+id/et_sign_up_introduce"
@@ -115,8 +150,10 @@
         android:layout_height="110dp"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="40dp"
-        android:paddingHorizontal="12dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
         android:hint="자신을 소개해보세요."
+        android:gravity="top"
         android:fontFamily="@font/suit"
         android:maxLength="100"
         android:textColorHint="#A1A1A1"
@@ -124,30 +161,30 @@
         android:textSize="14sp"
         android:singleLine="false"
         android:background="@drawable/bg_rectangle_gradient"
-        app:layout_constraintTop_toBottomOf="@id/TextView"
+        app:layout_constraintTop_toBottomOf="@id/TextView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-        android:id="@+id/tv_sign_up_introduce_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:fontFamily="@font/suit"
-        android:textSize="10sp"
-        android:textColor="@color/gray_350"
-        app:layout_constraintTop_toBottomOf="@id/et_sign_up_introduce"
-        app:layout_constraintEnd_toStartOf="@id/TextView2"/>
-    <TextView
-        android:id="@+id/TextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:text="/100"
-        android:fontFamily="@font/suit"
-        android:textSize="10sp"
-        android:textColor="@color/gray_350"
-        app:layout_constraintTop_toBottomOf="@id/et_sign_up_introduce"
-        app:layout_constraintEnd_toEndOf="@id/et_sign_up_introduce"/>
+<!--    <TextView-->
+<!--        android:id="@+id/tv_sign_up_introduce_count"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="0"-->
+<!--        android:fontFamily="@font/suit"-->
+<!--        android:textSize="10sp"-->
+<!--        android:textColor="@color/gray_350"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/et_sign_up_introduce"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/TextView2"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/TextView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:text="/100"-->
+<!--        android:fontFamily="@font/suit"-->
+<!--        android:textSize="10sp"-->
+<!--        android:textColor="@color/gray_350"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/et_sign_up_introduce"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/et_sign_up_introduce"/>-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_sign_up_submit"
@@ -158,7 +195,7 @@
         android:textSize="17sp"
         android:textColor="@color/gray_100"
         android:background="@drawable/bg_rectangle_gradient"
-        app:layout_constraintTop_toBottomOf="@id/tv_sign_up_introduce_count"
+        app:layout_constraintTop_toBottomOf="@id/et_sign_up_introduce"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

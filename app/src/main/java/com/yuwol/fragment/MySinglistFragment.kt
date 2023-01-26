@@ -30,12 +30,10 @@ class MySinglistFragment : Fragment() {
     ): View? {
         binding = FragmentMySinglistBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitleGradient("나의 싱리스트", binding.tvMySinglistTitle)
 
         initChartList()
         initChartRecyclerView()
@@ -45,17 +43,11 @@ class MySinglistFragment : Fragment() {
         }
     }
 
-    private fun setTitleGradient(text: String, tv: TextView) {
-        val spannable = text.toSpannable()
-        spannable[0..text.length] = LinearGradientSpan(text, text, ContextCompat.getColor(requireContext(), R.color.pink_100), ContextCompat.getColor(requireContext(), R.color.purple_100))
-        tv.text = spannable
-    }
-
     private fun initChartRecyclerView() {
-        binding.rvMySinglistAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        binding.rvMySinglist.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         mysinglistAdapter = MysinglistAdapter()
         mysinglistAdapter.dataList = chartData
-        binding.rvMySinglistAll.adapter = mysinglistAdapter
+        binding.rvMySinglist.adapter = mysinglistAdapter
     }
     private fun initChartList() {
         chartData.clear()

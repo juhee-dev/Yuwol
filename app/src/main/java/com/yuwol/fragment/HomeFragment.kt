@@ -49,7 +49,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         setTitleGradient(getString(R.string.chart_title_new), binding.textView4)
 
         initChartList()
-        getChartList()
+//        getChartList()
         initChartRecyclerView()
 
         binding.tvHomeAll.setOnClickListener(this)

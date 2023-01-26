@@ -17,10 +17,6 @@ import kotlinx.android.synthetic.main.fragment_third_rating.view.*
 
 class ThirdRatingFragment : Fragment() {
     lateinit var binding: FragmentThirdRatingBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,18 +25,12 @@ class ThirdRatingFragment : Fragment() {
     ): View? {
         binding = FragmentThirdRatingBinding.inflate(inflater, container, false)
         return binding.root
-
-        val view: View = inflater!!.inflate(R.layout.fragment_home, container, false)
-        view.button.setOnClickListener {
-            Log.d("console", "Button pressed")
-        }
-        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button.setOnClickListener{
+        binding.btnThirdRatingSubmit.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,HomeFragment()).commit()
         }
     }
