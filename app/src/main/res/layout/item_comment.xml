@@ -9,7 +9,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="4dp"
-        android:src="@drawable/cover"
+        android:src="@drawable/cover_note"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         app:layout_constraintTop_toTopOf="parent"

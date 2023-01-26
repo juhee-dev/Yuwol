@@ -36,7 +36,7 @@
                 <ImageView
                     android:layout_width="210dp"
                     android:layout_height="210dp"
-                    android:src="@drawable/cover"/>
+                    android:src="@drawable/cover_note"/>
             </androidx.cardview.widget.CardView>
             <ImageView
                 android:id="@+id/iv_song_detail_sing_list"
