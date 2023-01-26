@@ -52,10 +52,10 @@ class MySinglistFragment : Fragment() {
     }
 
     private fun initChartRecyclerView() {
-        binding.rvMySinglistAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        binding.rvMySinglist.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         mysinglistAdapter = MysinglistAdapter()
         mysinglistAdapter.dataList = chartData
-        binding.rvMySinglistAll.adapter = mysinglistAdapter
+        binding.rvMySinglist.adapter = mysinglistAdapter
     }
     private fun initChartList() {
         chartData.clear()

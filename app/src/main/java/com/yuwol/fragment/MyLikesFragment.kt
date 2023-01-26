@@ -45,10 +45,10 @@ class MyLikesFragment : Fragment() {
     }
 
     private fun initChartRecyclerView() {
-        binding.rvMyLikesAll.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        binding.rvMyLikes.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         mylikesAdapter = MylikesAdapter()
         mylikesAdapter.dataList= chartData
-        binding.rvMyLikesAll.adapter = mylikesAdapter
+        binding.rvMyLikes.adapter = mylikesAdapter
     }
     private fun initChartList() {
         chartData.clear()
