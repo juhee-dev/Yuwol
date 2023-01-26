@@ -28,14 +28,7 @@ class SecondRatingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//
-//        arguments?.let {
-//            song = it.getSerializable("rating") as Rate
-//        }
-//
-//        binding.tvRating2Title.text = song.title
-//        binding.tvRating2Artist.text = song.artist
-//        binding.ivRate2Cover.setImageResource(song.cover)
+
 
         binding.ivRating2Forward.setOnClickListener{
             parentFragmentManager.beginTransaction().replace(R.id.fl_main,ThirdRatingFragment()).commit()

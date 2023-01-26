@@ -46,12 +46,6 @@ class ThirdRatingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        arguments?.let {
-//            song = it.getSerializable("rating") as Rate
-//        }
-//
-//        binding.textView7.text = song.title
-//        binding.textView8.text = song.artist
 
 
 
